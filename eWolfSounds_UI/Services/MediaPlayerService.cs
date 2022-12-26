@@ -1,9 +1,13 @@
-﻿namespace eWolfSounds_UI.Services
+﻿using eWolfSounds_UI.Interfaces;
+using System;
+using System.Windows.Media;
+
+namespace eWolfSounds_UI.Services
 {
     public class MediaPlayerService
     {
         private static MediaPlayerService _mediaPlayerService = new MediaPlayerService();
-        /*private readonly MediaPlayer _mediaPlayer;
+        private readonly MediaPlayer _mediaPlayer;
 
         public MediaPlayerService()
         {
@@ -20,6 +24,6 @@
             _mediaPlayer.Open(new Uri(soundDetails.OrginalName));
             _mediaPlayer.Position = new TimeSpan(0);
             _mediaPlayer.Play();
-        }*/
+        }
     }
 }

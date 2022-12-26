@@ -1,5 +1,6 @@
-﻿using eWolfSounds_UI.Models;
-using eWolfSounds_UI.Interfaces;
+﻿using eWolfSounds_UI.Interfaces;
+using eWolfSounds_UI.Models;
+using eWolfSounds_UI.Services;
 using eWolfSounds_UI.UserControls;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,19 +8,18 @@ using System.Windows;
 
 namespace eWolfSounds_UI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private ObservableCollection<SoundLibraryItem> _fullList = new ObservableCollection<SoundLibraryItem>();
         private SoundEffectHolder _soundEffectHolder = new SoundEffectHolder();
-
         private ObservableCollection<SoundLibraryItem> _soundItemsToShow = new ObservableCollection<SoundLibraryItem>();
 
         public MainWindow()
         {
             InitializeComponent();
+
+            ServiceLocator.Instance.InjectService<MediaPlayerService>(new MediaPlayerService());
+
             _soundEffectHolder.Populate();
         }
 
