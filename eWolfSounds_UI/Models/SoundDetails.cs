@@ -58,5 +58,13 @@ namespace eWolfSounds_UI.Models
                 return _orginalName;
             }
         }
+
+        public string PathOnly
+        {
+            get
+            {
+                return _path;
+            }
+        }
     }
 }

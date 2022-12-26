@@ -1,6 +1,7 @@
 ﻿using eWolfSounds_UI.Interfaces;
 using eWolfSounds_UI.Models;
 using eWolfSounds_UI.Services;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -19,6 +20,14 @@ namespace eWolfSounds_UI.UserControls
             get
             {
                 return SoundDetails.FullPath;
+            }
+        }
+
+        public string PathOnly
+        {
+            get
+            {
+                return SoundDetails.PathOnly;
             }
         }
 
@@ -50,6 +59,11 @@ namespace eWolfSounds_UI.UserControls
         {
             // play the current sound effect
             //Console.WriteLine("TODO: Remove from the list :" + Title);
+        }
+
+        private void Button_OpenFolderClick(object sender, RoutedEventArgs e)
+        {
+            Process.Start("explorer.exe", SoundDetails.PathOnly);
         }
     }
 }
