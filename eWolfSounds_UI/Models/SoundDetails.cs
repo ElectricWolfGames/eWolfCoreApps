@@ -1,4 +1,5 @@
 ﻿using eWolfSounds_UI.Interfaces;
+using eWolfTagHolders.Tags;
 using System.IO;
 
 namespace eWolfSounds_UI.Models
@@ -10,12 +11,13 @@ namespace eWolfSounds_UI.Models
         private string _name = "";
         private string _orginalName = "";
         private string _path = "";
+        private TagHolders _tagHolders;
 
         public string FullPath
         {
             get
             {
-                return $"{_path}{_name}{_extension}";
+                return $"{_path}{_tagHolders.Line}{_extension}";
             }
             set
             {
@@ -24,6 +26,15 @@ namespace eWolfSounds_UI.Models
                 _name = Path.GetFileNameWithoutExtension(value);
                 _path = value.Replace(Path.GetFileName(value), string.Empty);
                 _modified = false;
+                _tagHolders = new TagHolders(_name);
+            }
+        }
+
+        public TagHolders GetTagHolders
+        {
+            get
+            {
+                return _tagHolders;
             }
         }
 
@@ -45,6 +56,7 @@ namespace eWolfSounds_UI.Models
             {
                 if (_name != value)
                 {
+                    _tagHolders.Line = value;
                     _name = value;
                     _modified = true;
                 }

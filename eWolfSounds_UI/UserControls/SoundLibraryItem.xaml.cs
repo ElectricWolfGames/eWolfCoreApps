@@ -27,7 +27,7 @@ namespace eWolfSounds_UI.UserControls
         {
             get
             {
-                return SoundDetails.PathOnly;
+                return SoundDetails.FullPath;
             }
         }
 

@@ -32,6 +32,9 @@ namespace eWolfTagHolders.Helpers
 
         public static string[] GetTagsFromName(string name)
         {
+            name = name.Replace("sci fi", "Sci-Fi", StringComparison.InvariantCulture);
+            name = name.Replace("scifi", "Sci-Fi", StringComparison.InvariantCulture);
+
             string[] parts = name.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             List<string> trimmedParts = new List<string>();
 

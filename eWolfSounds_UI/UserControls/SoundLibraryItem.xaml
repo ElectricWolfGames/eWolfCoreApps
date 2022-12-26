@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:eWolfSounds_UI.UserControls"
              mc:Ignorable="d"
-             d:DesignHeight="40" d:DesignWidth="990">
+             d:DesignHeight="40" d:DesignWidth="940">
     <Grid>
         <TextBox x:Name="_labelName" Text="{Binding Title,
                         Mode=TwoWay,
                         UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="801" />
         <Button Content="Play" HorizontalAlignment="Left" Margin="816,-2,0,0" VerticalAlignment="Top" Click="Button_Click" />
         <Button Content="X" HorizontalAlignment="Left" Margin="818,20,0,0" VerticalAlignment="Top" />
-        <Button Content="Open Folder" HorizontalAlignment="Left" Margin="910,-2,0,0" VerticalAlignment="Top" Click="Button_OpenFolderClick" />
+        <Button Content="Open Folder" HorizontalAlignment="Left" Margin="862,-2,0,0" VerticalAlignment="Top" Click="Button_OpenFolderClick" />
         <Label Content="{Binding PathOnly}" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top" Height="26" Width="801" />
     </Grid>
 </UserControl>
