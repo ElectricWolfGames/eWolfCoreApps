@@ -1,9 +1,6 @@
 ﻿using eWolfSounds_UI.Interfaces;
 using eWolfTagHolders.Tags;
-using System;
 using System.IO;
-using System.Windows.Controls;
-using System.Xml.Linq;
 
 namespace eWolfSounds_UI.Models
 {

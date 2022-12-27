@@ -41,23 +41,25 @@ namespace eWolfSounds_UI
 
         private void AddDefaultTags()
         {
-            var tag = new TagLibraryItem()
-            {
-                TagName = "Sci-Fi"
-            };
-            _tagList.Add(tag);
+            List<string> defaultTags = new List<string>();
+            defaultTags.Add("Sci-Fi");
+            defaultTags.Add("Background");
+            defaultTags.Add("Machinery");
+            defaultTags.Add("Human");
+            defaultTags.Add("Animal");
+            defaultTags.Add("Weather");
+            defaultTags.Add("Transport");
+            defaultTags.Add("Explosion");
+            defaultTags.Add("War");
 
-            tag = new TagLibraryItem()
+            foreach (string tag in defaultTags)
             {
-                TagName = "Background"
-            };
-            _tagList.Add(tag);
-
-            tag = new TagLibraryItem()
-            {
-                TagName = "Machinery"
-            };
-            _tagList.Add(tag);
+                var tagItem = new TagLibraryItem()
+                {
+                    TagName = tag
+                };
+                _tagList.Add(tagItem);
+            }
         }
 
         private void ButFixNames_Click(object sender, RoutedEventArgs e)
