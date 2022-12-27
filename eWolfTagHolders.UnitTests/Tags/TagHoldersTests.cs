@@ -81,6 +81,17 @@ namespace eWolfTagHolders.UnitTests.Tags
         }
 
         [Test]
+        public void ShouldNotAddSameTagOnLine()
+        {
+            TagHolders th = new TagHolders("2222");
+            th.Line = "Test Test";
+
+            th.Line.Should().Be("Test");
+            th.Modifiy.Should().BeTrue();
+            th.Modifiy = false;
+        }
+
+        [Test]
         public void ShouldRemoveTag()
         {
             TagHolders th = new TagHolders("PreTag TagOne TagTwo");

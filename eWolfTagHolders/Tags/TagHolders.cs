@@ -19,6 +19,7 @@ namespace eWolfTagHolders.Tags
             }
             set
             {
+                Modifiy = true;
                 _parts = TagHelper.GetTagsFromName(value);
             }
         }

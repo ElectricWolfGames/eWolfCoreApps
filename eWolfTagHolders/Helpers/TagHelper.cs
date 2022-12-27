@@ -40,7 +40,10 @@ namespace eWolfTagHolders.Helpers
 
             foreach (string part in parts)
             {
-                trimmedParts.Add(part.Trim());
+                if (!trimmedParts.Contains(part.Trim()))
+                {
+                    trimmedParts.Add(part.Trim());
+                }
             }
 
             return trimmedParts.ToArray();
