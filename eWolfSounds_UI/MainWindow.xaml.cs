@@ -14,13 +14,50 @@ namespace eWolfSounds_UI
         private SoundEffectHolder _soundEffectHolder = new SoundEffectHolder();
         private ObservableCollection<SoundLibraryItem> _soundItemsToShow = new ObservableCollection<SoundLibraryItem>();
 
+        private ObservableCollection<TagLibraryItem> _tagList = new ObservableCollection<TagLibraryItem>();
+
         public MainWindow()
         {
             InitializeComponent();
 
             ServiceLocator.Instance.InjectService<MediaPlayerService>(new MediaPlayerService());
+            ServiceLocator.Instance.InjectService<MainWindow>(this);
 
             _soundEffectHolder.Populate();
+
+            AddDefaultTags();
+            MainTagList.ItemsSource = _tagList;
+        }
+
+        public void SetNewTagOnSelectedItem(string tagName)
+        {
+            var item = (SoundLibraryItem)MainItemsList.SelectedItem;
+            if (item != null)
+            {
+                item.Title += $" {tagName}";
+                item.UpdateTags();
+            }
+        }
+
+        private void AddDefaultTags()
+        {
+            var tag = new TagLibraryItem()
+            {
+                TagName = "Sci-Fi"
+            };
+            _tagList.Add(tag);
+
+            tag = new TagLibraryItem()
+            {
+                TagName = "Background"
+            };
+            _tagList.Add(tag);
+
+            tag = new TagLibraryItem()
+            {
+                TagName = "Machinery"
+            };
+            _tagList.Add(tag);
         }
 
         private void ButFixNames_Click(object sender, RoutedEventArgs e)

@@ -4,20 +4,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1000">
-    <Grid Margin="0,74,0,0">
+        Title="MainWindow" Height="800" Width="1200">
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="64" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="47*" />
-            <ColumnDefinition Width="453*" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="1000" />
         </Grid.ColumnDefinitions>
-        <ListView x:Name="MainItemsList" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2">
+        <ListView Grid.Column="1" Grid.Row="1" x:Name="MainItemsList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn />
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Search" HorizontalAlignment="Left" Margin="22,-60,0,0" VerticalAlignment="Top" Click="ButSearch_Click" />
-        <Button Content="Save" HorizontalAlignment="Left" Margin="28,-60,0,0" VerticalAlignment="Top" Click="ButSave_Click" Grid.Column="1" />
+        <ListView Grid.Column="0" Grid.Row="1" x:Name="MainTagList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Column="1" Grid.Row="0" Content="Search" HorizontalAlignment="Left" Margin="16,16,0,0" VerticalAlignment="Top" Click="ButSearch_Click" />
+        <Button Grid.Column="0" Grid.Row="0" Content="Save" HorizontalAlignment="Left" Margin="16,16,0,0" VerticalAlignment="Top" Click="ButSave_Click" />
+        <CheckBox Grid.Column="1" Grid.Row="0" x:Name="Untagged" Content="Show Untagged" HorizontalAlignment="Left" Margin="80,18,0,0" VerticalAlignment="Top" />
     </Grid>
 </Window>

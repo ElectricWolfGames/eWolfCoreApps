@@ -10,5 +10,7 @@ namespace eWolfSounds_UI.Interfaces
         string Name { get; set; }
         string OrginalName { get; }
         string PathOnly { get; }
+
+        void UpdateTags();
     }
 }

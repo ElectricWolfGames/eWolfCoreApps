@@ -78,5 +78,10 @@ namespace eWolfSounds_UI.Models
                 return _path;
             }
         }
+
+        public void UpdateTags()
+        {
+            Name = _tagHolders.Line;
+        }
     }
 }
