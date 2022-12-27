@@ -1,6 +1,9 @@
 ﻿using eWolfSounds_UI.Interfaces;
 using eWolfTagHolders.Tags;
+using System;
 using System.IO;
+using System.Windows.Controls;
+using System.Xml.Linq;
 
 namespace eWolfSounds_UI.Models
 {
@@ -25,7 +28,9 @@ namespace eWolfSounds_UI.Models
                 _extension = Path.GetExtension(value);
                 _name = Path.GetFileNameWithoutExtension(value);
                 _path = value.Replace(Path.GetFileName(value), string.Empty);
+
                 _modified = false;
+                CheckName();
                 _tagHolders = new TagHolders(_name);
             }
         }
@@ -91,5 +96,33 @@ namespace eWolfSounds_UI.Models
         {
             Name = _tagHolders.Line;
         }
+
+        private void CheckName()
+        {
+            var parts = _name.Split(" ");
+            if (parts.Length != 2)
+                return;
+
+            if (!parts[0].ToUpper().Contains("TRACK"))
+                return;
+
+            _name = parts[1];
+        }
+
+        /*
+         * private string NameCheck(string name)
+        {
+            var fileName = Path.GetFileName(name)
+
+            var parts = name.Split("//").Split(" ");
+            if (parts.Length != 2)
+                return name;
+
+            if (!parts[0].ToUpper().Contains("TRACK"))
+                return name;
+
+            return parts[1];
+        }
+         */
     }
 }

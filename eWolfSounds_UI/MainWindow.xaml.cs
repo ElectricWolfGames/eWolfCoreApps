@@ -81,21 +81,23 @@ namespace eWolfSounds_UI
 
         private ObservableCollection<SoundLibraryItem> GetSoundList()
         {
-            bool? untagged = Untagged.IsChecked;
+            bool untagged = Untagged.IsChecked == true;
 
             ObservableCollection<SoundLibraryItem> items = new ObservableCollection<SoundLibraryItem>();
 
             List<ISoundDetails> sounds = _soundEffectHolder.Sounds;
             foreach (ISoundDetails sound in sounds)
             {
-                if (sound.TotalTags <= 1)
+                if (untagged)
                 {
-                    SoundLibraryItem sli = new SoundLibraryItem
-                    {
-                        SoundDetails = sound
-                    };
-                    items.Add(sli);
+                    if (sound.TotalTags > 1)
+                        continue;
                 }
+                SoundLibraryItem sli = new SoundLibraryItem
+                {
+                    SoundDetails = sound
+                };
+                items.Add(sli);
             }
             _fullList = items;
             return items;
