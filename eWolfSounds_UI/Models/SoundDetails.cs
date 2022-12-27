@@ -79,6 +79,14 @@ namespace eWolfSounds_UI.Models
             }
         }
 
+        public int TotalTags
+        {
+            get
+            {
+                return GetTagHolders.CountTags();
+            }
+        }
+
         public void UpdateTags()
         {
             Name = _tagHolders.Line;

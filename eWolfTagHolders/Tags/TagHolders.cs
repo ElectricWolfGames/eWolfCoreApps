@@ -65,6 +65,11 @@ namespace eWolfTagHolders.Tags
             Modifiy = true;
         }
 
+        public int CountTags()
+        {
+            return _parts.Length;
+        }
+
         public string GetTagFromPartGroup(string tag)
         {
             foreach (string part in _parts)

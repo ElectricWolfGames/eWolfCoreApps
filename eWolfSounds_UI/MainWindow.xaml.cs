@@ -74,38 +74,28 @@ namespace eWolfSounds_UI
 
         private void ButSearch_Click(object sender, RoutedEventArgs e)
         {
-            MainItemsList.Items.Clear();
+            //MainItemsList.Items.Clear();
 
             MainItemsList.ItemsSource = GetSoundList();
         }
 
-        private void FilterText_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            //string filter = FilterText.Text.ToUpper();
-
-            ObservableCollection<SoundLibraryItem> items = new ObservableCollection<SoundLibraryItem>();
-            foreach (var item in _fullList)
-            {
-                //  if (item.Title.ToUpper().Contains(filter))
-                {
-                    items.Add(item);
-                }
-            }
-            MainItemsList.ItemsSource = items;
-        }
-
         private ObservableCollection<SoundLibraryItem> GetSoundList()
         {
+            bool? untagged = Untagged.IsChecked;
+
             ObservableCollection<SoundLibraryItem> items = new ObservableCollection<SoundLibraryItem>();
 
             List<ISoundDetails> sounds = _soundEffectHolder.Sounds;
             foreach (ISoundDetails sound in sounds)
             {
-                SoundLibraryItem sli = new SoundLibraryItem
+                if (sound.TotalTags <= 1)
                 {
-                    SoundDetails = sound
-                };
-                items.Add(sli);
+                    SoundLibraryItem sli = new SoundLibraryItem
+                    {
+                        SoundDetails = sound
+                    };
+                    items.Add(sli);
+                }
             }
             _fullList = items;
             return items;

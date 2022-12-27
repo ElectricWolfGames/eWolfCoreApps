@@ -49,6 +49,14 @@ namespace eWolfSounds_UI.UserControls
             }
         }
 
+        public int TotalTags
+        {
+            get
+            {
+                return SoundDetails.GetTagHolders.CountTags();
+            }
+        }
+
         public void UpdateTags()
         {
             SoundDetails.UpdateTags();
