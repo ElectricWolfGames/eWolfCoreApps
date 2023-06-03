@@ -6,7 +6,6 @@ using System.Xml.Serialization;
 
 namespace eWolfMetaTagging.Data
 {
-
     [Serializable]
     [XmlRoot("BasicTagListBase")]
     [XmlInclude(typeof(TagListSets))]

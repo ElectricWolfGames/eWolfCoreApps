@@ -1,8 +1,7 @@
-﻿using System.IO;
-using System.Configuration;
-using System.Xml.Serialization;
+﻿using eWolfMetaTagging.Helpers;
 using eWolfMetaTagging.Services;
-using eWolfMetaTagging.Helpers;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace eWolfMetaTagging.Data
 {
