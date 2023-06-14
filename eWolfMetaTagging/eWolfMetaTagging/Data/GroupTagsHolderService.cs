@@ -413,6 +413,10 @@ namespace eWolfMetaTagging.Data
             groupTags = new GroupTags("7714,GWR5700,Pannier");
             groupTags.Add("7714");
             GroupTagCollection.Add(groupTags);
+
+            groupTags = new GroupTags("B954546,Brakevan,20T");
+            groupTags.Add("B954546");
+            GroupTagCollection.Add(groupTags);
         }
     }
 }
