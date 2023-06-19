@@ -345,6 +345,7 @@ namespace eWolfMetaTagging
                     mePlayer.Source = uri;
                     mePlayer.Play();
                     mePlayer.IsEnabled = true;
+                    mePlayer.IsMuted = true;
                 }
                 return;
             }
@@ -357,6 +358,7 @@ namespace eWolfMetaTagging
                     mePlayer.Source = uri;
                     mePlayer.Play();
                     mePlayer.IsEnabled = true;
+                    mePlayer.IsMuted = true;
                 }
 
                 return;

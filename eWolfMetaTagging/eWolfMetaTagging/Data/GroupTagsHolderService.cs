@@ -417,6 +417,10 @@ namespace eWolfMetaTagging.Data
             groupTags = new GroupTags("B954546,Brakevan,20T");
             groupTags.Add("B954546");
             GroupTagCollection.Add(groupTags);
+
+            groupTags = new GroupTags("ColinMcAndrew&Coy,0-4-0");
+            groupTags.Add("ColinMcAndrew&Coy");
+            GroupTagCollection.Add(groupTags);
         }
     }
 }
