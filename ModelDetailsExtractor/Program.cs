@@ -9,7 +9,6 @@ namespace ExtractModelDetails
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
             var holder = new ModelLocoDetailsHolder();
 
             var e = new ModelDetailsExtractor();
