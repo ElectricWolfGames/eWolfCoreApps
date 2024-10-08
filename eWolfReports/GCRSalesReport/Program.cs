@@ -1,7 +1,5 @@
 ﻿using OfficeOpenXml;
 using System.Data;
-using System.Globalization;
-using static OfficeOpenXml.ExcelErrorValue;
 
 namespace GCRSalesReport
 {
@@ -16,6 +14,8 @@ namespace GCRSalesReport
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage package = new ExcelPackage(fileName))
             {
+                Console.WriteLine($"Processing {fileName}");
+
                 ExcelWorksheet worksheet = package.Workbook.Worksheets[3];
                 ProcessItems(worksheet);
 
