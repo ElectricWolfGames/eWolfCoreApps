@@ -29,7 +29,6 @@ namespace GCRSalesReport
             Console.WriteLine("Hello, World!");
 
             string path = "E:\\GCR\\Stand\\Stand-Sales\\2024\\";
-            string file = "2024-04-26 DieselGala.xlsx";
 
             foreach (var fileInfo in Directory.GetFiles(path))
             {
