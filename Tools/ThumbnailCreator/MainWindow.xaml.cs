@@ -40,6 +40,7 @@ namespace ThumbnailCreator
                 //Specification for target bitmap like width/height pixel etc.
                 RenderTargetBitmap renderTarget = new((int)renderWidth, (int)renderHeight, 0, 0,
                     PixelFormats.Pbgra32);
+                
                 //creates Visual Brush of UIElement
                 VisualBrush visualBrush = new(source);
 
@@ -73,20 +74,37 @@ namespace ThumbnailCreator
             ShowTitle.Text = _showDetails.Title;
             ShowDescription.Text = _showDetails.Description;
 
+            var a = new SolidColorBrush(Colors.White);
+            var b = new SolidColorBrush(Colors.Cyan);
+
             foreach (var ep in _showDetails.EpisodeDetails)
             {
+
+                ShowTitle.Text = _showDetails.Title + ep.TitleExtra;
                 EpisodeTitle.Text = ep.Title;
                 EpisodeDescription.Text = ep.Description;
 
+                if (EpisodeTitle.Foreground == a)
+                {
+                    EpisodeTitle.Foreground = b;
+                }
+                else
+                {
+                    EpisodeTitle.Foreground = a;
+                }
 
 
                 InvalidateVisual();
                 UpdateLayout();
-
-                string file = $@"E:\Video_Projects\Audios\The Spaceship\\Images\\";
-                Directory.CreateDirectory(file);
+                
+                Directory.CreateDirectory(_showDetails.Path);
                 UIElement element = this.Content as UIElement;
-                Uri path = new(file + $"{ep.Title.Replace(":", "")}.png");
+
+                string text = ep.Title;
+                text = text.Replace(":", "");
+                text = text.Replace("?", "");
+
+                Uri path = new(_showDetails.Path + $"{text}.png");
                 CaptureScreen(element, path);
             }
 
