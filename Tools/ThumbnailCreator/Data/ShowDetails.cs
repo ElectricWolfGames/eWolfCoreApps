@@ -8,10 +8,10 @@ namespace ThumbnailCreator.Data
         public string Description { get; set; }
         public List<EpisodeDetails> EpisodeDetails { get; set; } = new List<EpisodeDetails>();
 
-        public string Path { get; set; } = $@"E:\Video_Projects\Audios\99\Images\";
+        public string Path { get; set; } = $@"E:\Video_Projects\Audios\99";
 
         public string ShowType { get; set; } = "Radio Comedy";
-        public string Episodes { get; set; } = "4";
-        public string Series { get; set; } = "1";
+        public string Episodes { get; set; } = "6";
+        public int Series { get; set; } = 2;
     }
 }

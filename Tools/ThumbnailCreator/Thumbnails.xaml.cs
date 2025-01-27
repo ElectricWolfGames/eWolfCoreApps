@@ -10,12 +10,12 @@ namespace ThumbnailCreator
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Thumbnails : Window
     {
 
         private ShowDetails _showDetails;
 
-        public MainWindow()
+        public Thumbnails()
         {
             InitializeComponent();
 
@@ -26,10 +26,7 @@ namespace ThumbnailCreator
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             CreateAll();
-
-            Thumbnails thumbnails = new Thumbnails();
-            thumbnails.ShowDialog();
-            Close();
+            //Close();
         }
 
         public static void CaptureScreen(UIElement source, Uri destination)
@@ -76,27 +73,15 @@ namespace ThumbnailCreator
         private void CreateAll()
         {
             ShowTitle.Text = _showDetails.Title;
-            ShowDescription.Text = _showDetails.Description;
 
             var a = new SolidColorBrush(Colors.White);
             var b = new SolidColorBrush(Colors.Cyan);
 
-            foreach (var ep in _showDetails.EpisodeDetails)
+            for (int seriesCount =1; seriesCount<_showDetails.Series+1; seriesCount++)
             {
-
-                ShowTitle.Text = _showDetails.Title + ep.TitleExtra;
-                EpisodeTitle.Text = ep.Title;
-                EpisodeDescription.Text = ep.Description;
-
-                if (EpisodeTitle.Foreground == a)
-                {
-                    EpisodeTitle.Foreground = b;
-                }
-                else
-                {
-                    EpisodeTitle.Foreground = a;
-                }
-
+                ShowType.Text = _showDetails.ShowType;
+                Show.Text = $"Series {seriesCount}";
+                EpisodeCount.Text = $"{_showDetails.Episodes} Episodes";
 
                 InvalidateVisual();
                 UpdateLayout();
@@ -104,19 +89,10 @@ namespace ThumbnailCreator
                 Directory.CreateDirectory(_showDetails.Path);
                 UIElement element = this.Content as UIElement;
 
-                string text = ep.Title;
-                text = text.Replace(":", "");
-                text = text.Replace("?", "");
-
-                Directory.CreateDirectory(_showDetails.Path + "Images\\");
-
-                Uri path = new(_showDetails.Path + $"Images\\{text}.png");
+                Directory.CreateDirectory(_showDetails.Path + "thumbnails\\");
+                Uri path = new(_showDetails.Path + $"thumbnails\\{seriesCount}.png");
                 CaptureScreen(element, path);
             }
-
-
-
-
         }
     }
 }

@@ -24,4 +24,10 @@
     <Resource Include="Images\Pic.jpeg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="Thumbnails.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>
