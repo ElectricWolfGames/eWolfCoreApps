@@ -10,7 +10,8 @@ namespace ThumbnailCreator.Data
 
         public string Path { get; set; } = $@"E:\Video_Projects\Audios\99";
 
-        public string ShowType { get; set; } = "Radio Comedy";
+        public string ShowTypeLineA { get; set; } = "Radio";
+        public string ShowTypeLineB { get; set; } = "Comedy";
         public string Episodes { get; set; } = "6";
         public int Series { get; set; } = 2;
     }

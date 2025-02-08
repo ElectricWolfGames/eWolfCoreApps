@@ -27,7 +27,7 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center" />
 
-        <Image Grid.Row="1" Grid.Column="1" Source="Images/Pic.jpeg" OpacityMask="#66000000" />
+        <Image Grid.Row="1" Grid.Column="1" Source="Images/Rudys Rarer Rcords.jpeg" OpacityMask="#66000000" />
         <local:OutlinedText Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
             x:Name="ShowTitle" Fill="Black" FontSize="100"     
             Bold="True" Stroke="Yellow" StrokeThickness="4" Text="Demo Title" 
@@ -36,7 +36,7 @@
                    x:Name="EpisodeTitle" HorizontalAlignment="Center" FontSize="56" TextWrapping="Wrap"
                    Text="TextBlock" VerticalAlignment="Top" Height="302" Width="898"
                    Foreground="#FFFFFFFF" FontFamily="Bowlby One SC"/>
-        <TextBlock Grid.Row="1" x:Name="EpisodeDescription" HorizontalAlignment="Center" FontSize="40" Margin="0,151,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="253" Width="898" Foreground="White"/>
+        <TextBlock Grid.Row="1" x:Name="EpisodeDescription" HorizontalAlignment="Center" FontSize="32" Margin="0,151,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="380" Width="898" Foreground="White"/>
         <TextBlock Grid.Row="1" Grid.Column="0" x:Name="ShowDescription" HorizontalAlignment="Left" FontSize="28" Margin="51,536,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="230" Width="902" Foreground="White"/>
 
     </Grid>

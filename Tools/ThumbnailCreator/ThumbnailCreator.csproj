@@ -10,9 +10,14 @@
 
   <ItemGroup>
     <None Remove="10 Life after Life.jpeg" />
+    <None Remove="Art\Face_With_Headphones-Small.jpeg" />
+    <None Remove="Art\Face_With_Headphones-Small.png" />
     <None Remove="backgound Eels.png" />
     <None Remove="Image1.png" />
     <None Remove="Image2.png" />
+    <None Remove="Images\11 The Train at Platform 4.jpeg" />
+    <None Remove="Images\12 Bangers Mash.jpeg" />
+    <None Remove="Images\Rudys Rarer Rcords.jpeg" />
     <None Remove="IMG_6866 2024-07-17 GrosmontStation NYMR Tracks.JPG" />
     <None Remove="OIG4.jpeg" />
     <None Remove="OIG4.M0OmUIZ1Sg.LJ.jpeg" />
@@ -21,7 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Art\Face_With_Headphones-Small.jpeg" />
+    <Resource Include="Art\Face_With_Headphones-Small.png" />
+    <Resource Include="Images\11 The Train at Platform 4.jpeg" />
+    <Resource Include="Images\12 Bangers Mash.jpeg" />
     <Resource Include="Images\Pic.jpeg" />
+    <Resource Include="Images\Rudys Rarer Rcords.jpeg" />
   </ItemGroup>
 
   <ItemGroup>

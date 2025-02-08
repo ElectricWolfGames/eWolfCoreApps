@@ -79,9 +79,14 @@ namespace ThumbnailCreator
 
             for (int seriesCount =1; seriesCount<_showDetails.Series+1; seriesCount++)
             {
-                ShowType.Text = _showDetails.ShowType;
+                ShowType.Text = _showDetails.ShowTypeLineA;
+                ShowType2.Text = _showDetails.ShowTypeLineB;
                 Show.Text = $"Series {seriesCount}";
-                EpisodeCount.Text = $"{_showDetails.Episodes} Episodes";
+
+
+                int episodecount = _showDetails.EpisodeDetails.Where(x => x.Title.Contains($"s{seriesCount.ToString("D2")}")).Count();
+
+                EpisodeCount.Text = $"{episodecount} Episodes";
 
                 InvalidateVisual();
                 UpdateLayout();

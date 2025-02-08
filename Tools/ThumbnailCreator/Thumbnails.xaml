@@ -27,22 +27,27 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center" />
         <Image Grid.Row="1" Grid.Column="0" 
-               Source="Images/Pic.jpeg" OpacityMask="#FF000000" />
+               Source="Images/Rudys Rarer Rcords.jpeg" OpacityMask="#FF000000" />
 
         <local:OutlinedText Grid.Row="0" Grid.Column="0"
                 Grid.ColumnSpan="2" x:Name="ShowTitle" Fill="Black" FontSize="154"     
                 Bold="True" Stroke="Yellow" StrokeThickness="8" Text="Demo Text" Margin="0,0,0,0" 
                 HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" Height="231"/>
 
+        <Image Grid.Row="1" Grid.Column="1" 
+            Source="Art/Face_With_Headphones-Small.png" Margin="455,0,0,388" />
+
         <TextBlock Grid.Row="1" Grid.Column="1" x:Name="ShowType" FontSize="94" Width="Auto"
-                   Text="Radio Comedy" Foreground="Yellow" FontFamily="Bowlby One SC" Margin="106,42,106,551"/>
+                   Text="Radio" Foreground="Yellow" FontFamily="Lemon" Margin="106,91,106,502"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="ShowType2" FontSize="94" Width="Auto"
+                   Text="Comedy" Foreground="Yellow" FontFamily="Lemon" Margin="60,194,152,399"/>
 
         <local:OutlinedText Grid.Row="1" x:Name="Show" Fill="White" FontSize="100"     
             Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1"
-            Height="79" Width="Auto" Grid.Column="1" Margin="254,382,242,247"/>
+            Height="79" Width="Auto" Grid.Column="1" Margin="282,415,214,214"/>
         
         <local:OutlinedText Grid.Row="1" x:Name="EpisodeCount" Fill="Yellow" FontSize="100"     
             Bold="True" Stroke="Black" StrokeThickness="4" Text="4 Episodes"
-            Height="79" Width="Auto" Margin="186,534,242,95" Grid.Column="1"/>
+            Height="79" Width="Auto" Margin="214,562,214,67" Grid.Column="1"/>
     </Grid>
 </Window>

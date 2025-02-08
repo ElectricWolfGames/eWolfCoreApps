@@ -108,9 +108,11 @@ namespace ThumbnailCreator
                 text = text.Replace(":", "");
                 text = text.Replace("?", "");
 
-                Directory.CreateDirectory(_showDetails.Path + "Images\\");
+                string subfolder = ep.Title.Substring(0,3);
 
-                Uri path = new(_showDetails.Path + $"Images\\{text}.png");
+                Directory.CreateDirectory(_showDetails.Path + subfolder);
+
+                Uri path = new(_showDetails.Path + $"{subfolder}\\{text}.png");
                 CaptureScreen(element, path);
             }
 
