@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1112" Width="1920" Background="White">
     <Grid>
-
         <Grid.RowDefinitions>
             <RowDefinition Height="220" />
             <RowDefinition Height="*" />
@@ -28,9 +27,10 @@
                    VerticalAlignment="Center" />
 
         <Image x:Name="Image"  Grid.Row="1" Grid.Column="1" Source="Images/Rudys Rarer Rcords.jpeg" OpacityMask="#88000000" />
+
         <local:OutlinedText Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-            x:Name="ShowTitle" Fill="Black" FontSize="100"
-            Bold="True" Stroke="Yellow" StrokeThickness="4" Text="Demo Title"
+            x:Name="ShowTitle" Fill="Yellow" FontSize="100"
+            Bold="True" Stroke="#FF224444" StrokeThickness="4" Text="Demo Title"
             HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Width="Auto" />
         <TextBlock Grid.Row="1"
                    x:Name="EpisodeTitle" HorizontalAlignment="Center" FontSize="56" TextWrapping="Wrap"

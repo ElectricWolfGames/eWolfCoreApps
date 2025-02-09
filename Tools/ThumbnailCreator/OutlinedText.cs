@@ -318,4 +318,3 @@ namespace ThumbnailCreator
         }
     }
 }
-

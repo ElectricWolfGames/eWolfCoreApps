@@ -6,8 +6,41 @@
         internal static ShowDetails PopulateStarShipData()
         {
             return SetRudyRareRecords();
-            //return Nebulous();
             //return SetAnsgstrom();
+            //return HobbyBobbies();
+            //return Nebulous();
+        }
+
+        private static ShowDetails HobbyBobbies()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/Hobby Bobbies.jpeg";
+            showDetails.Title = "Hobby Bobbies";
+            showDetails.Path = $@"E:\_AudioTemp\_Ark\Comedy\Hobby Bobbies\";
+            showDetails.Description = "";
+            showDetails.Episodes = "";
+            showDetails.Series = 2;
+
+            EpisodeDetails episodeDetails;
+
+            for (int i = 0; i < 4; i++)
+            {
+                episodeDetails = new EpisodeDetails();
+                episodeDetails.TitleExtra = ": Series 1";
+                episodeDetails.Title = $"s01e0{i}";
+                episodeDetails.Description = "";
+                showDetails.EpisodeDetails.Add(episodeDetails);
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                episodeDetails = new EpisodeDetails();
+                episodeDetails.TitleExtra = ": Series 2";
+                episodeDetails.Title = $"s02e0{i}";
+                episodeDetails.Description = "";
+                showDetails.EpisodeDetails.Add(episodeDetails);
+            }
+
+            return showDetails;
         }
 
         private static ShowDetails Nebulous()
@@ -90,6 +123,7 @@
         private static ShowDetails SetRudyRareRecords()
         {
             ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/Rudys Rarer Rcords.jpeg";
             showDetails.Title = "Rudy's Rare Records";
             showDetails.Path = $@"E:\_AudioTemp\Comedy\_All_G\Rudys Rarer Rcords\";
             showDetails.Description = "Adam Sharpe, who returns to Birmingham from London after a breakdown, and is forced to move in with his father Rudy Sharpe. They squeeze into the flat above the eponymous Rudy's Rare Records, his dad's shambolic record shop selling reggae, ska and soul.";

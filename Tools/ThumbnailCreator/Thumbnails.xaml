@@ -21,8 +21,8 @@
                    Grid.ColumnSpan="2" Grid.RowSpan="3"
                    Width="1920"
                    Height="1112"
-                   Fill="Black"
-                   Stroke="#FF111111"
+                   Fill="#FF222222"
+                   Stroke="#88112222"
                    StrokeThickness="2"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center" />
@@ -30,17 +30,21 @@
                Source="Images/Rudys Rarer Rcords.jpeg" OpacityMask="#FF000000" />
 
         <local:OutlinedText Grid.Row="0" Grid.Column="0"
-                Grid.ColumnSpan="2" x:Name="ShowTitle" Fill="Black" FontSize="154"
-                Bold="True" Stroke="Yellow" StrokeThickness="8" Text="Demo Text" Margin="0,0,0,0"
+                Grid.ColumnSpan="2" x:Name="ShowTitle" Fill="Yellow" FontSize="154"
+                Bold="True" Stroke="Black" StrokeThickness="6" Text="Demo Text" Margin="0,0,0,0"
                 HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" Height="231" />
 
         <Image Grid.Row="1" Grid.Column="1"
             Source="Art/Face_With_Headphones-Small.png" Margin="455,0,0,388" />
 
-        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="ShowType" FontSize="94" Width="Auto"
-                   Text="Radio" Foreground="Yellow" FontFamily="Lemon" Margin="106,91,106,502" />
-        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="ShowType2" FontSize="94" Width="Auto"
-                   Text="Comedy" Foreground="Yellow" FontFamily="Lemon" Margin="60,194,152,399" />
+        <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType" 
+                    Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="Radio"
+                    Font="Lemon" Margin="122,79,0,0"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />
+        <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType2" 
+                    Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="Comedy"
+                    Font="Lemon" Margin="60,184,0,0"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />
 
         <local:OutlinedText Grid.Row="1" x:Name="Show" Fill="White" FontSize="100"
             Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1"
