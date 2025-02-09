@@ -1,9 +1,8 @@
 ﻿using System.IO;
 using System.Windows;
-using System.Windows.Media.Imaging;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using ThumbnailCreator.Data;
-using System.Xml.Linq;
 
 namespace ThumbnailCreator
 {
@@ -12,7 +11,6 @@ namespace ThumbnailCreator
     /// </summary>
     public partial class Thumbnails : Window
     {
-
         private ShowDetails _showDetails;
 
         public Thumbnails()
@@ -21,12 +19,6 @@ namespace ThumbnailCreator
 
             _showDetails = Shows.PopulateStarShipData();
             this.Loaded += Window_Loaded;
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            CreateAll();
-            //Close();
         }
 
         public static void CaptureScreen(UIElement source, Uri destination)
@@ -41,7 +33,7 @@ namespace ThumbnailCreator
                 //Specification for target bitmap like width/height pixel etc.
                 RenderTargetBitmap renderTarget = new((int)renderWidth, (int)renderHeight, 0, 0,
                     PixelFormats.Pbgra32);
-                
+
                 //creates Visual Brush of UIElement
                 VisualBrush visualBrush = new(source);
 
@@ -77,12 +69,13 @@ namespace ThumbnailCreator
             var a = new SolidColorBrush(Colors.White);
             var b = new SolidColorBrush(Colors.Cyan);
 
-            for (int seriesCount =1; seriesCount<_showDetails.Series+1; seriesCount++)
+            for (int seriesCount = 1; seriesCount < _showDetails.Series + 1; seriesCount++)
             {
                 ShowType.Text = _showDetails.ShowTypeLineA;
                 ShowType2.Text = _showDetails.ShowTypeLineB;
                 Show.Text = $"Series {seriesCount}";
-
+                var thumb = new BitmapImage(new Uri($"pack://application:,,,/{_showDetails.Source}"));
+                Image.Source = thumb;
 
                 int episodecount = _showDetails.EpisodeDetails.Where(x => x.Title.Contains($"s{seriesCount.ToString("D2")}")).Count();
 
@@ -90,7 +83,7 @@ namespace ThumbnailCreator
 
                 InvalidateVisual();
                 UpdateLayout();
-                
+
                 Directory.CreateDirectory(_showDetails.Path);
                 UIElement element = this.Content as UIElement;
 
@@ -98,6 +91,13 @@ namespace ThumbnailCreator
                 Uri path = new(_showDetails.Path + $"thumbnails\\{seriesCount}.png");
                 CaptureScreen(element, path);
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            CreateAll();
+
+            Close();
         }
     }
 }

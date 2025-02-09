@@ -1,9 +1,8 @@
 ﻿using System.IO;
 using System.Windows;
-using System.Windows.Media.Imaging;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using ThumbnailCreator.Data;
-using System.Xml.Linq;
 
 namespace ThumbnailCreator
 {
@@ -12,7 +11,6 @@ namespace ThumbnailCreator
     /// </summary>
     public partial class MainWindow : Window
     {
-
         private ShowDetails _showDetails;
 
         public MainWindow()
@@ -21,15 +19,6 @@ namespace ThumbnailCreator
 
             _showDetails = Shows.PopulateStarShipData();
             this.Loaded += Window_Loaded;
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            CreateAll();
-
-            Thumbnails thumbnails = new Thumbnails();
-            thumbnails.ShowDialog();
-            Close();
         }
 
         public static void CaptureScreen(UIElement source, Uri destination)
@@ -44,7 +33,7 @@ namespace ThumbnailCreator
                 //Specification for target bitmap like width/height pixel etc.
                 RenderTargetBitmap renderTarget = new((int)renderWidth, (int)renderHeight, 0, 0,
                     PixelFormats.Pbgra32);
-                
+
                 //creates Visual Brush of UIElement
                 VisualBrush visualBrush = new(source);
 
@@ -77,13 +66,14 @@ namespace ThumbnailCreator
         {
             ShowTitle.Text = _showDetails.Title;
             ShowDescription.Text = _showDetails.Description;
+            var thumb = new BitmapImage(new Uri($"pack://application:,,,/{_showDetails.Source}"));
+            Image.Source = thumb;
 
             var a = new SolidColorBrush(Colors.White);
             var b = new SolidColorBrush(Colors.Cyan);
 
             foreach (var ep in _showDetails.EpisodeDetails)
             {
-
                 ShowTitle.Text = _showDetails.Title + ep.TitleExtra;
                 EpisodeTitle.Text = ep.Title;
                 EpisodeDescription.Text = ep.Description;
@@ -97,10 +87,9 @@ namespace ThumbnailCreator
                     EpisodeTitle.Foreground = a;
                 }
 
-
                 InvalidateVisual();
                 UpdateLayout();
-                
+
                 Directory.CreateDirectory(_showDetails.Path);
                 UIElement element = this.Content as UIElement;
 
@@ -108,17 +97,23 @@ namespace ThumbnailCreator
                 text = text.Replace(":", "");
                 text = text.Replace("?", "");
 
-                string subfolder = ep.Title.Substring(0,3);
+                string subfolder = ep.Title.Substring(0, 3);
 
                 Directory.CreateDirectory(_showDetails.Path + subfolder);
 
                 Uri path = new(_showDetails.Path + $"{subfolder}\\{text}.png");
                 CaptureScreen(element, path);
             }
+        }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            CreateAll();
 
+            Thumbnails thumbnails = new Thumbnails();
+            thumbnails.ShowDialog();
 
-
+            Close();
         }
     }
 }

@@ -17,6 +17,8 @@
     <None Remove="Image2.png" />
     <None Remove="Images\11 The Train at Platform 4.jpeg" />
     <None Remove="Images\12 Bangers Mash.jpeg" />
+    <None Remove="Images\Ansgstrom b.jpeg" />
+    <None Remove="Images\Nebulous A.jpeg" />
     <None Remove="Images\Rudys Rarer Rcords.jpeg" />
     <None Remove="IMG_6866 2024-07-17 GrosmontStation NYMR Tracks.JPG" />
     <None Remove="OIG4.jpeg" />
@@ -30,6 +32,8 @@
     <Resource Include="Art\Face_With_Headphones-Small.png" />
     <Resource Include="Images\11 The Train at Platform 4.jpeg" />
     <Resource Include="Images\12 Bangers Mash.jpeg" />
+    <Resource Include="Images\Ansgstrom b.jpeg" />
+    <Resource Include="Images\Nebulous A.jpeg" />
     <Resource Include="Images\Pic.jpeg" />
     <Resource Include="Images\Rudys Rarer Rcords.jpeg" />
   </ItemGroup>
