@@ -18,6 +18,7 @@
     <None Remove="Images\11 The Train at Platform 4.jpeg" />
     <None Remove="Images\12 Bangers Mash.jpeg" />
     <None Remove="Images\Ansgstrom b.jpeg" />
+    <None Remove="Images\Clayton Grange Title.png" />
     <None Remove="Images\Hobby Bobbies.jpeg" />
     <None Remove="Images\Nebulous A.jpeg" />
     <None Remove="Images\Rudys Rarer Rcords.jpeg" />
@@ -34,6 +35,7 @@
     <Resource Include="Images\11 The Train at Platform 4.jpeg" />
     <Resource Include="Images\12 Bangers Mash.jpeg" />
     <Resource Include="Images\Ansgstrom b.jpeg" />
+    <Resource Include="Images\Clayton Grange Title.png" />
     <Resource Include="Images\Hobby Bobbies.jpeg" />
     <Resource Include="Images\Nebulous A.jpeg" />
     <Resource Include="Images\Pic.jpeg" />
