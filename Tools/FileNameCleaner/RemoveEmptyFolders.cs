@@ -11,11 +11,32 @@
 
         public void Do()
         {
-            var folders = Directory.GetDirectories(_path);
-            foreach (var folder in folders)
+
+            ProcessPath(_path);
+        }
+
+        private void ProcessPath(string path)
+        {
+            try
             {
-                Console.WriteLine(folder);
+                var items = Directory.GetFileSystemEntries(path);
+
+                if (items.Count() == 0)
+                {
+                    Console.WriteLine(path + "   Removed");
+                    Directory.Delete(path);
+                }
+
+                foreach (var entry in items)
+                {
+                    if (Directory.Exists(entry))
+                        ProcessPath(entry);
+                }
             }
+            catch { }
         }
     }
 }
+
+
+       
