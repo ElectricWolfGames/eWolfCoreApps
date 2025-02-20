@@ -1,4 +1,6 @@
 ﻿
+using System.Reflection.Metadata.Ecma335;
+
 namespace FileNameCleaner
 {
     internal class Program
@@ -7,9 +9,17 @@ namespace FileNameCleaner
         {
             Console.WriteLine("Hello World!");
 
-            string path = @"N:\";
-            RemoveEmptyFolders refs = new RemoveEmptyFolders(path);
-            refs.Do();
+            // string path = @"K:\TV\";
+            string path = "E:\\_ToWatch\\Films\\ToStore\\";
+            CleanUpFileNames cfn = new CleanUpFileNames(path);
+            cfn.Do();
+
+
+            //RemoveExtraSpaces res = new RemoveExtraSpaces(path);
+            //res.Do();
+
+            //RemoveEmptyFolders refs = new RemoveEmptyFolders(path);
+            //refs.Do();
         }
     }
 }
