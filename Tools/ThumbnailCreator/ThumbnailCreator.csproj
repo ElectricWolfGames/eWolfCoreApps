@@ -20,6 +20,7 @@
     <None Remove="Images\Ansgstrom b.jpeg" />
     <None Remove="Images\Clayton Grange Title.png" />
     <None Remove="Images\Hobby Bobbies.jpeg" />
+    <None Remove="Images\JokeShop.jpeg" />
     <None Remove="Images\Nebulous A.jpeg" />
     <None Remove="Images\Rudys Rarer Rcords.jpeg" />
     <None Remove="IMG_6866 2024-07-17 GrosmontStation NYMR Tracks.JPG" />
@@ -37,6 +38,7 @@
     <Resource Include="Images\Ansgstrom b.jpeg" />
     <Resource Include="Images\Clayton Grange Title.png" />
     <Resource Include="Images\Hobby Bobbies.jpeg" />
+    <Resource Include="Images\JokeShop.jpeg" />
     <Resource Include="Images\Nebulous A.jpeg" />
     <Resource Include="Images\Pic.jpeg" />
     <Resource Include="Images\Rudys Rarer Rcords.jpeg" />

@@ -5,6 +5,7 @@
         // 1920 x 1040
         internal static ShowDetails PopulateStarShipData()
         {
+            return MirandaHartsJokeShop();
             return SetClaytonGrange();
             //return SetRudyRareRecords();
             //return SetAnsgstrom();
@@ -12,7 +13,45 @@
             //return Nebulous();
         }
 
-  
+        private static ShowDetails MirandaHartsJokeShop()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/JokeShop.jpeg";
+            showDetails.Title = "Miranda Hart's Joke Shop";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading\03 Miranda Harts Joke Shop\";
+            showDetails.Description = "Miranda is an unconventional woman. She's six feet tall, self-conscious and posh. And is frequently mistaken for a man. She's also invested her inheritance in a joke shop that she runs with her friend Stevie while trying to deal with her outrageously embarrassing mother.";
+            showDetails.Episodes = "4";
+            showDetails.Series = 1;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = ": Series 1";
+            episodeDetails.Title = "s01e01 What A Flirt";
+            episodeDetails.Description = "Miranda flirts with Gary, but is mistaken for a man by passers-by when she un-knowingly buys clothes from a shop for transvestites. Other mix-ups scare Gary away, as they make Miranda look like she is desperate for a baby.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = ": Series 1";
+            episodeDetails.Title = "s01e02 What A Job";
+            episodeDetails.Description = "Miranda tries to prove she can get a proper job away from the joke shop.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = ": Series 1";
+            episodeDetails.Title = "s01e03 What A Wife";
+            episodeDetails.Description = "Gary needs a pretend wife for the evening and for some reason he chooses Stevie over Miranda.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = ": Series 1";
+            episodeDetails.Title = "s01e04 What An Excuse";
+            episodeDetails.Description = "Miranda's mother tries desperately to play Cupid for Miranda.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+
+            return showDetails;
+        }
+
+
         private static ShowDetails SetClaytonGrange()
         {
             ShowDetails showDetails = new ShowDetails();
