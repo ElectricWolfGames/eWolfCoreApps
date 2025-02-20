@@ -47,10 +47,8 @@
             episodeDetails.Description = "Miranda's mother tries desperately to play Cupid for Miranda.";
             showDetails.EpisodeDetails.Add(episodeDetails);
 
-
             return showDetails;
         }
-
 
         private static ShowDetails SetClaytonGrange()
         {
@@ -86,8 +84,6 @@
             episodeDetails.Description = "Meet the scientists who are a bit rubbish at life. And not much better at science.";
             showDetails.EpisodeDetails.Add(episodeDetails);
 
-
-
             episodeDetails = new EpisodeDetails();
             episodeDetails.TitleExtra = ": Series 2";
             episodeDetails.Title = "s02e01";
@@ -112,8 +108,7 @@
             episodeDetails.Description = "Spurred on by Saunders, the weary scientific team tries to impress a visiting Nobel Prize judge with their self-replicating killer robo-ants.\r\n";
             showDetails.EpisodeDetails.Add(episodeDetails);
 
-
             return showDetails;
         }
-        }
     }
+}

@@ -11,15 +11,15 @@
 
         public void Do()
         {
-
             ProcessPath(_path);
         }
+
         private void ProcessPath(string path)
         {
             var items = Directory.GetFileSystemEntries(path);
 
-           foreach (var entry in items)
-           {
+            foreach (var entry in items)
+            {
                 if (Directory.Exists(entry))
                 {
                     ProcessPath(entry);
@@ -30,8 +30,6 @@
                 if (spaceDash)
                     Console.WriteLine(entry);
                 */
-
-
 
                 bool spaceWord = entry.Contains(" AMZN ");
                 if (spaceWord)
@@ -45,10 +43,6 @@
                 if (spaceDot)
                     Console.WriteLine(entry);*/
             }
-
         }
     }
 }
-
-
-       

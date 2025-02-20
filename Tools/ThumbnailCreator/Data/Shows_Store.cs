@@ -249,6 +249,5 @@ namespace ThumbnailCreator.Data
 
             return showDetails;
         }
-
     }
 }

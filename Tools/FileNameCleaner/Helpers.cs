@@ -87,7 +87,6 @@
         "-DL",
         "DL-",
         "DL",
-
     };
 
             words = words.OrderByDescending(x => x.Length).ToList();
@@ -105,8 +104,5 @@
             original = original.Replace(".", " ");
             return original.Trim();
         }
-
-
     }
-
 }

@@ -37,11 +37,11 @@
         <Image Grid.Row="1" Grid.Column="1"
             Source="Art/Face_With_Headphones-Small.png" Margin="455,0,0,388" />
 
-        <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType" 
+        <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType"
                     Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="Radio"
                     Font="Lemon" Margin="122,79,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />
-        <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType2" 
+        <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType2"
                     Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="Comedy"
                     Font="Lemon" Margin="60,184,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />

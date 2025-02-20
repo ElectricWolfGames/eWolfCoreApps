@@ -11,7 +11,6 @@
 
         public void Do()
         {
-
             ProcessPath(_path);
         }
 
@@ -37,6 +36,3 @@
         }
     }
 }
-
-
-       
