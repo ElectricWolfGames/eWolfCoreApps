@@ -1,10 +1,12 @@
-﻿namespace FileNameCleaner
+﻿using CommonCode;
+
+namespace FileNameCleaner
 {
-    internal class CleanUpFileNames
+    internal class StartFileWithDate
     {
         private string _path;
 
-        public CleanUpFileNames(string path)
+        public StartFileWithDate(string path)
         {
             _path = path;
         }
@@ -15,24 +17,28 @@
         }
 
         private void ProcessPath(string path)
-        { 
+        {
 
             var items = Directory.GetFileSystemEntries(path);
 
             foreach (var entry in items)
             {
-                if (Directory.Exists(entry))
-                {
-                    ProcessPath(entry+"\\");
-                    continue;
-                }
-
+                Console.WriteLine(entry);
 
                 string name = Path.GetFileNameWithoutExtension(entry);
                 string pathOnly = entry.Replace(Path.GetFileName(entry), string.Empty);
-                var temp = Helpers.RemoveOtherWords(name);
-                temp += Path.GetExtension(entry);
 
+                var r = StringsHelper.HasDateNotAtStart(name);
+                if (!r)
+                    continue;
+
+                var stringYear = StringsHelper.GetYearFrom(name);
+                string temp = name.Replace(stringYear, string.Empty);
+
+                temp = $"{stringYear} {temp}";
+                temp = Helpers.RemoveOtherWords(temp);
+
+                temp += Path.GetExtension(entry);
                 string newPath = pathOnly + temp;
                 if (entry != newPath)
                 {
@@ -43,6 +49,7 @@
                     }
                     catch { }
                 }
+
             }
         }
     }

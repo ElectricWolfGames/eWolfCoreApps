@@ -25,6 +25,7 @@
         "HornedSplendidPuduOfFocus",
         "H 264 Multisubs MortFurd",
         ".NF.WEBRip.x264-GalaxyTV",
+        "DVDRip DivX 5 0 2 Wrist",
         "MULTi HDR DV 2160p -FW",
         ".DVDRip.XviD-ALLiANCE",
         "DVDRip.x264-HANDJOB",
@@ -32,8 +33,10 @@
         "[sharethefiles.com]",
         "P Hevc x265-Megusta",
         "x264-TORRENTGALAXY",
+        "BDRip -SPARKS _arc",
         "P Av1 10Bit-Megusta",
         "RE-ENCODE Rip -NTb",
+        "Rip AAC5 1-[YTS MX]",
         "Rip.x264-GalaxyTV",
         "-GloriousMongoose",
         "HEVC x265 MeGusta",
@@ -43,6 +46,7 @@
         "(Eng, Esp-Divx5)",
         "[TheRostrum.net]",
         "[ Dual][GrupoTS]",
+        "BDRip -Replica",
         "SuccessfulCrab",
         "Rip.x264-RARBG",
         "HDTV x264-FoV",
@@ -56,6 +60,7 @@
         "Divx-Elzeta",
         "H264-METCON",
         ".h264-DIANA",
+        "BDRip -ROEN",
         "h264-EDITH",
         "x264-ION10",
         "H264-CAKES",
@@ -87,6 +92,7 @@
         "-DL",
         "DL-",
         "DL",
+        "()"
     };
 
             words = words.OrderByDescending(x => x.Length).ToList();
