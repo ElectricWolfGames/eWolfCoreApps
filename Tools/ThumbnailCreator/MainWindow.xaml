@@ -29,7 +29,7 @@
         <Image x:Name="Image"  Grid.Row="1" Grid.Column="1" Source="Images/Rudys Rarer Rcords.jpeg" OpacityMask="#88000000" />
 
         <local:OutlinedText Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-            x:Name="ShowTitle" Fill="Yellow" FontSize="100"
+            x:Name="ShowTitle" Fill="Yellow" FontSize="85"
             Bold="True" Stroke="#FF224444" StrokeThickness="4" Text="Demo Title"
             HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Width="Auto" />
         <TextBlock Grid.Row="1"
