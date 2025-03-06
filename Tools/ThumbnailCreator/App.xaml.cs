@@ -10,5 +10,4 @@ namespace ThumbnailCreator
     public partial class App : Application
     {
     }
-
 }

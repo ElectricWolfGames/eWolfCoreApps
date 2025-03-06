@@ -97,11 +97,17 @@ namespace ThumbnailCreator
                 text = text.Replace(":", "");
                 text = text.Replace("?", "");
 
-                string subfolder = ep.Title.Substring(0, 3);
+                string subfolder = "OneOff";
+                if (ep.Title.Length > 3)
+                    subfolder = ep.Title.Substring(0, 3);
 
                 Directory.CreateDirectory(_showDetails.Path + subfolder);
 
+                if (_showDetails.OneOffShow)
+                    text = _showDetails.Title;
+
                 Uri path = new(_showDetails.Path + $"{subfolder}\\{text}.png");
+
                 CaptureScreen(element, path);
             }
         }

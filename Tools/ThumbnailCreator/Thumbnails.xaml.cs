@@ -74,12 +74,19 @@ namespace ThumbnailCreator
                 ShowType.Text = _showDetails.ShowTypeLineA;
                 ShowType2.Text = _showDetails.ShowTypeLineB;
                 Show.Text = $"Series {seriesCount}";
+
                 var thumb = new BitmapImage(new Uri($"pack://application:,,,/{_showDetails.Source}"));
                 Image.Source = thumb;
 
                 int episodecount = _showDetails.EpisodeDetails.Where(x => x.Title.Contains($"s{seriesCount.ToString("D2")}")).Count();
 
                 EpisodeCount.Text = $"{episodecount} Episodes";
+
+                if (_showDetails.OneOffShow)
+                {
+                    Show.Text = "Short";
+                    EpisodeCount.Text = _showDetails.TitleLine2;
+                }
 
                 InvalidateVisual();
                 UpdateLayout();
@@ -89,6 +96,11 @@ namespace ThumbnailCreator
 
                 Directory.CreateDirectory(_showDetails.Path + "thumbnails\\");
                 Uri path = new(_showDetails.Path + $"thumbnails\\{seriesCount}.png");
+                if (_showDetails.OneOffShow)
+                {
+                    path = new(_showDetails.Path + $"thumbnails\\{_showDetails.Title}.png");
+                }
+
                 CaptureScreen(element, path);
             }
         }

@@ -22,6 +22,9 @@
     <None Remove="Images\Clayton Grange Title.png" />
     <None Remove="Images\Hobby Bobbies.jpeg" />
     <None Remove="Images\JokeShop.jpeg" />
+    <None Remove="Images\MM\1 Lion.jpeg" />
+    <None Remove="Images\MM\3 Goalkeeper Joe.jpeg" />
+    <None Remove="Images\MM\3 The Magna Charta.jpeg" />
     <None Remove="Images\Nebulous A.jpeg" />
     <None Remove="Images\Party v1.jpeg" />
     <None Remove="Images\Rudys Rarer Rcords.jpeg" />
@@ -42,6 +45,9 @@
     <Resource Include="Images\Clayton Grange Title.png" />
     <Resource Include="Images\Hobby Bobbies.jpeg" />
     <Resource Include="Images\JokeShop.jpeg" />
+    <Resource Include="Images\MM\1 Lion.jpeg" />
+    <Resource Include="Images\MM\3 Goalkeeper Joe.jpeg" />
+    <Resource Include="Images\MM\3 The Magna Charta.jpeg" />
     <Resource Include="Images\Nebulous A.jpeg" />
     <Resource Include="Images\Party v1.jpeg" />
     <Resource Include="Images\Pic.jpeg" />

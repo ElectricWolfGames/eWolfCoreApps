@@ -46,12 +46,10 @@
                     Font="Lemon" Margin="60,184,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />
 
-        <local:OutlinedText Grid.Row="1" x:Name="Show" Fill="White" FontSize="100"
-            Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1"
-            Height="79" Width="Auto" Grid.Column="1" Margin="282,415,214,214" />
+        <local:OutlinedText Grid.Row="1" x:Name="Show" Fill="White" FontSize="80"
+            Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1" Width="Auto" Grid.Column="1" Margin="302,420,63,197" />
 
-        <local:OutlinedText Grid.Row="1" x:Name="EpisodeCount" Fill="Yellow" FontSize="100"
-            Bold="True" Stroke="Black" StrokeThickness="4" Text="4 Episodes"
-            Height="79" Width="Auto" Margin="214,562,214,67" Grid.Column="1" />
+        <local:OutlinedText Grid.Row="1" x:Name="EpisodeCount" Fill="Yellow" FontSize="80"
+            Bold="True" Stroke="Black" StrokeThickness="4" Text="4 Episodes" Width="Auto" Margin="122,562,96,10" Grid.Column="1" />
     </Grid>
 </Window>
