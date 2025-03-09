@@ -25,6 +25,9 @@
     <None Remove="Images\MM\1 Lion.jpeg" />
     <None Remove="Images\MM\3 Goalkeeper Joe.jpeg" />
     <None Remove="Images\MM\3 The Magna Charta.jpeg" />
+    <None Remove="Images\MM\4 The Battle of Hastings.jpeg" />
+    <None Remove="Images\MM\6 Jonah and the Grampus.jpeg" />
+    <None Remove="Images\MM\7 Gunner Joe.jpeg" />
     <None Remove="Images\Nebulous A.jpeg" />
     <None Remove="Images\Party v1.jpeg" />
     <None Remove="Images\Rudys Rarer Rcords.jpeg" />
@@ -48,10 +51,17 @@
     <Resource Include="Images\MM\1 Lion.jpeg" />
     <Resource Include="Images\MM\3 Goalkeeper Joe.jpeg" />
     <Resource Include="Images\MM\3 The Magna Charta.jpeg" />
+    <Resource Include="Images\MM\4 The Battle of Hastings.jpeg" />
+    <Resource Include="Images\MM\5 Three Ha pence a foot.jpeg" />
+    <Resource Include="Images\MM\7 Gunner Joe.jpeg" />
     <Resource Include="Images\Nebulous A.jpeg" />
     <Resource Include="Images\Party v1.jpeg" />
     <Resource Include="Images\Pic.jpeg" />
     <Resource Include="Images\Rudys Rarer Rcords.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\MM\6 Jonah and the Grampus.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
