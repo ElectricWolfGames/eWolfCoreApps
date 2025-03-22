@@ -34,6 +34,7 @@
     <None Remove="Images\Party v1.jpeg" />
     <None Remove="Images\Rudys Rarer Rcords.jpeg" />
     <None Remove="Images\Scifi\625Y.jpeg" />
+    <None Remove="Images\Scifi\A Plague Of Goodness.jpeg" />
     <None Remove="Images\Scifi\Aliens of the Mind.jpeg" />
     <None Remove="Images\Scifi\Host Planet Earth.jpeg" />
     <None Remove="IMG_6866 2024-07-17 GrosmontStation NYMR Tracks.JPG" />
@@ -74,6 +75,7 @@
   <ItemGroup>
     <Resource Include="Images\MM\6 Jonah and the Grampus.jpeg" />
     <Resource Include="Images\Scifi\625Y.jpeg" />
+    <Resource Include="Images\Scifi\A Plague Of Goodness.jpeg" />
     <Resource Include="Images\Scifi\Aliens of the Mind.jpeg" />
     <Resource Include="Images\Scifi\Host Planet Earth.jpeg" />
   </ItemGroup>

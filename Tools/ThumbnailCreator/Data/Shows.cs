@@ -2,6 +2,29 @@
 {
     public static partial class Shows
     {
+        public static ShowDetails APlagueOfGoodness()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/Scifi/A Plague Of Goodness.jpeg";
+            showDetails.Title = "A Plague Of Goodness";
+            showDetails.TitleLine2 = "Complete story";
+            showDetails.Path = $@"E:\_AudioTemp\Scifi\NEXT\Mix\A Plague Of Goodness\";
+            showDetails.Description = "An American evangelist's message is having a devastating effect in the United States. He asks to come to Britain. Will he be allowed in? What is the reason for his success? What influence do his wife and chief agent have?";
+            showDetails.ShowTypeLineA = "SciFi";
+            showDetails.ShowTypeLineB = "Drama";
+            showDetails.Series = 1;
+            showDetails.ShortShow = false;
+            showDetails.ComdeyShow = false;
+            showDetails.ScifiShow = true;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Complete story";
+            episodeDetails.Description = "By Wally K Daly";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
         public static ShowDetails _625Y()
         {
             ShowDetails showDetails = new ShowDetails();
@@ -29,7 +52,8 @@
         // 1920 x 1040
         internal static ShowDetails PopulateShowData()
         {
-            return _625Y();
+            return APlagueOfGoodness();
+            //return _625Y();
             //return BigJimTheFigaroClub();
             //return HostPlanetEarth();
             //return AliensInTheMind();
