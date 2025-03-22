@@ -12,6 +12,7 @@
     <None Remove="10 Life after Life.jpeg" />
     <None Remove="Art\Face_With_Headphones-Small.jpeg" />
     <None Remove="Art\Face_With_Headphones-Small.png" />
+    <None Remove="Art\sci fi.png" />
     <None Remove="backgound Eels.png" />
     <None Remove="Image1.png" />
     <None Remove="Image2.png" />
@@ -19,6 +20,7 @@
     <None Remove="Images\11 The Train at Platform 4.jpeg" />
     <None Remove="Images\12 Bangers Mash.jpeg" />
     <None Remove="Images\Ansgstrom b.jpeg" />
+    <None Remove="Images\BigJimTheFigaroClub.jpeg" />
     <None Remove="Images\Clayton Grange Title.png" />
     <None Remove="Images\Hobby Bobbies.jpeg" />
     <None Remove="Images\JokeShop.jpeg" />
@@ -31,6 +33,9 @@
     <None Remove="Images\Nebulous A.jpeg" />
     <None Remove="Images\Party v1.jpeg" />
     <None Remove="Images\Rudys Rarer Rcords.jpeg" />
+    <None Remove="Images\Scifi\625Y.jpeg" />
+    <None Remove="Images\Scifi\Aliens of the Mind.jpeg" />
+    <None Remove="Images\Scifi\Host Planet Earth.jpeg" />
     <None Remove="IMG_6866 2024-07-17 GrosmontStation NYMR Tracks.JPG" />
     <None Remove="OIG4.jpeg" />
     <None Remove="OIG4.M0OmUIZ1Sg.LJ.jpeg" />
@@ -39,12 +44,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="ZstdSharp.Port" Version="0.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Art\Face_With_Headphones-Small.jpeg" />
     <Resource Include="Art\Face_With_Headphones-Small.png" />
+    <Resource Include="Art\sci fi.png" />
     <Resource Include="Images\05 Do Nothings Until.jpeg" />
     <Resource Include="Images\11 The Train at Platform 4.jpeg" />
     <Resource Include="Images\12 Bangers Mash.jpeg" />
     <Resource Include="Images\Ansgstrom b.jpeg" />
+    <Resource Include="Images\BigJimTheFigaroClub.jpeg" />
     <Resource Include="Images\Clayton Grange Title.png" />
     <Resource Include="Images\Hobby Bobbies.jpeg" />
     <Resource Include="Images\JokeShop.jpeg" />
@@ -62,6 +73,9 @@
 
   <ItemGroup>
     <Resource Include="Images\MM\6 Jonah and the Grampus.jpeg" />
+    <Resource Include="Images\Scifi\625Y.jpeg" />
+    <Resource Include="Images\Scifi\Aliens of the Mind.jpeg" />
+    <Resource Include="Images\Scifi\Host Planet Earth.jpeg" />
   </ItemGroup>
 
   <ItemGroup>

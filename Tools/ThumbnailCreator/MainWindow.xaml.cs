@@ -17,7 +17,7 @@ namespace ThumbnailCreator
         {
             InitializeComponent();
 
-            _showDetails = Shows.PopulateStarShipData();
+            _showDetails = Shows.PopulateShowData();
             this.Loaded += Window_Loaded;
         }
 
@@ -103,7 +103,7 @@ namespace ThumbnailCreator
 
                 Directory.CreateDirectory(_showDetails.Path + subfolder);
 
-                if (_showDetails.OneOffShow)
+                if (_showDetails.ShortShow)
                     text = _showDetails.Title;
 
                 Uri path = new(_showDetails.Path + $"{subfolder}\\{text}.png");
@@ -116,8 +116,17 @@ namespace ThumbnailCreator
         {
             CreateAll();
 
-            Thumbnails thumbnails = new Thumbnails();
-            thumbnails.ShowDialog();
+            if (_showDetails.ComdeyShow)
+            {
+                Thumbnails thumbnails = new Thumbnails();
+                thumbnails.ShowDialog();
+            }
+
+            if (_showDetails.ScifiShow)
+            {
+                SciFiThumbnails sft = new SciFiThumbnails();
+                sft.ShowDialog();
+            }
 
             Close();
         }

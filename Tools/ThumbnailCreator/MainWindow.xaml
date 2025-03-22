@@ -27,16 +27,25 @@
                    VerticalAlignment="Center" />
 
         <Image x:Name="Image"  Grid.Row="1" Grid.Column="1" Source="Images/Rudys Rarer Rcords.jpeg" OpacityMask="#88000000" />
-
-        <local:OutlinedText Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-            x:Name="ShowTitle" Fill="Yellow" FontSize="85"
-            Bold="True" Stroke="#FF224444" StrokeThickness="4" Text="Demo Title"
-            HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Width="Auto" />
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <local:OutlinedText Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                x:Name="ShowTitle" Fill="Yellow" FontSize="92" Font="Exo 2"
+                Bold="True" Stroke="#FF224444" StrokeThickness="4" Text="Demo Titles"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Width="Auto" />
+        </Grid>
         <TextBlock Grid.Row="1"
                    x:Name="EpisodeTitle" HorizontalAlignment="Center" FontSize="56" TextWrapping="Wrap"
                    Text="TextBlock" VerticalAlignment="Top" Height="302" Width="898"
                    Foreground="#FFFFFFFF" FontFamily="Bowlby One SC" />
-        <TextBlock Grid.Row="1" x:Name="EpisodeDescription" HorizontalAlignment="Center" FontSize="32" Margin="0,151,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="380" Width="898" Foreground="White" />
+        <TextBlock Grid.Row="1" x:Name="EpisodeDescription" HorizontalAlignment="Center" FontSize="48" Margin="0,151,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="380" Width="898" Foreground="White" />
         <TextBlock Grid.Row="1" Grid.Column="0" x:Name="ShowDescription" HorizontalAlignment="Left" FontSize="28" Margin="51,536,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="230" Width="902" Foreground="White" />
     </Grid>
 </Window>

@@ -10,14 +10,14 @@ namespace ThumbnailCreator
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class Thumbnails : Window, INotifyPropertyChanged
+    public partial class SciFiThumbnails : Window, INotifyPropertyChanged
     {
         private bool _comedyShow = true;
         private SolidColorBrush _myColor = new SolidColorBrush(Colors.White);
         private bool _scifiShow = true;
         private ShowDetails _showDetails;
 
-        public Thumbnails()
+        public SciFiThumbnails()
         {
             InitializeComponent();
 
@@ -115,16 +115,12 @@ namespace ThumbnailCreator
 
             if (IsSciFiShow)
                 MyColor = new SolidColorBrush(Colors.White);
-            if (IsComedyShow)
-                MyColor = new SolidColorBrush(Colors.Yellow);
 
             var a = new SolidColorBrush(Colors.White);
             var b = new SolidColorBrush(Colors.Cyan);
 
             for (int seriesCount = 1; seriesCount < _showDetails.Series + 1; seriesCount++)
             {
-                ShowType.Text = _showDetails.ShowTypeLineA;
-                ShowType2.Text = _showDetails.ShowTypeLineB;
                 Show.Text = $"Series {seriesCount}";
 
                 var thumb = new BitmapImage(new Uri($"pack://application:,,,/{_showDetails.Source}"));
@@ -132,25 +128,7 @@ namespace ThumbnailCreator
 
                 int episodecount = _showDetails.EpisodeDetails.Where(x => x.Title.Contains($"s{seriesCount.ToString("D2")}")).Count();
 
-                EpisodeCount.Text = $"{episodecount} Episodes";
-
-                if (_showDetails.CompleteShow)
-                {
-                    Show.Text = "Complete Show";
-                }
-
-                if (_showDetails.ShortShow)
-                {
-                    if (IsComedyShow)
-                    {
-                        Show.Text = "Short";
-                    }
-                    else
-                    {
-                        Show.Text = string.Empty;
-                    }
-                    EpisodeCount.Text = _showDetails.TitleLine2;
-                }
+                Show.Text = _showDetails.TitleLine2;
 
                 InvalidateVisual();
                 UpdateLayout();

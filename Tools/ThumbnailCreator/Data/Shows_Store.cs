@@ -2,6 +2,169 @@
 {
     public static partial class Shows
     {
+        public static ShowDetails AliensInTheMind()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/Scifi/Aliens of the Mind.jpeg";
+            showDetails.Title = "Aliens of the Mind";
+            showDetails.TitleLine2 = "Vincent Price, Peter Cushing\r\n1976. (full story)";
+            showDetails.Path = $@"E:\_AudioTemp\Scifi\NEXT\Aliens of the Mind\";
+            showDetails.Description = "The six-part drama centres around the discovery, on a remote Scottish island, of a community of ‘human mutants’ capable of telepathy. A plan is in place to use them to control the British Government, and friends Curtis Lark (Vincent Price) and Hugh Baxter (Peter Cushing) join forces to combat them. 1976";
+            showDetails.ShowTypeLineA = "SciFi";
+            showDetails.ShowTypeLineB = "Drama";
+            showDetails.Series = 1;
+            showDetails.ShortShow = false;
+            showDetails.ComdeyShow = false;
+            showDetails.ScifiShow = true;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 1";
+            episodeDetails.Description = "Island Genesis";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 2";
+            episodeDetails.Description = "Hurried Exodus";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 3";
+            episodeDetails.Description = "Unexpected Visitations";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 4";
+            episodeDetails.Description = "Official Intercessions";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 5";
+            episodeDetails.Description = "Genetic Revelation";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 6";
+            episodeDetails.Description = "Final Tribulations";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        public static ShowDetails BigJimTheFigaroClub()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/BigJimTheFigaroClub.jpeg";
+            showDetails.Title = "Big Jim & The Figaro Club";
+            showDetails.TitleLine2 = "(Complete story)";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\08 Big Jim & The Figaro Club\";
+            showDetails.Description = "Comedy series set on a seaside town building site during the booming but restrictive post-war 1950s.";
+            showDetails.ShowTypeLineA = "Radio";
+            showDetails.ShowTypeLineB = "Comedy";
+            showDetails.Series = 1;
+            showDetails.ShortShow = false;
+            showDetails.CompleteShow = true;
+            showDetails.ComdeyShow = true;
+            showDetails.ScifiShow = false;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "s01e01 Transport of Delight";
+            episodeDetails.Description = "Demobbed Old Ned heads south after the war and joins a special construction team.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "s01e02 The French Connection";
+            episodeDetails.Description = "The post-war construction team's Potts and Perkins hurl insults - and then onions.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "s01e03 On the Line";
+            episodeDetails.Description = "Perkins can't get a site phone, so his workmates get him a handset and more besides.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "s01e04 Up the Pole";
+            episodeDetails.Description = "When Perkins befriends the Carnival Queen, the workmates plot a little sabotage.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "s01e05 Boning Up on History";
+            episodeDetails.Description = "Perkins wants to dig for post-war Britain, but the workmates decide to soil his plans.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "s01e06 The Old Dunkirk Spirit";
+            episodeDetails.Description = "Perkins has no materials to rebuild post-war Britain, which well suits the workmates.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        public static ShowDetails HostPlanetEarth()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/Scifi/Host Planet Earth.jpeg";
+            showDetails.Title = "Host Planet Earth";
+            showDetails.TitleLine2 = "1967 (Complete story)";
+            showDetails.Path = $@"E:\_AudioTemp\Scifi\NEXT\Host Planet Earth\";
+            showDetails.Description = "It detailed the course of a strange disease which first affects scientists working on a British rocketry programme. When British astronauts fall prey to the sickness in space, can they be allowed to return?";
+            showDetails.ShowTypeLineA = "SciFi";
+            showDetails.ShowTypeLineB = "Drama";
+            showDetails.Series = 1;
+            showDetails.ShortShow = false;
+            showDetails.ComdeyShow = false;
+            showDetails.ScifiShow = true;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 1";
+            episodeDetails.Description = "The Beginning";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 2";
+            episodeDetails.Description = "The Empty Minds";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 3";
+            episodeDetails.Description = "The Pattern Emerges";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 4";
+            episodeDetails.Description = "The Gemini Factor";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 5";
+            episodeDetails.Description = "The Arrival";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "Episode 6";
+            episodeDetails.Description = "The Price of Freedom";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
         private static ShowDetails DoNothingTilYouHearfromMe()
         {
             ShowDetails showDetails = new ShowDetails();
@@ -71,6 +234,269 @@
             episodeDetails.Title = "s02e04 Thanks for the Memory";
             episodeDetails.Description = "Can Roy lift George's spirits by organising a very special celebration?";
             showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        private static ShowDetails HobbyBobbies()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/Hobby Bobbies.jpeg";
+            showDetails.Title = "Hobby Bobbies";
+            showDetails.Path = $@"E:\_AudioTemp\_Ark\Comedy\Hobby Bobbies\";
+            showDetails.Description = "";
+            showDetails.Episodes = "";
+            showDetails.Series = 2;
+
+            EpisodeDetails episodeDetails;
+
+            for (int i = 0; i < 4; i++)
+            {
+                episodeDetails = new EpisodeDetails();
+                episodeDetails.TitleExtra = ": Series 1";
+                episodeDetails.Title = $"s01e0{i}";
+                episodeDetails.Description = "";
+                showDetails.EpisodeDetails.Add(episodeDetails);
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                episodeDetails = new EpisodeDetails();
+                episodeDetails.TitleExtra = ": Series 2";
+                episodeDetails.Title = $"s02e0{i}";
+                episodeDetails.Description = "";
+                showDetails.EpisodeDetails.Add(episodeDetails);
+            }
+
+            return showDetails;
+        }
+
+        private static ShowDetails MarriottsMonologues_1()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/MM/1 Lion.jpeg";
+            showDetails.Title = "Curious little boy and the lion";
+            showDetails.TitleLine2 = "With Thora Hird";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\07 Marriotts Monologues\";
+            showDetails.Description = "The monologues of Marriott Edgar, performed by actors and comedians";
+            showDetails.Episodes = "Marriotts Monologues";
+            showDetails.Series = 1;
+            showDetails.ShortShow = true;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "";
+
+            episodeDetails.Description = "Thora Hird with the classic tales of the curious little boy and the lion.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        private static ShowDetails MarriottsMonologues_2()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/MM/3 Goalkeeper Joe.jpeg";
+            showDetails.Title = "Goalkeeper Joe";
+            showDetails.TitleLine2 = "With Roy Castle";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\07 Marriotts Monologues\";
+            showDetails.Description = "The monologues of Marriott Edgar, performed by actors and comedians";
+            showDetails.Episodes = "Marriotts Monologues";
+            showDetails.Series = 1;
+            showDetails.ShortShow = true;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "";
+
+            episodeDetails.Description = "Roy Castle is the monologist for 'Goalkeeper Joe'";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        private static ShowDetails MarriottsMonologues_3()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/MM/3 The Magna Charta.jpeg";
+            showDetails.Title = "The Magna Charta";
+            showDetails.TitleLine2 = "With Roy Castle";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\07 Marriotts Monologues\";
+            showDetails.Description = "The monologues of Marriott Edgar, performed by actors and comedians";
+            showDetails.Episodes = "Marriotts Monologues";
+            showDetails.Series = 1;
+            showDetails.ShortShow = true;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "";
+
+            episodeDetails.Description = "Roy Castle is the monologist for 'The Magna Charta'";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        private static ShowDetails MarriottsMonologues_4()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/MM/4 The Battle of Hastings.jpeg";
+            showDetails.Title = "The Battle of Hastings";
+            showDetails.TitleLine2 = "With Bernie Clifton";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\07 Marriotts Monologues\";
+            showDetails.Description = "The monologues of Marriott Edgar, performed by actors and comedians";
+            showDetails.Episodes = "Marriotts Monologues";
+            showDetails.Series = 1;
+            showDetails.ShortShow = true;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "";
+
+            episodeDetails.Description = "Bernie Clifton is the monologist for 'The Battle of Hastings'";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        private static ShowDetails MarriottsMonologues_5()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/MM/5 Three Ha pence a foot.jpeg";
+            showDetails.Title = "Three Ha'pence a foot";
+            showDetails.TitleLine2 = "With Bernie Clifton";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\07 Marriotts Monologues\";
+            showDetails.Description = "The monologues of Marriott Edgar, performed by actors and comedians";
+            showDetails.Episodes = "Marriotts Monologues";
+            showDetails.Series = 1;
+            showDetails.ShortShow = true;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "";
+
+            episodeDetails.Description = "Bernie Clifton is the monologist for 'Three Ha'pence a foot'";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        private static ShowDetails MarriottsMonologues_6()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/MM/6 Jonah and the Grampus.jpeg";
+            showDetails.Title = "Jonah and the Grampus";
+            showDetails.TitleLine2 = "With Roy Hudd";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\07 Marriotts Monologues\";
+            showDetails.Description = "The monologues of Marriott Edgar, performed by actors and comedians";
+            showDetails.Episodes = "Marriotts Monologues";
+            showDetails.Series = 1;
+            showDetails.ShortShow = true;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "";
+
+            episodeDetails.Description = "Roy Hudd is the monologist for 'Jonah and the Grampus'";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        private static ShowDetails MarriottsMonologues_7()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/MM/7 Gunner Joe.jpeg";
+            showDetails.Title = "Gunner Joe";
+            showDetails.TitleLine2 = "With Roy Hudd";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\07 Marriotts Monologues\";
+            showDetails.Description = "The monologues of Marriott Edgar, performed by actors and comedians";
+            showDetails.Episodes = "Marriotts Monologues";
+            showDetails.Series = 1;
+            showDetails.ShortShow = true;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = "";
+            episodeDetails.Title = "";
+
+            episodeDetails.Description = "Roy Hudd is the monologist for 'Gunner Joe'";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        private static ShowDetails MirandaHartsJokeShop()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/JokeShop.jpeg";
+            showDetails.Title = "Miranda Hart's Joke Shop";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading\03 Miranda Harts Joke Shop\";
+            showDetails.Description = "Miranda is an unconventional woman. She's six feet tall, self-conscious and posh. And is frequently mistaken for a man. She's also invested her inheritance in a joke shop that she runs with her friend Stevie while trying to deal with her outrageously embarrassing mother.";
+            showDetails.Episodes = "4";
+            showDetails.Series = 1;
+
+            EpisodeDetails episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = ": Series 1";
+            episodeDetails.Title = "s01e01 What A Flirt";
+            episodeDetails.Description = "Miranda flirts with Gary, but is mistaken for a man by passers-by when she un-knowingly buys clothes from a shop for transvestites. Other mix-ups scare Gary away, as they make Miranda look like she is desperate for a baby.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = ": Series 1";
+            episodeDetails.Title = "s01e02 What A Job";
+            episodeDetails.Description = "Miranda tries to prove she can get a proper job away from the joke shop.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = ": Series 1";
+            episodeDetails.Title = "s01e03 What A Wife";
+            episodeDetails.Description = "Gary needs a pretend wife for the evening and for some reason he chooses Stevie over Miranda.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            episodeDetails = new EpisodeDetails();
+            episodeDetails.TitleExtra = ": Series 1";
+            episodeDetails.Title = "s01e04 What An Excuse";
+            episodeDetails.Description = "Miranda's mother tries desperately to play Cupid for Miranda.";
+            showDetails.EpisodeDetails.Add(episodeDetails);
+
+            return showDetails;
+        }
+
+        private static ShowDetails Nebulous()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/Nebulous A.jpeg";
+            showDetails.Title = "Nebulous";
+            showDetails.Path = $@"E:\_AudioTemp\_Ark\Comedy\Nebulous_V2\";
+            showDetails.Description = "";
+            showDetails.Episodes = "";
+            showDetails.Series = 3;
+
+            EpisodeDetails episodeDetails;
+
+            for (int i = 0; i < 6; i++)
+            {
+                episodeDetails = new EpisodeDetails();
+                episodeDetails.TitleExtra = ": Series 1";
+                episodeDetails.Title = $"s01e0{i} The Man Who Wasn't Dead";
+                episodeDetails.Description = "";
+                showDetails.EpisodeDetails.Add(episodeDetails);
+            }
+            for (int i = 0; i < 6; i++)
+            {
+                episodeDetails = new EpisodeDetails();
+                episodeDetails.TitleExtra = ": Series 2";
+                episodeDetails.Title = $"s02e0{i} The Man Who Wasn't Dead";
+                episodeDetails.Description = "";
+                showDetails.EpisodeDetails.Add(episodeDetails);
+            }
+            for (int i = 0; i < 6; i++)
+            {
+                episodeDetails = new EpisodeDetails();
+                episodeDetails.TitleExtra = ": Series 3";
+                episodeDetails.Title = $"s03e0{i} The Man Who Wasn't Dead";
+                episodeDetails.Description = "";
+                showDetails.EpisodeDetails.Add(episodeDetails);
+            }
 
             return showDetails;
         }
@@ -162,115 +588,6 @@
             episodeDetails.Title = "s04e01 Christmas Special";
             episodeDetails.Description = "The group of aspiring political agitators once again apply their small minds to big problems. This Christmas one-off special sees the team reunite one last time to take on Donald Trump.";
             showDetails.EpisodeDetails.Add(episodeDetails);
-
-            return showDetails;
-        }
-
-        private static ShowDetails HobbyBobbies()
-        {
-            ShowDetails showDetails = new ShowDetails();
-            showDetails.Source = @"Images/Hobby Bobbies.jpeg";
-            showDetails.Title = "Hobby Bobbies";
-            showDetails.Path = $@"E:\_AudioTemp\_Ark\Comedy\Hobby Bobbies\";
-            showDetails.Description = "";
-            showDetails.Episodes = "";
-            showDetails.Series = 2;
-
-            EpisodeDetails episodeDetails;
-
-            for (int i = 0; i < 4; i++)
-            {
-                episodeDetails = new EpisodeDetails();
-                episodeDetails.TitleExtra = ": Series 1";
-                episodeDetails.Title = $"s01e0{i}";
-                episodeDetails.Description = "";
-                showDetails.EpisodeDetails.Add(episodeDetails);
-            }
-            for (int i = 0; i < 4; i++)
-            {
-                episodeDetails = new EpisodeDetails();
-                episodeDetails.TitleExtra = ": Series 2";
-                episodeDetails.Title = $"s02e0{i}";
-                episodeDetails.Description = "";
-                showDetails.EpisodeDetails.Add(episodeDetails);
-            }
-
-            return showDetails;
-        }
-
-        private static ShowDetails MirandaHartsJokeShop()
-        {
-            ShowDetails showDetails = new ShowDetails();
-            showDetails.Source = @"Images/JokeShop.jpeg";
-            showDetails.Title = "Miranda Hart's Joke Shop";
-            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading\03 Miranda Harts Joke Shop\";
-            showDetails.Description = "Miranda is an unconventional woman. She's six feet tall, self-conscious and posh. And is frequently mistaken for a man. She's also invested her inheritance in a joke shop that she runs with her friend Stevie while trying to deal with her outrageously embarrassing mother.";
-            showDetails.Episodes = "4";
-            showDetails.Series = 1;
-
-            EpisodeDetails episodeDetails = new EpisodeDetails();
-            episodeDetails.TitleExtra = ": Series 1";
-            episodeDetails.Title = "s01e01 What A Flirt";
-            episodeDetails.Description = "Miranda flirts with Gary, but is mistaken for a man by passers-by when she un-knowingly buys clothes from a shop for transvestites. Other mix-ups scare Gary away, as they make Miranda look like she is desperate for a baby.";
-            showDetails.EpisodeDetails.Add(episodeDetails);
-
-            episodeDetails = new EpisodeDetails();
-            episodeDetails.TitleExtra = ": Series 1";
-            episodeDetails.Title = "s01e02 What A Job";
-            episodeDetails.Description = "Miranda tries to prove she can get a proper job away from the joke shop.";
-            showDetails.EpisodeDetails.Add(episodeDetails);
-
-            episodeDetails = new EpisodeDetails();
-            episodeDetails.TitleExtra = ": Series 1";
-            episodeDetails.Title = "s01e03 What A Wife";
-            episodeDetails.Description = "Gary needs a pretend wife for the evening and for some reason he chooses Stevie over Miranda.";
-            showDetails.EpisodeDetails.Add(episodeDetails);
-
-            episodeDetails = new EpisodeDetails();
-            episodeDetails.TitleExtra = ": Series 1";
-            episodeDetails.Title = "s01e04 What An Excuse";
-            episodeDetails.Description = "Miranda's mother tries desperately to play Cupid for Miranda.";
-            showDetails.EpisodeDetails.Add(episodeDetails);
-
-            return showDetails;
-        }
-
-        private static ShowDetails Nebulous()
-        {
-            ShowDetails showDetails = new ShowDetails();
-            showDetails.Source = @"Images/Nebulous A.jpeg";
-            showDetails.Title = "Nebulous";
-            showDetails.Path = $@"E:\_AudioTemp\_Ark\Comedy\Nebulous_V2\";
-            showDetails.Description = "";
-            showDetails.Episodes = "";
-            showDetails.Series = 3;
-
-            EpisodeDetails episodeDetails;
-
-            for (int i = 0; i < 6; i++)
-            {
-                episodeDetails = new EpisodeDetails();
-                episodeDetails.TitleExtra = ": Series 1";
-                episodeDetails.Title = $"s01e0{i} The Man Who Wasn't Dead";
-                episodeDetails.Description = "";
-                showDetails.EpisodeDetails.Add(episodeDetails);
-            }
-            for (int i = 0; i < 6; i++)
-            {
-                episodeDetails = new EpisodeDetails();
-                episodeDetails.TitleExtra = ": Series 2";
-                episodeDetails.Title = $"s02e0{i} The Man Who Wasn't Dead";
-                episodeDetails.Description = "";
-                showDetails.EpisodeDetails.Add(episodeDetails);
-            }
-            for (int i = 0; i < 6; i++)
-            {
-                episodeDetails = new EpisodeDetails();
-                episodeDetails.TitleExtra = ": Series 3";
-                episodeDetails.Title = $"s03e0{i} The Man Who Wasn't Dead";
-                episodeDetails.Description = "";
-                showDetails.EpisodeDetails.Add(episodeDetails);
-            }
 
             return showDetails;
         }

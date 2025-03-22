@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:ThumbnailCreator"
         mc:Ignorable="d"
         Title="Thumbnails" Height="1112" Width="1920" Background="White">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="220" />
@@ -30,26 +33,30 @@
                Source="Images/Rudys Rarer Rcords.jpeg" OpacityMask="#FF000000" />
 
         <local:OutlinedText Grid.Row="0" Grid.Column="0"
-                Grid.ColumnSpan="2" x:Name="ShowTitle" Fill="Yellow" FontSize="100"
+                Grid.ColumnSpan="2" x:Name="ShowTitle" Fill="{Binding MyColor}" FontSize="100"
                 Bold="True" Stroke="Black" StrokeThickness="6" Text="Demo Text" Margin="0,0,0,0"
                 HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" Height="231" />
 
-        <Image Grid.Row="1" Grid.Column="1"
+        <Image Grid.Row="1" Grid.Column="1" Visibility="{Binding IsComedyShow, Converter={StaticResource BoolToVisConverter}}"
             Source="Art/Face_With_Headphones-Small.png" Margin="455,0,0,388" />
+        <Image Grid.Row="1" Grid.Column="1" Visibility="{Binding IsSciFiShow, Converter={StaticResource BoolToVisConverter}}"
+            Source="Art/sci fi.png" Margin="455,0,0,388" />
 
         <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType"
-                    Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="Radio"
+                    Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="SciFi"
                     Font="Lemon" Margin="122,79,0,0"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />
+            HorizontalAlignment="Left" VerticalAlignment="Top" Width="396" Height="231" />
         <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType2"
                     Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="Comedy"
                     Font="Lemon" Margin="60,184,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />
 
         <local:OutlinedText Grid.Row="1" x:Name="Show" Fill="White" FontSize="80"
-            Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1" Width="Auto" Grid.Column="1" Margin="302,420,63,197" />
+            Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1" Width="Auto" Grid.Column="1" Margin="122,420,63,197" />
 
         <local:OutlinedText Grid.Row="1" x:Name="EpisodeCount" Fill="Yellow" FontSize="80"
-            Bold="True" Stroke="Black" StrokeThickness="4" Text="4 Episodes" Width="Auto" Margin="122,562,96,10" Grid.Column="1" />
+            Bold="True" Stroke="Black" StrokeThickness="4" Text="4 Episodes" Width="Auto" Margin="283,562,96,10" Grid.Column="1" />
+        <Image Grid.Row="1" Grid.Column="1" Visibility="{Binding IsSciFiShow, Converter={StaticResource BoolToVisConverter}}"
+            Source="/Art/sci fi.png" Margin="455,0,0,388" />
     </Grid>
 </Window>
