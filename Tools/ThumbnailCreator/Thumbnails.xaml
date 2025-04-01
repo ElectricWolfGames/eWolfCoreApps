@@ -52,7 +52,7 @@
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />
 
         <local:OutlinedText Grid.Row="1" x:Name="Show" Fill="White" FontSize="80"
-            Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1" Width="Auto" Grid.Column="1" Margin="122,420,63,197" />
+            Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1" Width="Auto" Grid.Column="1" Margin="347,420,63,197" />
 
         <local:OutlinedText Grid.Row="1" x:Name="EpisodeCount" Fill="Yellow" FontSize="80"
             Bold="True" Stroke="Black" StrokeThickness="4" Text="4 Episodes" Width="Auto" Margin="283,562,96,10" Grid.Column="1" />

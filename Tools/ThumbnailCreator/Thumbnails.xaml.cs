@@ -132,7 +132,10 @@ namespace ThumbnailCreator
 
                 int episodecount = _showDetails.EpisodeDetails.Where(x => x.Title.Contains($"s{seriesCount.ToString("D2")}")).Count();
 
-                EpisodeCount.Text = $"{episodecount} Episodes";
+                if (episodecount == 0)
+                    EpisodeCount.Text = "One off show";
+                else
+                    EpisodeCount.Text = $"{episodecount} Episodes";
 
                 if (_showDetails.CompleteShow)
                 {
