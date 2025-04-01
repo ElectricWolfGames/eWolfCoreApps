@@ -120,6 +120,12 @@
             s01e04.Description = "";
             showDetails.EpisodeDetails.Add(s01e04);
 
+            EpisodeDetails s01e05 = new EpisodeDetails();
+            s01e05.TitleExtra = "";
+            s01e05.Title = "Special: Robin & Wendy's Wet Edinburgh Weekend";
+            s01e05.Description = "";
+            showDetails.EpisodeDetails.Add(s01e05);
+
 
             EpisodeDetails s02e01 = new EpisodeDetails();
             s02e01.TitleExtra = "";
@@ -206,6 +212,7 @@
             s04e04.Title = "s04e04 Ground Control to Major Derek";
             s04e04.Description = "";
             showDetails.EpisodeDetails.Add(s04e04);
+
 
 
 
