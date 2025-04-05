@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\s04e01 Autumn Crocus.png" />
+    <None Remove="Images\s04e02 Congratulations, It%27s a Hob Nob.png" />
+    <None Remove="Images\s04e03 Baby Love.png" />
+    <None Remove="Images\s04e04 Ground Control to Major Derek.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\s04e01 Autumn Crocus.png" />
+    <Resource Include="Images\s04e02 Congratulations, It's a Hob Nob.png" />
+    <Resource Include="Images\s04e03 Baby Love.png" />
+    <Resource Include="Images\s04e04 Ground Control to Major Derek.png" />
+  </ItemGroup>
+
+</Project>

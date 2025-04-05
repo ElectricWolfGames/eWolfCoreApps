@@ -122,7 +122,7 @@
 
             EpisodeDetails s01e05 = new EpisodeDetails();
             s01e05.TitleExtra = "";
-            s01e05.Title = "Special: Robin & Wendy's Wet Edinburgh Weekend";
+            s01e05.Title = "s01 Special: Robin & Wendy's Wet Edinburgh Weekend";
             s01e05.Description = "";
             showDetails.EpisodeDetails.Add(s01e05);
 
