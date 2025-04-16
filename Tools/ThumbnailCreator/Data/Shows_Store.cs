@@ -6,7 +6,7 @@
         {
             ShowDetails showDetails = new ShowDetails();
             showDetails.Source = @"Images/Scifi/Aliens of the Mind.jpeg";
-            showDetails.Title = "Aliens of the Mind";
+            showDetails.Title = "Aliens in the Mind";
             showDetails.TitleLine2 = "Vincent Price, Peter Cushing\r\n1976. (full story)";
             showDetails.Path = $@"E:\_AudioTemp\Scifi\NEXT\Aliens of the Mind\";
             showDetails.Description = "The six-part drama centres around the discovery, on a remote Scottish island, of a community of ‘human mutants’ capable of telepathy. A plan is in place to use them to control the British Government, and friends Curtis Lark (Vincent Price) and Hugh Baxter (Peter Cushing) join forces to combat them. 1976";

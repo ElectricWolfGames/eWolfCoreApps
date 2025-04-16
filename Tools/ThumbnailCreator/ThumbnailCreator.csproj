@@ -19,6 +19,7 @@
     <None Remove="Images\05 Do Nothings Until.jpeg" />
     <None Remove="Images\11 The Train at Platform 4.jpeg" />
     <None Remove="Images\12 Bangers Mash.jpeg" />
+    <None Remove="Images\12 Dot.jpeg" />
     <None Remove="Images\Ansgstrom b.jpeg" />
     <None Remove="Images\BigJimTheFigaroClub.jpeg" />
     <None Remove="Images\Clayton Grange Title.png" />
@@ -58,6 +59,7 @@
     <Resource Include="Images\05 Do Nothings Until.jpeg" />
     <Resource Include="Images\11 The Train at Platform 4.jpeg" />
     <Resource Include="Images\12 Bangers Mash.jpeg" />
+    <Resource Include="Images\12 Dot.jpeg" />
     <Resource Include="Images\Ansgstrom b.jpeg" />
     <Resource Include="Images\BigJimTheFigaroClub.jpeg" />
     <Resource Include="Images\Clayton Grange Title.png" />
@@ -87,6 +89,7 @@
 
   <ItemGroup>
     <Resource Include="Images\Little Monster.jpeg" />
+    <Resource Include="Images\13 Welcome To Our Village.jfif" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using CreateAudioVideos.Folder;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -11,6 +12,8 @@ namespace CreateAudioVideos
         private int _fadeTimeSeconds;
         private MediaPlayer _player = new MediaPlayer();
         private TimeSpan _startFade;
+        private Process _ffmpegProcess;
+
 
         public VideoCreation(VideoCreationData videoCreationData)
         {
@@ -20,6 +23,9 @@ namespace CreateAudioVideos
 
             MainImage = videoCreationData.Image;
             videoCreationData.Play();
+
+            StartRecording();
+
 
             _fadeTimeSeconds = 5;
             _startFade = videoCreationData.Duration - new TimeSpan(0, 0, _fadeTimeSeconds * 2);
@@ -35,6 +41,24 @@ namespace CreateAudioVideos
             BlackOverlay.BeginAnimation(UIElement.OpacityProperty, fadeInBlack);
         }
 
+        private void StartRecording()
+        {
+            _ffmpegProcess = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = @"E:\_Apps\ffmpeg\bin\ffmpeg.exe",
+                    Arguments = "-i input.mp4 -vf scale=640:360 E:\\Projects\\GitHub\\eWolfCoreApps\\Tools\\CreateAudioVideos\\DemoData\\output.mp4", // example
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                }
+            };
+
+            _ffmpegProcess.Start();
+        }
+        private Process process;
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string _mainImage { get; set; }
@@ -69,8 +93,17 @@ namespace CreateAudioVideos
                 To = 1,
                 Duration = TimeSpan.FromSeconds(_fadeTimeSeconds),
             };
-
+            fadeInBlack.Completed += StopVideo;
             BlackOverlay.BeginAnimation(UIElement.OpacityProperty, fadeInBlack);
+        }
+
+        private void StopVideo(object? sender, EventArgs e)
+        {
+            if (_ffmpegProcess != null && !_ffmpegProcess.HasExited)
+            {
+                _ffmpegProcess.Kill(); // force stop
+                _ffmpegProcess.WaitForExit();
+            }
         }
 
         private void StartHoldTime(object? sender, EventArgs e)
