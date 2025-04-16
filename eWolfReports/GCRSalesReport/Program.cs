@@ -28,7 +28,7 @@ namespace GCRSalesReport
         {
             Console.WriteLine("Hello, World!");
 
-            string path = "E:\\GCR\\Stand\\Stand-Sales\\2024\\";
+            string path = "E:\\GCR\\Stand\\Stand-Sales\\2025\\";
 
             foreach (var fileInfo in Directory.GetFiles(path))
             {
@@ -121,18 +121,31 @@ namespace GCRSalesReport
                 {
                     continue;
                 }
+
+                name = name.Replace("(PTS)", string.Empty);
+                name = name.Replace("[S]", string.Empty);
+                name = name.Replace("[C]", string.Empty);
+                name = name.Trim();
+
                 var item = _peoples.FirstOrDefault(x => x.Name == name);
                 if (item == null)
                 {
                     item = new Peoples();
                     _peoples.Add(item);
+
                     item.Name = name;
                     //Console.WriteLine($"{name}");
                 }
 
-                for (int col = 2; col < 5; col++)
+                for (int col = 2; col < 6; col++)
                 {
                     if (worksheet.Cells[row, col].Value == null)
+                        continue;
+
+                    if (worksheet.Cells[1, col].Value != null && worksheet.Cells[1, col].Value.ToString() == "Dismantle")
+                        continue;
+
+                    if (worksheet.Cells[1, col].Value != null && worksheet.Cells[1, col].Value.ToString() == "Set-up")
                         continue;
 
                     string action = worksheet.Cells[row, col].Value.ToString();
@@ -152,7 +165,7 @@ namespace GCRSalesReport
                         item.Days += 1;
                         done = true;
                     }
-                    if (action == "Tickets" || action.Contains("Gate"))
+                    if (action == "Tickets" || action.Contains("Gate") || action.Contains("Rudds"))
                     {
                         item.Rudds += 1;
                         done = true;
