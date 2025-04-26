@@ -11,7 +11,7 @@ namespace FileNameCleaner
 
             // string path = @"K:\TV\";
             //string path = "E:\\_ToWatch\\Films\\ToStore\\";
-            string path = "E:\\_ToWatch\\Films\\ToStore\\";
+            string path = "E:\\_ToWatch\\Films\\ToStore\\To Check\\Star Wars Skeleton Crew\\720\\";
             CleanUpFileNames cfn = new CleanUpFileNames(path);
             cfn.Do();
 

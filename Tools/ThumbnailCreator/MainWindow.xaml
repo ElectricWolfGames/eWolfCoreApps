@@ -42,7 +42,7 @@
                 HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Width="Auto" />
         </Grid>
         <TextBlock Grid.Row="1"
-                   x:Name="EpisodeTitle" HorizontalAlignment="Center" FontSize="32" TextWrapping="Wrap"
+                   x:Name="EpisodeTitle" HorizontalAlignment="Center" FontSize="48" TextWrapping="Wrap"
                    Text="TextBlock" VerticalAlignment="Top" Height="302" Width="898"
                    Foreground="#FFFFFFFF" FontFamily="Bowlby One SC" />
         <TextBlock Grid.Row="1" x:Name="EpisodeDescription" HorizontalAlignment="Center" FontSize="48" Margin="0,151,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="380" Width="898" Foreground="White" />
