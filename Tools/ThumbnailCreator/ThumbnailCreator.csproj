@@ -22,6 +22,8 @@
     <None Remove="Images\12 Dot.jpeg" />
     <None Remove="Images\14 1834.jfif" />
     <None Remove="Images\15 Married.jpeg" />
+    <None Remove="Images\16 Detective Sergeant.jpg" />
+    <None Remove="Images\18 RigorMortis.jpeg" />
     <None Remove="Images\Ansgstrom b.jpeg" />
     <None Remove="Images\BigJimTheFigaroClub.jpeg" />
     <None Remove="Images\Clayton Grange Title.png" />
@@ -64,6 +66,8 @@
     <Resource Include="Images\12 Dot.jpeg" />
     <Resource Include="Images\14 1834.jfif" />
     <Resource Include="Images\15 Married.jpeg" />
+    <Resource Include="Images\16 Detective Sergeant.jpg" />
+    <Resource Include="Images\18 RigorMortis.jpeg" />
     <Resource Include="Images\Ansgstrom b.jpeg" />
     <Resource Include="Images\BigJimTheFigaroClub.jpeg" />
     <Resource Include="Images\Clayton Grange Title.png" />

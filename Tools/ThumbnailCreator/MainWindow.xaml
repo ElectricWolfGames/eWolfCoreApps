@@ -46,6 +46,6 @@
                    Text="TextBlock" VerticalAlignment="Top" Height="302" Width="898"
                    Foreground="#FFFFFFFF" FontFamily="Bowlby One SC" />
         <TextBlock Grid.Row="1" x:Name="EpisodeDescription" HorizontalAlignment="Center" FontSize="48" Margin="0,151,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="380" Width="898" Foreground="White" />
-        <TextBlock Grid.Row="1" Grid.Column="0" x:Name="ShowDescription" HorizontalAlignment="Left" FontSize="28" Margin="51,536,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="230" Width="902" Foreground="White" />
+        <TextBlock Grid.Row="1" Grid.Column="0" x:Name="ShowDescription" HorizontalAlignment="Left" FontSize="28" Margin="51,444,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="322" Width="902" Foreground="White" />
     </Grid>
 </Window>

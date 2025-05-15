@@ -35,7 +35,7 @@ namespace GCRSalesReport
                 GetDataTableFromExcel(fileInfo);
             }
 
-            _itemSales = _itemSales.OrderByDescending(x => x.Quantity * x.Value).ToList();
+            _itemSales = _itemSales.OrderByDescending(x => x.Quantity /* x.Value*/).ToList();
 
             foreach (var item in _itemSales)
             {
