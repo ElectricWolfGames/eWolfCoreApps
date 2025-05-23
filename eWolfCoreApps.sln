@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonCode.UnitTests", "Com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateAudioVideos", "Tools\CreateAudioVideos\CreateAudioVideos.csproj", "{2FB78202-0A22-4336-AB11-FAAF6F123491}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatchingFiles", "MatchingFiles\MatchingFiles.csproj", "{08DF1B06-C347-4726-BB30-30A1B6DF5F2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{2FB78202-0A22-4336-AB11-FAAF6F123491}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FB78202-0A22-4336-AB11-FAAF6F123491}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FB78202-0A22-4336-AB11-FAAF6F123491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08DF1B06-C347-4726-BB30-30A1B6DF5F2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08DF1B06-C347-4726-BB30-30A1B6DF5F2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08DF1B06-C347-4726-BB30-30A1B6DF5F2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08DF1B06-C347-4726-BB30-30A1B6DF5F2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,6 +118,7 @@ Global
 		{8017BEFC-BA00-462A-8D81-B42FCEFAE492} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{FFEB7601-9B07-462B-B671-1F9B32E50E1E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{2FB78202-0A22-4336-AB11-FAAF6F123491} = {001340F2-AE65-4279-AA50-5B28B83941E5}
+		{08DF1B06-C347-4726-BB30-30A1B6DF5F2D} = {001340F2-AE65-4279-AA50-5B28B83941E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16B389B3-87EB-491C-93B6-6463060612A9}
