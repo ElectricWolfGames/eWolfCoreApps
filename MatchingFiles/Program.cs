@@ -9,7 +9,7 @@ namespace MatchingFiles
         {
             Console.WriteLine("Hello World!");
 
-            string path = "K:\\FilmsClassicSci-Fi\\1960\\";
+            string path = "K:\\FilmsClassicSci-Fi\\";
             FindmatchingFiles findmatchingFiles = new FindmatchingFiles();
             findmatchingFiles.Compera(path);
 
