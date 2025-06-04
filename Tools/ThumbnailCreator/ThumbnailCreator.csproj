@@ -42,6 +42,7 @@
     <None Remove="Images\Party v1.jpeg" />
     <None Remove="Images\Robin Wendys Wet Weekends.jpeg" />
     <None Remove="Images\Rudys Rarer Rcords.jpeg" />
+    <None Remove="Images\Scifi\05 Deep Station Emerald.jpeg" />
     <None Remove="Images\Scifi\625Y.jpeg" />
     <None Remove="Images\Scifi\A Plague Of Goodness.jpeg" />
     <None Remove="Images\Scifi\Aliens of the Mind.jpeg" />
@@ -91,6 +92,7 @@
 
   <ItemGroup>
     <Resource Include="Images\MM\6 Jonah and the Grampus.jpeg" />
+    <Resource Include="Images\Scifi\05 Deep Station Emerald.jpeg" />
     <Resource Include="Images\Scifi\625Y.jpeg" />
     <Resource Include="Images\Scifi\A Plague Of Goodness.jpeg" />
     <Resource Include="Images\Scifi\Aliens of the Mind.jpeg" />

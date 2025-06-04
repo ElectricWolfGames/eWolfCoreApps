@@ -19,6 +19,13 @@ namespace MatchingFiles
 
         public void Compera(string path)
         {
+            if (!Path.Exists(path))
+            {
+                return;
+            }
+
+            Console.WriteLine("+");
+
             var folders = Directory.GetDirectories(path);
             foreach (var folder in folders)
             {
