@@ -76,9 +76,9 @@ namespace ThumbnailCreator.Data
             ShowDetails showDetails = new ShowDetails();
             showDetails.Source = @"Images/Scifi/05 Deep Station Emerald.jpeg";
             showDetails.Title = "Deep Station Emerald";
-            showDetails.TitleLine2 = "";
+            showDetails.TitleLine2 = "Complete Story";
             showDetails.Path = $@"E:\_AudioTemp\Scifi\_Uploading_SciFi\05 Deep Station Emerald\";
-            showDetails.Description = "Joe Turner’s four-part drama is a futuristic undersea thriller. The crew of a research base on the ocean floor discovers a source of cold fusion, the solution to all the world’s energy problems. Elation turns to terror, however, when a series of ‘accidents’ causes several deaths, and a strange virus which mutates DNA is loosed… obviously, someone on board is a killer…";
+            showDetails.Description = "Joe Turner’s drama is a futuristic undersea thriller. The crew of a research base on the ocean floor discovers a source of cold fusion, the solution to all the world’s energy problems. Elation turns to terror, however, when a series of ‘accidents’ causes several deaths, and a strange virus which mutates DNA is loosed… obviously, someone on board is a killer…";
             showDetails.ShowTypeLineA = "SciFi";
             showDetails.ShowTypeLineB = "Drama";
             showDetails.Series = 1;
@@ -89,27 +89,9 @@ namespace ThumbnailCreator.Data
 
             EpisodeDetails s01e01 = new EpisodeDetails();
             s01e01.TitleExtra = "";
-            s01e01.Title = "s01e01 Five Miles Down";
+            s01e01.Title = "Complete Story";
             s01e01.Description = "";
             showDetails.EpisodeDetails.Add(s01e01);
-
-            EpisodeDetails s01e02 = new EpisodeDetails();
-            s01e02.TitleExtra = "";
-            s01e02.Title = "s01e02 Conspiracy";
-            s01e02.Description = "";
-            showDetails.EpisodeDetails.Add(s01e02);
-
-            EpisodeDetails s01e03 = new EpisodeDetails();
-            s01e03.TitleExtra = "";
-            s01e03.Title = "s01e03 Heat";
-            s01e03.Description = "";
-            showDetails.EpisodeDetails.Add(s01e03);
-
-            EpisodeDetails s01e04 = new EpisodeDetails();
-            s01e04.TitleExtra = "";
-            s01e04.Title = "s01e04 And Then There Were Three";
-            s01e04.Description = "";
-            showDetails.EpisodeDetails.Add(s01e04);
 
             return showDetails;
         }
