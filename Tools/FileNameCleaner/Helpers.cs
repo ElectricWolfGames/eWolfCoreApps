@@ -103,6 +103,7 @@
         "[YTS.MX]",
         "Xvid-Sfm",
         "Xvid-Bia",
+        "[YTS AM]",
         "264-NTb",
         "-KNiVES",
         "540p","WEB-DL","H264","AAC2.0","SNAKE[EZTVx.to]",
@@ -159,7 +160,7 @@
         "rip",
         "-DL",
         "DL-",
-        " - ",
+        " -",
         "DL",
         "HQ",
         "()"

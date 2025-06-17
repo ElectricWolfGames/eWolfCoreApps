@@ -25,6 +25,7 @@
     <None Remove="Images\16 Detective Sergeant.jpg" />
     <None Remove="Images\17 Bookcases.jpeg" />
     <None Remove="Images\18 RigorMortis.jpeg" />
+    <None Remove="Images\19 Plum House.jpeg" />
     <None Remove="Images\Ansgstrom b.jpeg" />
     <None Remove="Images\BigJimTheFigaroClub.jpeg" />
     <None Remove="Images\Clayton Grange Title.png" />
@@ -71,6 +72,7 @@
     <Resource Include="Images\16 Detective Sergeant.jpg" />
     <Resource Include="Images\17 Bookcases.jpeg" />
     <Resource Include="Images\18 RigorMortis.jpeg" />
+    <Resource Include="Images\19 Plum House.jpeg" />
     <Resource Include="Images\Ansgstrom b.jpeg" />
     <Resource Include="Images\BigJimTheFigaroClub.jpeg" />
     <Resource Include="Images\Clayton Grange Title.png" />
