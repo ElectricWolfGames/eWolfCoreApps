@@ -11,9 +11,8 @@ namespace MatchingFiles
             FindmatchingFiles findmatchingFiles;
 
             findmatchingFiles = new FindmatchingFiles();
-            findmatchingFiles.Compera($"K:\\Films\\_ToSort_Done\\");
 
-            for (int i = 1; i < 10; i++)
+            /*for (int i = 1; i < 10; i++)
             {
                 findmatchingFiles = new FindmatchingFiles();
                 findmatchingFiles.Compera($"K:\\Films\\19{i}0\\");
@@ -26,7 +25,10 @@ namespace MatchingFiles
             {
                 findmatchingFiles = new FindmatchingFiles();
                 findmatchingFiles.Compera($"K:\\Films\\20{i}0\\");
-            }
+            }*/
+
+            findmatchingFiles.Compera($"K:\\Films\\");
+            findmatchingFiles.Compera($"K:\\FilmsClassicSci-Fi\\");
 
             Console.WriteLine("DONE");
         }

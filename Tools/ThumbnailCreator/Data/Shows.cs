@@ -4,14 +4,69 @@ namespace ThumbnailCreator.Data
 {
     public static partial class Shows
     {
+        public static ShowDetails CenturyVampire()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/20 20th Century Vampire.PNG";
+            showDetails.Title = "20th Century Vampire";
+            showDetails.TitleLine2 = "";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\20 20th Century Vampire\";
+            showDetails.Description = "The adventures of trainee vampire Eloise, her boyfriend Wayne and her eccentric Transylvanian tutor, Lucretia";
+            showDetails.ShowTypeLineA = "Radio";
+            showDetails.ShowTypeLineB = "Comedy";
+            showDetails.Series = 1;
+            showDetails.ShortShow = false;
+            showDetails.CompleteShow = false;
+            showDetails.ComdeyShow = true;
+            showDetails.ScifiShow = false;
+
+            EpisodeDetails s01e01 = new EpisodeDetails();
+            s01e01.TitleExtra = "";
+            s01e01.Title = "s01e01 I Am a Vampire";
+            s01e01.Description = "Eloise receives monumental news from her mysterious Aunt Lucretia; it seems the Co-op checkout girl is now a vampire!";
+            showDetails.EpisodeDetails.Add(s01e01);
+
+            EpisodeDetails s01e02 = new EpisodeDetails();
+            s01e02.TitleExtra = "";
+            s01e02.Title = "s01e02 Back to School";
+            s01e02.Description = "GCSE vampirism exam-time, but at least there is a practical!";
+            showDetails.EpisodeDetails.Add(s01e02);
+
+            EpisodeDetails s01e03 = new EpisodeDetails();
+            s01e03.TitleExtra = "";
+            s01e03.Title = "s01e03 The Biggest Secret";
+            s01e03.Description = "Bursting to share her news of her vampirism, Eloise tells each of her possible confidants a dark secret (all untrue) to see if they can be trusted.";
+            showDetails.EpisodeDetails.Add(s01e03);
+
+            EpisodeDetails s01e04 = new EpisodeDetails();
+            s01e04.TitleExtra = "";
+            s01e04.Title = "s01e04 Staff Outing";
+            s01e04.Description = "Debbie is responsible for arranging the annual Co-op staff outing, and decides on a trip to donate blood.";
+            showDetails.EpisodeDetails.Add(s01e04);
+
+            EpisodeDetails s01e05 = new EpisodeDetails();
+            s01e05.TitleExtra = "";
+            s01e05.Title = "s01e05 Endangered Species";
+            s01e05.Description = "Eloise and Lucretia discover that Mr Jenkins's blood is the rarest – and tastiest! – in the world.";
+            showDetails.EpisodeDetails.Add(s01e05);
+
+            EpisodeDetails s01e06 = new EpisodeDetails();
+            s01e06.TitleExtra = "";
+            s01e06.Title = "s01e06 Love Shack";
+            s01e06.Description = "Left alone to castle-sit in Lucretia's absence, how far will Eloise let boyfriend Wayne go?";
+            showDetails.EpisodeDetails.Add(s01e06);
+
+            return showDetails;
+        }
+
         public static ShowDetails PlumHouse()
         {
             ShowDetails showDetails = new ShowDetails();
             showDetails.Source = @"Images/19 Plum House.jpeg";
             showDetails.Title = "Plum House";
-            showDetails.TitleLine2 = "Comedy about the eccentric and inept staff at Plum House, former country home of minor 18th-century poet George Pudding. Written by Ben Cottam and Paul Mckenna.";
+            showDetails.TitleLine2 = "";
             showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\19 Plum House\";
-            showDetails.Description = "";
+            showDetails.Description = "Comedy about the eccentric and inept staff at Plum House, former country home of minor 18th-century poet George Pudding. Written by Ben Cottam and Paul Mckenna.";
             showDetails.ShowTypeLineA = "Radio";
             showDetails.ShowTypeLineB = "Comedy";
             showDetails.Series = 3;
@@ -134,7 +189,8 @@ namespace ThumbnailCreator.Data
         // 1920 x 1040
         internal static ShowDetails PopulateShowData()
         {
-            return PlumHouse();
+            return CenturyVampire();
+            //            return PlumHouse();
             //return DeepStationEmerald();
             //return Bookcases();
             //return RigorMortis();
