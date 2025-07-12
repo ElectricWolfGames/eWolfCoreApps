@@ -72,10 +72,78 @@ namespace ThumbnailCreator.Data
             return showDetails;
         }
 
+        public static ShowDetails Relocation()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/22 Relocation.jpeg";
+            showDetails.Title = "Relocation ";
+            showDetails.TitleLine2 = "";
+            showDetails.Path = $@"E:\_AudioTemp\Comedy\_Uploading_B\22 Relocation\";
+            showDetails.Description = "Comedy about a couple in witness relocation in the Welsh Valleys";
+            showDetails.ShowTypeLineA = "Radio";
+            showDetails.ShowTypeLineB = "Comedy";
+            showDetails.Series = 2;
+            showDetails.ShortShow = false;
+            showDetails.CompleteShow = false;
+            showDetails.ComdeyShow = true;
+            showDetails.ScifiShow = false;
+
+            EpisodeDetails s01e01 = new EpisodeDetails();
+            s01e01.TitleExtra = "";
+            s01e01.Title = "s01e01 Episode One";
+            s01e01.Description = "John and Sarah's life is turned upside down. As they're forced into a witness protection scheme, they wave goodbye to their life in London, change their names and embrace the charm of a Welsh town with a name they struggle to pronounce.";
+            showDetails.EpisodeDetails.Add(s01e01);
+
+            EpisodeDetails s01e02 = new EpisodeDetails();
+            s01e02.TitleExtra = "";
+            s01e02.Title = "s01e02 Episode Two";
+            s01e02.Description = "John and Sarah adjust to a new life as Brian and Helen in Hirwaun, but robot babies and their neighbour knowing they are in witness protection start to complicate things.";
+            showDetails.EpisodeDetails.Add(s01e02);
+
+            EpisodeDetails s01e03 = new EpisodeDetails();
+            s01e03.TitleExtra = "";
+            s01e03.Title = "s01e03 Episode Three";
+            s01e03.Description = "John and Sarah's motormouth neighbour Ioan now knows pretty much everything about them, and John faces some unwanted national attention.";
+            showDetails.EpisodeDetails.Add(s01e03);
+
+            EpisodeDetails s01e04 = new EpisodeDetails();
+            s01e04.TitleExtra = "";
+            s01e04.Title = "s01e04 Episode Four";
+            s01e04.Description = "John finds out Ioan had been searching for the man he helped send to prison, and things take an unexpected and thoroughly unwelcome turn.";
+            showDetails.EpisodeDetails.Add(s01e04);
+
+            EpisodeDetails s02e01 = new EpisodeDetails();
+            s02e01.TitleExtra = "";
+            s02e01.Title = "s02e01 Episode One";
+            s02e01.Description = "John and Sarah face yet another spell in witness protection. If being new parents wasn't enough, now they're relocating to the hometown of the officer in charge of their safety.";
+            showDetails.EpisodeDetails.Add(s02e01);
+
+            EpisodeDetails s02e02 = new EpisodeDetails();
+            s02e02.TitleExtra = "";
+            s02e02.Title = "s02e02 Episode Two";
+            s02e02.Description = "Sarah takes on an undercover mission to find the criminal her and husband John are hiding from. Meanwhile, John makes a surprising discovery about the leader of his baby class.";
+            showDetails.EpisodeDetails.Add(s02e02);
+
+            EpisodeDetails s02e03 = new EpisodeDetails();
+            s02e03.TitleExtra = "";
+            s02e03.Title = "s02e03 Episode Three";
+            s02e03.Description = "It's Christmas, but living under a witness protection scheme means John and Sarah don't feel very festive, while Ioan receives the job offer of a lifetime. Toby forms a new team to hunt down murderer Darren Bayes, John experiences a case of mistaken identity at the baby class, and Sarah is invited to an incredibly dangerous dinner party.";
+            showDetails.EpisodeDetails.Add(s02e03);
+
+            EpisodeDetails s02e04 = new EpisodeDetails();
+            s02e04.TitleExtra = "";
+            s02e04.Title = "s02e04 Episode Four";
+            s02e04.Description = "Things reach peak calamity in the world of witness protection.";
+            showDetails.EpisodeDetails.Add(s02e04);
+
+            return showDetails;
+        }
+
         // 1920 x 1040
         internal static ShowDetails PopulateShowData()
         {
-            return PleaseUseOtherDoor();
+            return Relocation();
+            //return PleaseUseOtherDoor();
             //return CenturyVampire();
             //            return PlumHouse();
             //return DeepStationEmerald();
