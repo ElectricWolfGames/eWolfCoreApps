@@ -10,7 +10,7 @@ namespace ThumbnailCreator.Data
             ShowDetails showDetails = new ShowDetails();
             showDetails.Source = @"Images/Scifi/06 Leviathan 99.jpeg";
             showDetails.Title = "Leviathan 99";
-            showDetails.TitleLine2 = "Complete Story";
+            showDetails.TitleLine2 = "Complete Story\nBy Ray Bradbury";
             showDetails.Path = $@"E:\_AudioTemp\Scifi\_Uploading_SciFi\06 Leviathan '99\";
             showDetails.Description = "A fantastical adaptation of Moby Dick, Ray Bradbury takes audiences past the moon and the stars in search of the greatest and brightest comet in the universe. Join a deranged captain, an eight-foot-tall telepathic spider, and our reluctant hero. You can call him Ishmael.";
             showDetails.ShowTypeLineA = "SciFi";
