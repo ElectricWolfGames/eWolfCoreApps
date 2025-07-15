@@ -5,6 +5,31 @@ namespace ThumbnailCreator.Data
 {
     public static partial class Shows
     {
+        public static ShowDetails Leviathan99()
+        {
+            ShowDetails showDetails = new ShowDetails();
+            showDetails.Source = @"Images/Scifi/06 Leviathan 99.jpeg";
+            showDetails.Title = "Leviathan 99";
+            showDetails.TitleLine2 = "Complete Story";
+            showDetails.Path = $@"E:\_AudioTemp\Scifi\_Uploading_SciFi\06 Leviathan '99\";
+            showDetails.Description = "A fantastical adaptation of Moby Dick, Ray Bradbury takes audiences past the moon and the stars in search of the greatest and brightest comet in the universe. Join a deranged captain, an eight-foot-tall telepathic spider, and our reluctant hero. You can call him Ishmael.";
+            showDetails.ShowTypeLineA = "SciFi";
+            showDetails.ShowTypeLineB = "Drama";
+            showDetails.Series = 1;
+            showDetails.ShortShow = false;
+            showDetails.CompleteShow = true;
+            showDetails.ComdeyShow = false;
+            showDetails.ScifiShow = true;
+
+            EpisodeDetails s01e01 = new EpisodeDetails();
+            s01e01.TitleExtra = "";
+            s01e01.Title = "Complete Story";
+            s01e01.Description = "";
+            showDetails.EpisodeDetails.Add(s01e01);
+
+            return showDetails;
+        }
+
         public static ShowDetails PleaseUseOtherDoor()
         {
             ShowDetails showDetails = new ShowDetails();
@@ -142,7 +167,8 @@ namespace ThumbnailCreator.Data
         // 1920 x 1040
         internal static ShowDetails PopulateShowData()
         {
-            return Relocation();
+            return Leviathan99();
+            //return Relocation();
             //return PleaseUseOtherDoor();
             //return CenturyVampire();
             //            return PlumHouse();
