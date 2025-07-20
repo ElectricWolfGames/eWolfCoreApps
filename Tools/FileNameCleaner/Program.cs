@@ -20,8 +20,8 @@ namespace FileNameCleaner
             StartFileWithDate sfwd = new StartFileWithDate(path);
             sfwd.Do();
 
-            RemoveExtraSpaces res = new RemoveExtraSpaces(path);
-            res.Do();
+            //RemoveExtraSpaces res = new RemoveExtraSpaces(path);
+            //res.Do();
 
             //RemoveEmptyFolders refs = new RemoveEmptyFolders(path);
             //refs.Do();
