@@ -30,6 +30,7 @@
     <None Remove="Images\21 Please Use Other Door.jpeg" />
     <None Remove="Images\22 Relocation.jpeg" />
     <None Remove="Images\23 King of Bath.jpeg" />
+    <None Remove="Images\24 The Castle.jpeg" />
     <None Remove="Images\Ansgstrom b.jpeg" />
     <None Remove="Images\BigJimTheFigaroClub.jpeg" />
     <None Remove="Images\Clayton Grange Title.png" />
@@ -82,6 +83,7 @@
     <Resource Include="Images\21 Please Use Other Door.jpeg" />
     <Resource Include="Images\22 Relocation.jpeg" />
     <Resource Include="Images\23 King of Bath.jpeg" />
+    <Resource Include="Images\24 The Castle.jpeg" />
     <Resource Include="Images\Ansgstrom b.jpeg" />
     <Resource Include="Images\BigJimTheFigaroClub.jpeg" />
     <Resource Include="Images\Clayton Grange Title.png" />
