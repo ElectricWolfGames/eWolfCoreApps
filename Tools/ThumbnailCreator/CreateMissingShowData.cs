@@ -1,7 +1,6 @@
 ﻿using eWolfAudioShows;
 using eWolfAudioShows.Interfaces;
 using System.IO;
-using System.Windows;
 using ThumbnailCreator.Data;
 
 namespace ThumbnailCreator
