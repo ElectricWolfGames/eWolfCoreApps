@@ -17,6 +17,9 @@ namespace ThumbnailCreator
         {
             InitializeComponent();
 
+            CreateMissingShowData createMissingShowData = new CreateMissingShowData();
+            createMissingShowData.Do();
+
             _showDetails = Shows.PopulateShowData();
             this.Loaded += Window_Loaded;
         }

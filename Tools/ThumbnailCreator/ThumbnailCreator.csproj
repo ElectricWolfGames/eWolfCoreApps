@@ -66,6 +66,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\eWolfSiteBuilder\eWolfAudioShows\eWolfAudioShows.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Art\Face_With_Headphones-Small.jpeg" />
     <Resource Include="Art\Face_With_Headphones-Small.png" />
     <Resource Include="Art\sci fi.png" />

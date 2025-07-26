@@ -1,7 +1,4 @@
-﻿using System.Runtime.Intrinsics.X86;
-using System.Threading;
-
-namespace ThumbnailCreator.Data
+﻿namespace ThumbnailCreator.Data
 {
     public static partial class Shows
     {
