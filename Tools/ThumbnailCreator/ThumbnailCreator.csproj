@@ -16,36 +16,12 @@
     <None Remove="backgound Eels.png" />
     <None Remove="Image1.png" />
     <None Remove="Image2.png" />
-    <None Remove="Images\05 Do Nothings Until.jpeg" />
-    <None Remove="Images\11 The Train at Platform 4.jpeg" />
-    <None Remove="Images\12 Bangers Mash.jpeg" />
-    <None Remove="Images\12 Dot.jpeg" />
-    <None Remove="Images\14 1834.jfif" />
-    <None Remove="Images\15 Married.jpeg" />
-    <None Remove="Images\16 Detective Sergeant.jpg" />
-    <None Remove="Images\17 Bookcases.jpeg" />
-    <None Remove="Images\18 RigorMortis.jpeg" />
-    <None Remove="Images\19 Plum House.jpeg" />
-    <None Remove="Images\20 20th Century Vampire.PNG" />
-    <None Remove="Images\21 Please Use Other Door.jpeg" />
-    <None Remove="Images\22 Relocation.jpeg" />
-    <None Remove="Images\23 King of Bath.jpeg" />
-    <None Remove="Images\24 The Castle.jpeg" />
-    <None Remove="Images\Ansgstrom b.jpeg" />
-    <None Remove="Images\BigJimTheFigaroClub.jpeg" />
-    <None Remove="Images\Clayton Grange Title.png" />
-    <None Remove="Images\Ectoplasm.jpeg" />
-    <None Remove="Images\Hobby Bobbies.jpeg" />
-    <None Remove="Images\JokeShop.jpeg" />
-    <None Remove="Images\Little Monster.jpeg" />
     <None Remove="Images\MM\1 Lion.jpeg" />
     <None Remove="Images\MM\3 Goalkeeper Joe.jpeg" />
     <None Remove="Images\MM\3 The Magna Charta.jpeg" />
     <None Remove="Images\MM\4 The Battle of Hastings.jpeg" />
     <None Remove="Images\MM\6 Jonah and the Grampus.jpeg" />
     <None Remove="Images\MM\7 Gunner Joe.jpeg" />
-    <None Remove="Images\Nebulous A.jpeg" />
-    <None Remove="Images\Party v1.jpeg" />
     <None Remove="Images\Robin Wendys Wet Weekends.jpeg" />
     <None Remove="Images\Rudys Rarer Rcords.jpeg" />
     <None Remove="Images\Scifi\05 Deep Station Emerald.jpeg" />
@@ -73,35 +49,12 @@
     <Resource Include="Art\Face_With_Headphones-Small.jpeg" />
     <Resource Include="Art\Face_With_Headphones-Small.png" />
     <Resource Include="Art\sci fi.png" />
-    <Resource Include="Images\05 Do Nothings Until.jpeg" />
-    <Resource Include="Images\11 The Train at Platform 4.jpeg" />
-    <Resource Include="Images\12 Bangers Mash.jpeg" />
-    <Resource Include="Images\12 Dot.jpeg" />
-    <Resource Include="Images\14 1834.jfif" />
-    <Resource Include="Images\15 Married.jpeg" />
-    <Resource Include="Images\16 Detective Sergeant.jpg" />
-    <Resource Include="Images\17 Bookcases.jpeg" />
-    <Resource Include="Images\18 RigorMortis.jpeg" />
-    <Resource Include="Images\19 Plum House.jpeg" />
-    <Resource Include="Images\20 20th Century Vampire.PNG" />
-    <Resource Include="Images\21 Please Use Other Door.jpeg" />
-    <Resource Include="Images\22 Relocation.jpeg" />
-    <Resource Include="Images\23 King of Bath.jpeg" />
-    <Resource Include="Images\24 The Castle.jpeg" />
-    <Resource Include="Images\Ansgstrom b.jpeg" />
-    <Resource Include="Images\BigJimTheFigaroClub.jpeg" />
-    <Resource Include="Images\Clayton Grange Title.png" />
-    <Resource Include="Images\Ectoplasm.jpeg" />
-    <Resource Include="Images\Hobby Bobbies.jpeg" />
-    <Resource Include="Images\JokeShop.jpeg" />
     <Resource Include="Images\MM\1 Lion.jpeg" />
     <Resource Include="Images\MM\3 Goalkeeper Joe.jpeg" />
     <Resource Include="Images\MM\3 The Magna Charta.jpeg" />
     <Resource Include="Images\MM\4 The Battle of Hastings.jpeg" />
     <Resource Include="Images\MM\5 Three Ha pence a foot.jpeg" />
     <Resource Include="Images\MM\7 Gunner Joe.jpeg" />
-    <Resource Include="Images\Nebulous A.jpeg" />
-    <Resource Include="Images\Party v1.jpeg" />
     <Resource Include="Images\Pic.jpeg" />
     <Resource Include="Images\Robin Wendys Wet Weekends.jpeg" />
     <Resource Include="Images\Rudys Rarer Rcords.jpeg" />
@@ -115,11 +68,6 @@
     <Resource Include="Images\Scifi\A Plague Of Goodness.jpeg" />
     <Resource Include="Images\Scifi\Aliens of the Mind.jpeg" />
     <Resource Include="Images\Scifi\Host Planet Earth.jpeg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\Little Monster.jpeg" />
-    <Resource Include="Images\13 Welcome To Our Village.jfif" />
   </ItemGroup>
 
   <ItemGroup>

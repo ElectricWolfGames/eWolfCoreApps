@@ -1,13 +1,14 @@
 ﻿using eWolfAudioShows;
 using eWolfAudioShows.Interfaces;
 using System.IO;
+using System.Windows;
 using ThumbnailCreator.Data;
 
 namespace ThumbnailCreator
 {
     internal class CreateMissingShowData
     {
-        private ShowDetails _showDetails;
+        public ShowDetails ShowDetails { get; set; }
 
         public void Do()
         {
@@ -28,6 +29,8 @@ namespace ThumbnailCreator
                     continue;
 
                 SetShow(show);
+                MainWindow mainWindow = new MainWindow(ShowDetails);
+                mainWindow.ShowDialog();
             }
         }
 
@@ -38,24 +41,40 @@ namespace ThumbnailCreator
 
         private void SetShow(IAudioShow show)
         {
-            string path = $"{show.OutputPath}\\thumbnails\\";
-            string image = $"{path}\\Ref\\{show.Title}.jpeg";
+            string image = $"{show.OutputPath}\\Ref\\{show.Title}.jpeg";
 
-            ShowDetails showDetails = new ShowDetails();
-            showDetails.Source = image; // TODO: need to load the image.
-            showDetails.Title = show.Title;
-            showDetails.TitleLine2 = "";
-            showDetails.Path = show.OutputPath;
-            showDetails.Description = show.Description;
-            showDetails.ShowTypeLineA = "Radio";
-            showDetails.ShowTypeLineB = "Comedy";
-            showDetails.Series = show.Shows.Shows.Count();
-            showDetails.ShortShow = false;
-            showDetails.CompleteShow = false;
-            showDetails.ComdeyShow = true;
-            showDetails.ScifiShow = false;
+            ShowDetails = new ShowDetails
+            {
+                Source = image, // TODO: need to load the image.
+                Title = show.Title,
+                TitleLine2 = "",
+                Path = show.OutputPath,
+                Description = show.Description,
+                ShowTypeLineA = "Radio",
+                ShowTypeLineB = "Comedy",
+                Series = show.Shows.Shows.Count(),
+                ShortShow = false,
+                CompleteShow = false,
+                ComdeyShow = true,
+                ScifiShow = false
+            };
 
-            _showDetails = showDetails;
+            int count = 0;
+            foreach (var serie in show.Shows.Shows)
+            {
+                int epCount = 1;
+                count++;
+                foreach (var ep in serie.Episodes)
+                {
+                    string name = $"s0{count}e0{epCount++}";
+
+                    EpisodeDetails s01e01 = new EpisodeDetails();
+                    s01e01.TitleExtra = "";
+                    s01e01.Title = $"{name} {ep.Name}";
+                    s01e01.Description = ep.Description;
+                    ShowDetails.EpisodeDetails.Add(s01e01);
+                }
+            }
         }
     }
 }

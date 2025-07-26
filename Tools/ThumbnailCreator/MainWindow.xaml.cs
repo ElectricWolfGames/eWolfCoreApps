@@ -6,21 +6,15 @@ using ThumbnailCreator.Data;
 
 namespace ThumbnailCreator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private ShowDetails _showDetails;
 
-        public MainWindow()
+        public MainWindow(ShowDetails showDetails)
         {
             InitializeComponent();
 
-            CreateMissingShowData createMissingShowData = new CreateMissingShowData();
-            createMissingShowData.Do();
-
-            _showDetails = Shows.PopulateShowData();
+            _showDetails = showDetails;
             this.Loaded += Window_Loaded;
         }
 
@@ -69,7 +63,13 @@ namespace ThumbnailCreator
         {
             ShowTitle.Text = _showDetails.Title;
             ShowDescription.Text = _showDetails.Description;
-            var thumb = new BitmapImage(new Uri($"pack://application:,,,/{_showDetails.Source}"));
+
+            BitmapImage thumb = new BitmapImage();
+            thumb.BeginInit();
+            thumb.UriSource = new Uri(_showDetails.Source, UriKind.Absolute);
+            thumb.CacheOption = BitmapCacheOption.OnLoad; // Ensures the file is closed after loading
+            thumb.EndInit();
+
             Image.Source = thumb;
 
             var a = new SolidColorBrush(Colors.White);
@@ -121,13 +121,13 @@ namespace ThumbnailCreator
 
             if (_showDetails.ComdeyShow)
             {
-                Thumbnails thumbnails = new Thumbnails();
+                Thumbnails thumbnails = new Thumbnails(_showDetails);
                 thumbnails.ShowDialog();
             }
 
             if (_showDetails.ScifiShow)
             {
-                SciFiThumbnails sft = new SciFiThumbnails();
+                SciFiThumbnails sft = new SciFiThumbnails(_showDetails);
                 sft.ShowDialog();
             }
 

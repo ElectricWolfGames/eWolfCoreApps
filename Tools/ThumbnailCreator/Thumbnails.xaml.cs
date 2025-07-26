@@ -17,13 +17,13 @@ namespace ThumbnailCreator
         private bool _scifiShow = true;
         private ShowDetails _showDetails;
 
-        public Thumbnails()
+        public Thumbnails(ShowDetails showDetails)
         {
             InitializeComponent();
 
             DataContext = this;
 
-            _showDetails = Shows.PopulateShowData();
+            _showDetails = showDetails;
             this.Loaded += Window_Loaded;
         }
 
@@ -127,7 +127,11 @@ namespace ThumbnailCreator
                 ShowType2.Text = _showDetails.ShowTypeLineB;
                 Show.Text = $"Series {seriesCount}";
 
-                var thumb = new BitmapImage(new Uri($"pack://application:,,,/{_showDetails.Source}"));
+                BitmapImage thumb = new BitmapImage();
+                thumb.BeginInit();
+                thumb.UriSource = new Uri(_showDetails.Source, UriKind.Absolute);
+                thumb.CacheOption = BitmapCacheOption.OnLoad; // Ensures the file is closed after loading
+                thumb.EndInit();
                 Image.Source = thumb;
 
                 int episodecount = _showDetails.EpisodeDetails.Where(x => x.Title.Contains($"s{seriesCount.ToString("D2")}")).Count();

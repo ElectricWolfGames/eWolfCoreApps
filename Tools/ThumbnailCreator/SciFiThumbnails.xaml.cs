@@ -7,9 +7,6 @@ using ThumbnailCreator.Data;
 
 namespace ThumbnailCreator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class SciFiThumbnails : Window, INotifyPropertyChanged
     {
         private bool _comedyShow = true;
@@ -17,13 +14,13 @@ namespace ThumbnailCreator
         private bool _scifiShow = true;
         private ShowDetails _showDetails;
 
-        public SciFiThumbnails()
+        public SciFiThumbnails(ShowDetails showDetails)
         {
             InitializeComponent();
 
             DataContext = this;
 
-            _showDetails = Shows.PopulateShowData();
+            _showDetails = showDetails;
             this.Loaded += Window_Loaded;
         }
 
