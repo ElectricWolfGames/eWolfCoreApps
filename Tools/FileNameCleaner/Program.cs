@@ -10,8 +10,8 @@ namespace FileNameCleaner
 
             // string path = @"K:\TV\";
 
-            string path = "E:\\_ToWatch\\_ToCheck\\_ToStore\\";
-            //string path = "E:\\_ToWatch\\_ToCheck\\Agatha Christie's Marple  2004\\";
+            //string path = "E:\\_ToWatch\\_ToCheck\\_ToStore\\";
+            string path = "E:\\_ToWatch\\_ToCheck\\Agatha Christie's Marple  2004\\";
             //string path = "E:\\_ToWatch\\_ToCheck\\Midsomer Murders\\";
             //string path = "E:\\_ToWatch\\_ToCheck\\The Last of Us\\";
             CleanUpFileNames cfn = new CleanUpFileNames(path);
