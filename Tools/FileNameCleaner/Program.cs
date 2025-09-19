@@ -12,6 +12,11 @@ namespace FileNameCleaner
 
             //string path = "E:\\_ToWatch\\_ToCheck\\_ToStore\\";
             string path = "E:\\_ToWatch\\_ToCheck\\Agatha Christie's Marple  2004\\";
+
+            path = args[0];
+
+            Console.WriteLine($"{path}");
+
             //string path = "E:\\_ToWatch\\_ToCheck\\Midsomer Murders\\";
             //string path = "E:\\_ToWatch\\_ToCheck\\The Last of Us\\";
             CleanUpFileNames cfn = new CleanUpFileNames(path);
@@ -20,11 +25,11 @@ namespace FileNameCleaner
             StartFileWithDate sfwd = new StartFileWithDate(path);
             sfwd.Do();
 
-            //RemoveExtraSpaces res = new RemoveExtraSpaces(path);
-            //res.Do();
+            RemoveExtraSpaces res = new RemoveExtraSpaces(path);
+            res.Do();
 
-            //RemoveEmptyFolders refs = new RemoveEmptyFolders(path);
-            //refs.Do();
+            RemoveEmptyFolders refs = new RemoveEmptyFolders(path);
+            refs.Do();
         }
     }
 }

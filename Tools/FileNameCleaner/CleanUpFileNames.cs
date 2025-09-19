@@ -15,22 +15,21 @@
         }
 
         private void ProcessPath(string path)
-        { 
-
+        {
             var items = Directory.GetFileSystemEntries(path);
 
             foreach (var entry in items)
             {
                 if (Directory.Exists(entry))
                 {
-                    ProcessPath(entry+"\\");
+                    ProcessPath(entry + "\\");
                     continue;
                 }
-
 
                 string name = Path.GetFileNameWithoutExtension(entry);
                 string pathOnly = entry.Replace(Path.GetFileName(entry), string.Empty);
                 var temp = Helpers.RemoveOtherWords(name);
+                temp = Helpers.RemoveOtherWords(name);
                 temp += Path.GetExtension(entry);
 
                 string newPath = pathOnly + temp;
