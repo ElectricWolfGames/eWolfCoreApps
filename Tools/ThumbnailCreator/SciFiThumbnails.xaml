@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ThumbnailCreator"
         mc:Ignorable="d"
-        Title="Thumbnails" Height="1112" Width="1920" Background="#88112222">
+        Title="Thumbnails" Background="#88112222"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="False"
+        WindowStartupLocation="CenterScreen"
+        Width="1920"
+        Height="1080">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
     </Window.Resources>

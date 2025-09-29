@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ThumbnailCreator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1112" Width="1920" Background="White">
+        Title="MainWindow" Background="White"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="False"
+        WindowStartupLocation="CenterScreen"
+        Width="1920"
+        Height="1080">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="220" />
