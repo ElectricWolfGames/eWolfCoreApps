@@ -120,7 +120,11 @@ namespace ThumbnailCreator
             {
                 Show.Text = $"Series {seriesCount}";
 
-                var thumb = new BitmapImage(new Uri($"pack://application:,,,/{_showDetails.Source}"));
+                BitmapImage thumb = new BitmapImage();
+                thumb.BeginInit();
+                thumb.UriSource = new Uri(_showDetails.Source, UriKind.Absolute);
+                thumb.CacheOption = BitmapCacheOption.OnLoad; // Ensures the file is closed after loading
+                thumb.EndInit();
                 Image.Source = thumb;
 
                 int episodecount = _showDetails.EpisodeDetails.Where(x => x.Title.Contains($"s{seriesCount.ToString("D2")}")).Count();

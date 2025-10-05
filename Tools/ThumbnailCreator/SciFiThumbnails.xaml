@@ -62,8 +62,8 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="45" />
             </Grid.ColumnDefinitions>
-            <local:OutlinedText Grid.Row="2" Grid.Column="1" x:Name="Show" Fill="White" FontSize="64"
-                   Bold="True" Stroke="Black" StrokeThickness="4" Width="Auto" Text="Series 1" />
+            <local:OutlinedText Grid.Row="2" Grid.Column="1" x:Name="Show" Fill="White" Font="Impact" FontSize="64"
+                   Bold="True" Stroke="Black" StrokeThickness="3" Width="Auto" Text="Series 1" HorizontalAlignment="Center" />
         </Grid>
 
         <Image x:Name="Image" Grid.Row="1" Grid.Column="1"
@@ -73,16 +73,12 @@
             Source="Art/sci fi.png" Margin="-61,52,516,336" />
 
         <local:OutlinedText Grid.Row="1" Grid.Column="0" x:Name="ShowType"
-                    Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="Sci-Fi"
-                    Font="Lemon" Margin="500,79,0,0"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Width="396" Height="231" />
+                    Fill="Yellow" FontSize="88" Bold="True" Stroke="Black" StrokeThickness="3" Text="SCI-FI"
+                    Font="Impact" Margin="592,122,0,0"
+            HorizontalAlignment="Left" VerticalAlignment="Top" Width="396" Height="232" />
         <local:OutlinedText Grid.Row="1" Grid.Column="0" x:Name="ShowType2"
-                    Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="Radio"
-                    Font="Lemon" Margin="490,172,0,0"
-            HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="138" />
-        <local:OutlinedText Grid.Row="1" Grid.Column="0" x:Name="ShowType3"
-            Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="Drama"
-            Font="Lemon" Margin="464,276,0,0"
+                    Fill="Yellow" FontSize="88" Bold="True" Stroke="Black" StrokeThickness="3" Text="RADIO DRAMA"
+                    Font="Impact" Margin="456,238,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="138" />
     </Grid>
 </Window>

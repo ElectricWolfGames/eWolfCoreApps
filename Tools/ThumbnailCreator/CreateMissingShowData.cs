@@ -46,7 +46,7 @@ namespace ThumbnailCreator
             {
                 Source = image, // TODO: need to load the image.
                 Title = show.Title,
-                TitleLine2 = "",
+                TitleLine2 = show.TitleLine2,
                 Path = show.OutputPath,
                 Description = show.Description,
                 ShowTypeLineA = "Radio",
@@ -57,6 +57,12 @@ namespace ThumbnailCreator
                 ComdeyShow = true,
                 ScifiShow = false
             };
+
+            if (show.ShowTypes == eWolfAudioShows.Data.Enums.ShowTypes.SciFiDrama)
+            {
+                ShowDetails.ScifiShow = true;
+                ShowDetails.ComdeyShow = false;
+            }
 
             int count = 0;
             foreach (var serie in show.Shows.Shows)
