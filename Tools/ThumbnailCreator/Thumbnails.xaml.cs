@@ -125,7 +125,7 @@ namespace ThumbnailCreator
             {
                 ShowType.Text = _showDetails.ShowTypeLineA;
                 ShowType2.Text = _showDetails.ShowTypeLineB;
-                Show.Text = $"Series {seriesCount}";
+                Show.Text = $"SERIES {seriesCount}";
 
                 BitmapImage thumb = new BitmapImage();
                 thumb.BeginInit();

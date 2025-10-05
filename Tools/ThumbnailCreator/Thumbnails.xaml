@@ -50,11 +50,11 @@
             Source="Art/sci fi.png" Margin="455,0,0,388" />
 
         <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType"
-                    Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="SciFi"
+                    Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="RADIO"
                     Font="Lemon" Margin="122,79,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="396" Height="231" />
         <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType2"
-                    Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="Comedy"
+                    Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="COMEDY"
                     Font="Lemon" Margin="60,184,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />
 
