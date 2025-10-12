@@ -10,6 +10,9 @@ namespace GCRSalesReport
 
         private static void GetDataTableFromExcel(string fileName, bool hasHeader = true)
         {
+            _itemSales = [];
+            _peoples = [];
+
             FileInfo existingFile = new(fileName);
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (ExcelPackage package = new(fileName))
@@ -28,21 +31,37 @@ namespace GCRSalesReport
         {
             Console.WriteLine("Hello, World!");
 
-            string path = "E:\\GCR\\Stand\\Stand-Sales\\2024\\";
-            //string path = "E:\\GCR\\Stand\\Stand-Sales\\test\\";
-
+            string path = "E:\\GCR\\Stand\\Stand-Sales\\2023\\";
             foreach (var fileInfo in Directory.GetFiles(path))
-            {
                 GetDataTableFromExcel(fileInfo);
-            }
+            var sales2023 = _itemSales.OrderByDescending(x => x.Quantity).ToList();
 
-            _itemSales = _itemSales.OrderByDescending(x => x.Quantity).ToList();
+            path = "E:\\GCR\\Stand\\Stand-Sales\\2024\\";
+            foreach (var fileInfo in Directory.GetFiles(path))
+                GetDataTableFromExcel(fileInfo);
+            var sales2024 = _itemSales.OrderByDescending(x => x.Quantity).ToList();
 
-            foreach (var item in _itemSales)
+            path = "E:\\GCR\\Stand\\Stand-Sales\\2025\\";
+            foreach (var fileInfo in Directory.GetFiles(path))
+                GetDataTableFromExcel(fileInfo);
+            var sales2025 = _itemSales.OrderByDescending(x => x.Quantity).ToList();
+
+            foreach (var item in sales2025)
             {
                 if (item.Quantity != 0)
                 {
-                    Console.WriteLine($"{item.Name},{item.Quantity},£{item.Value},£{item.TotalCost}");
+                    var y2023 = sales2023.FirstOrDefault(x => x.Name == item.Name);
+                    var y2024 = sales2024.FirstOrDefault(x => x.Name == item.Name);
+
+                    double y2023val = 0;
+                    if (y2023 != null)
+                        y2023val = y2023.Quantity;
+
+                    double y2024val = 0;
+                    if (y2024 != null)
+                        y2024val = y2024.Quantity;
+
+                    Console.WriteLine($"{item.Name},{item.Quantity},{y2024val},{y2023val},£{item.Value},£{item.TotalCost}");
                 }
             }
 
