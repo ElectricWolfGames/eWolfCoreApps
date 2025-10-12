@@ -10,16 +10,16 @@ namespace GCRSalesReport
 
         private static void GetDataTableFromExcel(string fileName, bool hasHeader = true)
         {
-            FileInfo existingFile = new FileInfo(fileName);
+            FileInfo existingFile = new(fileName);
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-            using (ExcelPackage package = new ExcelPackage(fileName))
+            using (ExcelPackage package = new(fileName))
             {
                 Console.WriteLine($"Processing {fileName}");
 
-                ExcelWorksheet worksheet = package.Workbook.Worksheets[3];
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.FirstOrDefault(x => x.Name == "Sales");
                 ProcessItems(worksheet);
 
-                worksheet = package.Workbook.Worksheets[2];
+                worksheet = package.Workbook.Worksheets.FirstOrDefault(x => x.Name == "People");
                 ProcessPeople(worksheet);
             }
         }
@@ -28,14 +28,15 @@ namespace GCRSalesReport
         {
             Console.WriteLine("Hello, World!");
 
-            string path = "E:\\GCR\\Stand\\Stand-Sales\\2025\\";
+            string path = "E:\\GCR\\Stand\\Stand-Sales\\2024\\";
+            //string path = "E:\\GCR\\Stand\\Stand-Sales\\test\\";
 
             foreach (var fileInfo in Directory.GetFiles(path))
             {
                 GetDataTableFromExcel(fileInfo);
             }
 
-            _itemSales = _itemSales.OrderByDescending(x => x.Quantity /* x.Value*/).ToList();
+            _itemSales = _itemSales.OrderByDescending(x => x.Quantity).ToList();
 
             foreach (var item in _itemSales)
             {
@@ -63,12 +64,33 @@ namespace GCRSalesReport
         {
             int colCount = worksheet.Dimension.End.Column;
             int rowCount = worksheet.Dimension.End.Row;
+
+            int columncount = 0;
+
+            if (worksheet.Cells[20, 4].Value != null && worksheet.Cells[20, 4].Value.ToString() == "Quantity")
+                columncount++;
+
+            if (worksheet.Cells[20, 5].Value != null && worksheet.Cells[20, 5].Value.ToString() == "Quantity")
+                columncount++;
+
+            if (worksheet.Cells[20, 6].Value != null && worksheet.Cells[20, 6].Value.ToString() == "Quantity")
+                columncount++;
+
+            if (worksheet.Cells[20, 7].Value != null && worksheet.Cells[20, 7].Value.ToString() == "Quantity")
+                columncount++;
+
             for (int row = 21; row <= rowCount; row++)
             {
                 if (worksheet.Cells[row, 2].Value == null)
                     continue;
 
                 string name = worksheet.Cells[row, 2].Value.ToString();
+
+                if (name.Contains("Note"))
+                {
+                    int i = 0;
+                    i++;
+                }
 
                 if (name == "Name")
                     continue;
@@ -90,13 +112,17 @@ namespace GCRSalesReport
                 var price = worksheet.Cells[row, 3].Value;
                 item.Value = (double)price;
 
-                for (int col = 4; col < 6; col++)
+                for (int col = 4; col < 4 + columncount; col++)
                 {
-                    if (worksheet.Cells[row, 4].Value != null)
+                    if (worksheet.Cells[row, col].Value != null)
                     {
-                        var value = worksheet.Cells[row, 4].Value;
-                        item.Quantity += (double)value;
-                        item.TotalCost += (float)((double)value * (double)price);
+                        var value = worksheet.Cells[row, col].Value;
+                        try
+                        {
+                            item.Quantity += (double)value;
+                            item.TotalCost += (float)((double)value * (double)price);
+                        }
+                        catch { }
                     }
                 }
             }
