@@ -38,7 +38,7 @@
                                 <appname>Final Cut Pro</appname>
                                 <appmanufacturer>Apple Inc.</appmanufacturer>
                                 <data>
-                                    <qtcodec/>
+                                    <qtcodec />
                                 </data>
                             </appspecificdata>
                         </codec>
@@ -115,7 +115,7 @@
                                 </parameter>
                             </effect>
                         </filter>
-                        <comments/>
+                        <comments />
                     </clipitem>
                     <enabled>TRUE</enabled>
                     <locked>FALSE</locked>

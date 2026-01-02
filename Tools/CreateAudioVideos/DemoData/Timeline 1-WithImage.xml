@@ -231,7 +231,7 @@
                                 </parameter>
                             </effect>
                         </filter>
-                        <comments/>
+                        <comments />
                     </clipitem>
                     <enabled>TRUE</enabled>
                     <locked>FALSE</locked>
@@ -250,7 +250,7 @@
                             <appspecificdata>
                                 <appname>Final Cut Pro</appname>
                                 <appmanufacturer>Apple Inc.</appmanufacturer>
-                                <data/>
+                                <data />
                             </appspecificdata>
                         </codec>
                     </samplecharacteristics>
@@ -326,7 +326,7 @@
                                 </parameter>
                             </effect>
                         </filter>
-                        <comments/>
+                        <comments />
                     </clipitem>
                     <enabled>TRUE</enabled>
                     <locked>FALSE</locked>

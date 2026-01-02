@@ -1,14 +1,11 @@
-﻿using CreateAudioVideos.DR;
+﻿using CreateAudioVideos.Builders;
+
+using CreateAudioVideos.DR;
 using CreateAudioVideos.Folder;
 using System.IO;
-using System;
 using System.Windows;
 using System.Windows.Media;
-using System.Xml;
 using System.Xml.Serialization;
-using System.Windows.Documents;
-using Microsoft.VisualBasic.Devices;
-using CreateAudioVideos.Builders;
 
 namespace CreateAudioVideos
 {
@@ -43,10 +40,9 @@ namespace CreateAudioVideos
 
             SaveExport(xmeml);
         }
+
         private void SaveExport(xmeml xmeml)
         {
-
-
             XmlSerializer serializer = new XmlSerializer(typeof(xmeml));
             XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
             ns.Add("", ""); // Add an empty namespace with an empty prefix

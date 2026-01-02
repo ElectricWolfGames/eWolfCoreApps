@@ -7,9 +7,6 @@ using ThumbnailCreator.Data;
 
 namespace ThumbnailCreator
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class Thumbnails : Window, INotifyPropertyChanged
     {
         private bool _comedyShow = true;

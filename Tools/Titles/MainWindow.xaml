@@ -6,17 +6,20 @@
         xmlns:local="clr-namespace:Titles"
         xmlns:localTitles="clr-namespace:Titles.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1500">
+        Title="MainWindow" Height="800" Width="1500" Background="Transparent">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <TextBox Grid.Column="0" Margin="16,88,6,286" Text="{Binding TitleLabel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                        Width="377" TextWrapping="Wrap" />
-        <Label Content="Title" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.149,0.271" Width="49" Height="25" />
-
+        <GroupBox Header="Data" Name="DataFieldTags" Grid.Column="0">
+            <Grid Background="LightGray">
+                <TextBox Margin="16,88,10,433" Text="{Binding TitleLabel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" />
+                <Label Content="Title" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.149,0.271" Width="49" Height="25" />
+                <Button Content="Save Image" HorizontalAlignment="Left" Margin="42,354,0,0" VerticalAlignment="Top" Click="Button_Click" />
+            </Grid>
+        </GroupBox>
         <localTitles:OutlinedText Grid.Row="0" Grid.Column="1"
                 x:Name="ShowTitle" Fill="{Binding FillColor}" Font="Lemon" FontSize="60"
                 Bold="True" Stroke="Black" StrokeThickness="3" Text="{Binding TitleLabel}" Margin="0,88,0,0"

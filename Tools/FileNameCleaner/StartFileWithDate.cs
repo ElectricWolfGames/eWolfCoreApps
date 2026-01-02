@@ -18,7 +18,6 @@ namespace FileNameCleaner
 
         private void ProcessPath(string path)
         {
-
             var items = Directory.GetFileSystemEntries(path);
 
             foreach (var entry in items)
@@ -49,7 +48,6 @@ namespace FileNameCleaner
                     }
                     catch { }
                 }
-
             }
         }
     }

@@ -7,6 +7,6 @@
         Title="MainWindow" Height="450" Width="800" Background="Aqua">
     <Grid>
         <Button Content="Button" HorizontalAlignment="Left" Height="40" Margin="29,98,0,0" VerticalAlignment="Top" Width="96" Click="Button_Click" />
-        <Button Content="DR fiels" Margin="29,165,675,225" Click="Button_Click_1"/>
+        <Button Content="DR fiels" Margin="29,165,675,225" Click="Button_Click_1" />
     </Grid>
 </Window>

@@ -62,6 +62,21 @@ namespace CreateAudioVideos.Builders
             return file;
         }
 
+        private xmemlSequenceMediaVideoTrackClipitemFile CreateClipFileThumb()
+        {
+            xmemlSequenceMediaVideoTrackClipitemFile clip = new xmemlSequenceMediaVideoTrackClipitemFile();
+
+            clip.id = "1.png 2";
+            clip.duration = 1;
+            clip.rate = CreateThumbNailRate();
+            clip.name = "1.png";
+            clip.pathurl = "file://localhost/E:/_AudioTemp/Scifi/NEXT/Mix/A%20Plague%20Of%20Goodness/thumbnails/1.png";
+            clip.timecode = CreateThumbNailTimeCode();
+            clip.media = CreateThumbNailMedia();
+
+            return clip;
+        }
+
         private xmemlSequenceMediaAudioTrackClipitem[] CreateClipItem()
         {
             List<xmemlSequenceMediaAudioTrackClipitem> list = new List<xmemlSequenceMediaAudioTrackClipitem>();
@@ -82,6 +97,14 @@ namespace CreateAudioVideos.Builders
 
             list.Add(clip);
             return list.ToArray();
+        }
+
+        private xmemlSequenceMediaVideoTrackClipitemRate CreateClipItemRate()
+        {
+            xmemlSequenceMediaVideoTrackClipitemRate rate = new xmemlSequenceMediaVideoTrackClipitemRate();
+            rate.timebase = 24;
+            rate.ntsc = "False";
+            return rate;
         }
 
         private xmemlSequenceMediaAudioTrackClipitemRate CreateClipRate()
@@ -162,6 +185,174 @@ namespace CreateAudioVideos.Builders
             return list.ToArray();
         }
 
+        private parameterKeyframe[] CreateFilterKeyFrames()
+        {
+            List<parameterKeyframe> list = new List<parameterKeyframe>();
+            parameterKeyframe kf = new parameterKeyframe();
+            kf.when = 0;
+            kf.value = 0;
+            kf.speedvirtualkf = "TRUE";
+            kf.speedkfstart = "TRUE";
+            list.Add(kf);
+
+            kf = new parameterKeyframe();
+            kf.when = 68400;
+            kf.value = 0;
+            kf.speedvirtualkf = "TRUE";
+            kf.speedkfstart = "TRUE";
+            list.Add(kf);
+
+            kf = new parameterKeyframe();
+            kf.when = 87868;
+            kf.value = 0;
+            kf.speedvirtualkf = "TRUE";
+            kf.speedkfstart = "TRUE";
+            list.Add(kf);
+
+            kf = new parameterKeyframe();
+            kf.when = 1440001;
+            kf.value = 1;
+            kf.speedvirtualkf = "TRUE";
+            kf.speedkfstart = "TRUE";
+            list.Add(kf);
+
+            return list.ToArray();
+        }
+
+        private object[] CreateFilterParameters()
+        {
+            List<object> paras = new List<object>();
+
+            var parScale = new parameterValueInt();
+            parScale.name = "Scale";
+            parScale.parameterid = "scale";
+            parScale.value = 100;
+            parScale.valuemin = 0;
+            parScale.valuemax = 10000;
+            paras.Add(parScale);
+
+            var parCenter = new parameterHorizVert();
+            parCenter.name = "Center";
+            parCenter.parameterid = "Center";
+            parCenter.value = new parameterValue();
+            parCenter.value.horiz = 0;
+            parCenter.value.vert = 0;
+            paras.Add(parCenter);
+
+            var parRotation = new parameterValueInt();
+            parRotation.name = "Rotation";
+            parRotation.parameterid = "Rotation";
+            parRotation.valuemin = -100000;
+            parRotation.valuemax = 100000;
+            paras.Add(parRotation);
+
+            var parAnchorPoint = new parameterHorizVert();
+            parAnchorPoint.name = "Anchor Point";
+            parAnchorPoint.parameterid = "centerOffset";
+            parAnchorPoint.value = new parameterValue();
+            parAnchorPoint.value.horiz = 0;
+            parAnchorPoint.value.vert = 0;
+            paras.Add(parAnchorPoint);
+
+            return paras.ToArray();
+        }
+
+        private xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter[] CreateFilterParametersCrop()
+        {
+            List<xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter> paras = new List<xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter>();
+            xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter par = new xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter();
+            par.name = "left";
+            par.parameterid = "left";
+            par.value = 0;
+            par.valuemin = 0;
+            par.valuemax = 100;
+            paras.Add(par);
+
+            par = new xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter();
+            par.name = "right";
+            par.parameterid = "right";
+            par.value = 0;
+            par.valuemin = 0;
+            par.valuemax = 100;
+            paras.Add(par);
+
+            par = new xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter();
+            par.name = "top";
+            par.parameterid = "top";
+            par.value = 0;
+            par.valuemin = 0;
+            par.valuemax = 100;
+            paras.Add(par);
+
+            par = new xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter();
+            par.name = "bottom";
+            par.parameterid = "bottom";
+            par.value = 0;
+            par.valuemin = 0;
+            par.valuemax = 100;
+            paras.Add(par);
+
+            return paras.ToArray();
+        }
+
+        private xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter[] CreateFilterParametersOpacity()
+        {
+            List<xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter> paras = new List<xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter>();
+            xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter par = new xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter();
+            par.name = "opacity";
+            par.parameterid = "opacity";
+            par.value = 0;
+            par.valuemin = 0;
+            par.valuemax = 100;
+            paras.Add(par);
+
+            return paras.ToArray();
+        }
+
+        private object[] CreateFilterParametersTimeRemap()
+        {
+            List<object> paras = new List<object>();
+
+            var par = new parameterValueInt();
+            par.name = "speed";
+            par.parameterid = "speed";
+            par.value = 0;
+            par.valuemin = -10000;
+            par.valuemax = 10000;
+            paras.Add(par);
+
+            var parReverse = new parameterValueString();
+            parReverse.name = "reverse";
+            parReverse.parameterid = "reverse";
+            parReverse.value = "False";
+            paras.Add(parReverse);
+
+            var parFrameblending = new parameterValueString();
+            parFrameblending.name = "frameblending";
+            parFrameblending.parameterid = "frameblending";
+            parFrameblending.value = "false";
+            paras.Add(parFrameblending);
+
+            var parVariablespeed = new parameterValueInt();
+            parVariablespeed.name = "variablespeed";
+            parVariablespeed.parameterid = "variablespeed";
+            parVariablespeed.value = 0;
+            parVariablespeed.valuemin = 0;
+            parVariablespeed.valuemax = 1;
+            paras.Add(parVariablespeed);
+
+            var parKeyFrame = new parameterKeyFrame();
+            parKeyFrame.name = "graphdict";
+            parKeyFrame.parameterid = "graphdict";
+            parKeyFrame.keyframe = CreateFilterKeyFrames();
+            parKeyFrame.valuemin = 0;
+            parKeyFrame.valuemax = 0;
+            parKeyFrame.interpolation = new parameterInterpolation();
+            parKeyFrame.interpolation.name = "FCPCurve";
+
+            return paras.ToArray();
+        }
+
         private xmemlSequenceMedia CreateMedia()
         {
             xmemlSequenceMedia media = new xmemlSequenceMedia();
@@ -238,57 +429,6 @@ namespace CreateAudioVideos.Builders
             return soundTrack;
         }
 
-        private xmemlSequenceTimecode CreateTikmeCodes()
-        {
-            xmemlSequenceTimecode xmemlSequenceTimecode = new xmemlSequenceTimecode();
-            xmemlSequenceTimecode.@string = "01:00:00:00";
-            xmemlSequenceTimecode.frame = 86400;
-            xmemlSequenceTimecode.displayformat = "NDF";
-            xmemlSequenceTimecode.rate = SequenceRate();
-
-            return xmemlSequenceTimecode;
-        }
-
-        private xmemlSequenceMediaAudioTrackClipitemFileMedia CreateTrackMedia()
-        {
-            xmemlSequenceMediaAudioTrackClipitemFileMedia media = new xmemlSequenceMediaAudioTrackClipitemFileMedia();
-            media.audio = new xmemlSequenceMediaAudioTrackClipitemFileMediaAudio();
-            media.audio.channelcount = 2;
-            return media;
-        }
-
-        private xmemlSequenceMediaVideoTrack CreatTrack()
-        {
-            xmemlSequenceMediaVideoTrack track = new xmemlSequenceMediaVideoTrack();
-            track.enabled = "true";
-            track.locked = "false";
-            track.clipitem = CreateThumbNail();
-            return track;
-        }
-
-        private xmemlSequenceMediaVideoTrackClipitem[] CreateThumbNail()
-        {
-            List<xmemlSequenceMediaVideoTrackClipitem> list = new List<xmemlSequenceMediaVideoTrackClipitem>();
-            xmemlSequenceMediaVideoTrackClipitem clip = new xmemlSequenceMediaVideoTrackClipitem();
-
-            clip.id = "1.png 0";
-            clip.name = "1.png";
-            clip.duration = 1440001;
-            clip.rate = CreateClipItemRate();
-            clip.start = 0;
-            clip.end = 1468;
-            clip.enabled = "TRUE";
-            clip.@in = 86400;
-            clip.@out = 87868;
-            clip.file = CreateClipFileThumb();
-            clip.compositemode = "Normal";
-            clip.filter = CreateThumbFilter();
-            
-            list.Add(clip);
-            return list.ToArray();
-
-        }
-
         private xmemlSequenceMediaVideoTrackClipitemFilter[] CreateThumbFilter()
         {
             List<xmemlSequenceMediaVideoTrackClipitemFilter> list = new List<xmemlSequenceMediaVideoTrackClipitemFilter>();
@@ -345,193 +485,29 @@ namespace CreateAudioVideos.Builders
             filterD.effect.parameter = CreateFilterParametersTimeRemap();
             list.Add(filterD);
 
-
             return list.ToArray();
         }
 
-        private object[] CreateFilterParametersTimeRemap()
+        private xmemlSequenceMediaVideoTrackClipitem[] CreateThumbNail()
         {
-            List<object> paras = new List<object>();
-            
-            var par = new parameterValueInt();
-            par.name = "speed";
-            par.parameterid = "speed";
-            par.value = 0;
-            par.valuemin = -10000;
-            par.valuemax = 10000;
-            paras.Add(par);
+            List<xmemlSequenceMediaVideoTrackClipitem> list = new List<xmemlSequenceMediaVideoTrackClipitem>();
+            xmemlSequenceMediaVideoTrackClipitem clip = new xmemlSequenceMediaVideoTrackClipitem();
 
-            var parReverse = new parameterValueString();
-            parReverse.name = "reverse";
-            parReverse.parameterid = "reverse";
-            parReverse.value = "False";
-            paras.Add(parReverse);
-
-            var parFrameblending = new parameterValueString();
-            parFrameblending.name = "frameblending";
-            parFrameblending.parameterid = "frameblending";
-            parFrameblending.value = "false";
-            paras.Add(parFrameblending);
-
-            var parVariablespeed = new parameterValueInt();
-            parVariablespeed.name = "variablespeed";
-            parVariablespeed.parameterid = "variablespeed";
-            parVariablespeed.value = 0;
-            parVariablespeed.valuemin = 0;
-            parVariablespeed.valuemax = 1;
-            paras.Add(parVariablespeed);
-
-            var parKeyFrame = new parameterKeyFrame();
-            parKeyFrame.name = "graphdict";
-            parKeyFrame.parameterid = "graphdict";
-            parKeyFrame.keyframe = CreateFilterKeyFrames();
-            parKeyFrame.valuemin = 0;
-            parKeyFrame.valuemax = 0;
-            parKeyFrame.interpolation = new parameterInterpolation();
-            parKeyFrame.interpolation.name = "FCPCurve";
-
-            return paras.ToArray();
-        }
-
-        private parameterKeyframe[] CreateFilterKeyFrames()
-        {
-            List<parameterKeyframe> list = new List<parameterKeyframe>();
-            parameterKeyframe kf = new parameterKeyframe();
-            kf.when = 0;
-            kf.value = 0;
-            kf.speedvirtualkf = "TRUE";
-            kf.speedkfstart = "TRUE";
-            list.Add(kf);
-
-            kf = new parameterKeyframe();
-            kf.when = 68400;
-            kf.value = 0;
-            kf.speedvirtualkf = "TRUE";
-            kf.speedkfstart = "TRUE";
-            list.Add(kf);
-
-            kf = new parameterKeyframe();
-            kf.when = 87868;
-            kf.value = 0;
-            kf.speedvirtualkf = "TRUE";
-            kf.speedkfstart = "TRUE";
-            list.Add(kf);
-
-            kf = new parameterKeyframe();
-            kf.when = 1440001;
-            kf.value = 1;
-            kf.speedvirtualkf = "TRUE";
-            kf.speedkfstart = "TRUE";
-            list.Add(kf);
-
-            return list.ToArray();
-        }
-
-        private xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter[] CreateFilterParametersOpacity()
-        {
-            List<xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter> paras = new List<xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter>();
-            xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter par = new xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter();
-            par.name = "opacity";
-            par.parameterid = "opacity";
-            par.value = 0;
-            par.valuemin = 0;
-            par.valuemax = 100;
-            paras.Add(par);
-
-            return paras.ToArray();
-        }
-
-        private xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter[] CreateFilterParametersCrop()
-        {
-            List<xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter> paras = new List<xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter>();
-            xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter par = new xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter();
-            par.name = "left";
-            par.parameterid = "left";
-            par.value = 0;
-            par.valuemin = 0;
-            par.valuemax = 100;
-            paras.Add(par);
-
-            par = new xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter();
-            par.name = "right";
-            par.parameterid = "right";
-            par.value = 0;
-            par.valuemin = 0;
-            par.valuemax = 100;
-            paras.Add(par);
-
-            par = new xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter();
-            par.name = "top";
-            par.parameterid = "top";
-            par.value = 0;
-            par.valuemin = 0;
-            par.valuemax = 100;
-            paras.Add(par);
-
-
-            par = new xmemlSequenceMediaVideoTrackClipitemFilterEffectParameter();
-            par.name = "bottom";
-            par.parameterid = "bottom";
-            par.value = 0;
-            par.valuemin = 0;
-            par.valuemax = 100;
-            paras.Add(par);
-
-            return paras.ToArray();
-        }
-
-        private object[] CreateFilterParameters()
-        {
-            List<object> paras = new List<object>();
-
-            var parScale = new parameterValueInt();
-            parScale.name = "Scale";
-            parScale.parameterid = "scale";
-            parScale.value = 100;
-            parScale.valuemin = 0;
-            parScale.valuemax = 10000;
-            paras.Add(parScale);
-
-            var parCenter = new parameterHorizVert();
-            parCenter.name = "Center";
-            parCenter.parameterid = "Center";
-            parCenter.value = new parameterValue();
-            parCenter.value.horiz = 0;
-            parCenter.value.vert = 0;
-            paras.Add(parCenter);
-
-            var parRotation = new parameterValueInt();
-            parRotation.name = "Rotation";
-            parRotation.parameterid = "Rotation";
-            parRotation.valuemin = -100000;
-            parRotation.valuemax = 100000;
-            paras.Add(parRotation);
-
-            var parAnchorPoint = new parameterHorizVert();
-            parAnchorPoint.name = "Anchor Point";
-            parAnchorPoint.parameterid = "centerOffset";
-            parAnchorPoint.value = new parameterValue();
-            parAnchorPoint.value.horiz = 0;
-            parAnchorPoint.value.vert = 0;
-            paras.Add(parAnchorPoint);
-
-            return paras.ToArray();
-        }
-
-        private xmemlSequenceMediaVideoTrackClipitemFile CreateClipFileThumb()
-        {
-            xmemlSequenceMediaVideoTrackClipitemFile clip = new xmemlSequenceMediaVideoTrackClipitemFile();
-
-            clip.id = "1.png 2";
-            clip.duration = 1;
-            clip.rate = CreateThumbNailRate();
+            clip.id = "1.png 0";
             clip.name = "1.png";
-            clip.pathurl = "file://localhost/E:/_AudioTemp/Scifi/NEXT/Mix/A%20Plague%20Of%20Goodness/thumbnails/1.png";
-            clip.timecode = CreateThumbNailTimeCode();
-            clip.media = CreateThumbNailMedia();
+            clip.duration = 1440001;
+            clip.rate = CreateClipItemRate();
+            clip.start = 0;
+            clip.end = 1468;
+            clip.enabled = "TRUE";
+            clip.@in = 86400;
+            clip.@out = 87868;
+            clip.file = CreateClipFileThumb();
+            clip.compositemode = "Normal";
+            clip.filter = CreateThumbFilter();
 
-            return clip;
-
+            list.Add(clip);
+            return list.ToArray();
         }
 
         private xmemlSequenceMediaVideoTrackClipitemFileMedia CreateThumbNailMedia()
@@ -542,14 +518,12 @@ namespace CreateAudioVideos.Builders
             return media;
         }
 
-        private xmemlSequenceMediaVideoTrackClipitemFileMediaVideo CreateThumbNailVideo()
+        private xmemlSequenceMediaVideoTrackClipitemFileRate CreateThumbNailRate()
         {
-            xmemlSequenceMediaVideoTrackClipitemFileMediaVideo video = new xmemlSequenceMediaVideoTrackClipitemFileMediaVideo();
-            video.duration = 1;
-            video.samplecharacteristics = new xmemlSequenceMediaVideoTrackClipitemFileMediaVideoSamplecharacteristics();
-            video.samplecharacteristics.width = 1920;
-            video.samplecharacteristics.height = 1080;
-            return video;
+            xmemlSequenceMediaVideoTrackClipitemFileRate rate = new xmemlSequenceMediaVideoTrackClipitemFileRate();
+            rate.timebase = 24;
+            rate.ntsc = "False";
+            return rate;
         }
 
         private xmemlSequenceMediaVideoTrackClipitemFileTimecode CreateThumbNailTimeCode()
@@ -562,6 +536,27 @@ namespace CreateAudioVideos.Builders
             return timecode;
         }
 
+        private xmemlSequenceMediaVideoTrackClipitemFileMediaVideo CreateThumbNailVideo()
+        {
+            xmemlSequenceMediaVideoTrackClipitemFileMediaVideo video = new xmemlSequenceMediaVideoTrackClipitemFileMediaVideo();
+            video.duration = 1;
+            video.samplecharacteristics = new xmemlSequenceMediaVideoTrackClipitemFileMediaVideoSamplecharacteristics();
+            video.samplecharacteristics.width = 1920;
+            video.samplecharacteristics.height = 1080;
+            return video;
+        }
+
+        private xmemlSequenceTimecode CreateTikmeCodes()
+        {
+            xmemlSequenceTimecode xmemlSequenceTimecode = new xmemlSequenceTimecode();
+            xmemlSequenceTimecode.@string = "01:00:00:00";
+            xmemlSequenceTimecode.frame = 86400;
+            xmemlSequenceTimecode.displayformat = "NDF";
+            xmemlSequenceTimecode.rate = SequenceRate();
+
+            return xmemlSequenceTimecode;
+        }
+
         private xmemlSequenceMediaVideoTrackClipitemFileTimecodeRate CreateTimeCodeRate()
         {
             xmemlSequenceMediaVideoTrackClipitemFileTimecodeRate rate = new xmemlSequenceMediaVideoTrackClipitemFileTimecodeRate();
@@ -570,20 +565,21 @@ namespace CreateAudioVideos.Builders
             return rate;
         }
 
-        private xmemlSequenceMediaVideoTrackClipitemFileRate CreateThumbNailRate()
+        private xmemlSequenceMediaAudioTrackClipitemFileMedia CreateTrackMedia()
         {
-            xmemlSequenceMediaVideoTrackClipitemFileRate rate = new xmemlSequenceMediaVideoTrackClipitemFileRate();
-            rate.timebase = 24;
-            rate.ntsc = "False";
-            return rate;
+            xmemlSequenceMediaAudioTrackClipitemFileMedia media = new xmemlSequenceMediaAudioTrackClipitemFileMedia();
+            media.audio = new xmemlSequenceMediaAudioTrackClipitemFileMediaAudio();
+            media.audio.channelcount = 2;
+            return media;
         }
 
-        private xmemlSequenceMediaVideoTrackClipitemRate CreateClipItemRate()
+        private xmemlSequenceMediaVideoTrack CreatTrack()
         {
-            xmemlSequenceMediaVideoTrackClipitemRate rate = new xmemlSequenceMediaVideoTrackClipitemRate();
-            rate.timebase = 24;
-            rate.ntsc = "False";
-            return rate;
+            xmemlSequenceMediaVideoTrack track = new xmemlSequenceMediaVideoTrack();
+            track.enabled = "true";
+            track.locked = "false";
+            track.clipitem = CreateThumbNail();
+            return track;
         }
 
         private xmemlSequenceMediaVideoFormat CreratFormat()
