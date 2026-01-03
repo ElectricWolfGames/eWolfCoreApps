@@ -9,8 +9,9 @@ namespace Titles
     public partial class MainWindow : Window
     {
         public SolidColorBrush _fillColor = new SolidColorBrush(Colors.Yellow);
-        private string _title = "Title";
+        private string _title = "Episode 2:\n\rLight and Track,\n\rand new Rolling Stock";
 
+        // 120 episode fton size.
         public MainWindow()
         {
             InitializeComponent();
@@ -95,7 +96,7 @@ namespace Titles
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Directory.CreateDirectory("E:\\temp\\Titles\\");
-            Uri path = new($"E:\\temp\\Titles\\{TitleLabel}.png");
+            Uri path = new($"E:\\temp\\Titles\\title.png");
             UIElement element = this.Content as UIElement;
             CaptureScreen(element, path);
         }
