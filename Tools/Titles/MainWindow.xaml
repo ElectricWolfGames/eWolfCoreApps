@@ -12,16 +12,34 @@
             <ColumnDefinition Width="250" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
 
-        <GroupBox Header="Data" Name="DataFieldTags" Grid.Column="0">
+        <GroupBox Header="Data" Name="DataFieldTags" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3">
             <Grid Background="LightGray">
-                <TextBox Margin="16,88,10,433" Text="{Binding TitleLabel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" />
-                <Label Content="Title" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.149,0.271" Width="49" Height="25" />
-                <Button Content="Save Image" HorizontalAlignment="Left" Margin="42,354,0,0" VerticalAlignment="Top" Click="Button_Click" />
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250" />
+                    <RowDefinition Height="250" />
+                    <RowDefinition Height="250" />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Content="Episode Title" Margin="16,20,173,0" VerticalAlignment="Top" Width="49" Height="25" />
+                <TextBox Grid.Row="0" Margin="16,50,10,19" Background="Azure" Text="{Binding TitleLabel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" />
+
+                <Label Grid.Row="1" Content="Main Title" Margin="10,10,136,0" VerticalAlignment="Top" Height="25" />
+                <TextBox Grid.Row="1" Margin="16,40,10,24" Background="Azure" Text="{Binding TitleLabelB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" />
+
+                <Button Grid.Row="2" Content="Save Image" Click="Button_Click" Height="32" Width="84" Margin="10,10,144,208" />
             </Grid>
         </GroupBox>
         <localTitles:OutlinedText Grid.Row="0" Grid.Column="1"
                 x:Name="ShowTitle" Fill="{Binding FillColor}" Font="Lemon" FontSize="90"
+                Bold="True" Stroke="Black" StrokeThickness="8" Text="{Binding TitleLabel}" Margin="5"
+                HorizontalAlignment="Center" VerticalAlignment="Top" />
+        <localTitles:OutlinedText Grid.Row="1" Grid.Column="1"
+                x:Name="ShowTitleB" Fill="{Binding FillColor}" Font="Lemon" FontSize="90"
                 Bold="True" Stroke="Black" StrokeThickness="8" Text="{Binding TitleLabel}" Margin="5"
                 HorizontalAlignment="Center" VerticalAlignment="Top" />
     </Grid>

@@ -9,7 +9,8 @@ namespace Titles
     public partial class MainWindow : Window
     {
         public SolidColorBrush _fillColor = new SolidColorBrush(Colors.Yellow);
-        private string _title = "Episode 2:\n\rLight and Track,\n\rand new Rolling Stock";
+        private string _titleA = "Episode 2:";
+        private string _titleB = "Light and Track,\n\rand new Rolling Stock";
 
         // 120 episode fton size.
         public MainWindow()
@@ -36,13 +37,25 @@ namespace Titles
 
         public string TitleLabel
         {
-            get { return _title; }
+            get { return _titleA; }
             set
             {
-                _title = value;
+                _titleA = value;
                 OnPropertyChanged(nameof(TitleLabel));
-                ShowTitle.Text = _title;
+                ShowTitle.Text = _titleA;
                 OnPropertyChanged(nameof(ShowTitle));
+            }
+        }
+
+        public string TitleLabelB
+        {
+            get { return _titleB; }
+            set
+            {
+                _titleB = value;
+                OnPropertyChanged(nameof(TitleLabelB));
+                ShowTitleB.Text = _titleB;
+                OnPropertyChanged(nameof(ShowTitleB));
             }
         }
 
