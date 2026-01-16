@@ -3,11 +3,14 @@ using System.IO;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Titles.Helpers;
 
 namespace Titles
 {
     public partial class MainWindow : Window
     {
+        // nice font - Montserrat Subrayada
+
         public SolidColorBrush _fillColor = new SolidColorBrush(Colors.Yellow);
         private string _titleA = "Episode 2:";
         private string _titleB = "Light and Track,\n\rand new Rolling Stock";
@@ -108,10 +111,14 @@ namespace Titles
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Directory.CreateDirectory("E:\\temp\\Titles\\");
-            Uri path = new($"E:\\temp\\Titles\\title.png");
-            UIElement element = this.Content as UIElement;
+            string basePath = "E:\\temp\\Titles\\";
+            Directory.CreateDirectory(basePath);
+            Uri path = new($"{basePath}\\title.png");
+
+            UIElement element = (UIElement)this.Content;
             CaptureScreen(element, path);
+
+            WindowsHelper.OpenFileExplorer(basePath);
         }
     }
 }
