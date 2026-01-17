@@ -12,8 +12,8 @@ public partial class MainWindow : Window
     // nice font - Montserrat Subrayada
 
     public SolidColorBrush _fillColor = new SolidColorBrush(Colors.Yellow);
-    private string _titleA = "Episode 2:";
-    private string _titleB = "Light and Track,\n\r+ Rolling Stock";
+    private string _titleA = "Episode 1:";
+    private string _titleB = "Naming of the layout...";
 
     public MainWindow()
     {
@@ -62,6 +62,54 @@ public partial class MainWindow : Window
 
     public static void CaptureScreen(UIElement source, Uri destination)
     {
+        /*if (source == null)
+            throw new ArgumentNullException(nameof(source));
+
+        // Ensure layout is complete
+        source.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+        source.Arrange(new Rect(source.DesiredSize));
+        source.UpdateLayout();
+
+        double width = source.RenderSize.Width;
+        double height = source.RenderSize.Height;
+
+        // Get DPI from visual
+        var dpi = VisualTreeHelper.GetDpi(source);
+
+        var renderTarget = new RenderTargetBitmap(
+            (int)Math.Ceiling(width * dpi.DpiScaleX),
+            (int)Math.Ceiling(height * dpi.DpiScaleY),
+            dpi.PixelsPerInchX,
+            dpi.PixelsPerInchY,
+            PixelFormats.Pbgra32);
+
+        var drawingVisual = new DrawingVisual();
+
+        using (var dc = drawingVisual.RenderOpen())
+        {
+            // IMPORTANT: draw transparent background explicitly
+            dc.DrawRectangle(
+                Brushes.Transparent,
+                null,
+                new Rect(0, 0, width, height));
+
+            dc.DrawRectangle(
+                new VisualBrush(source),
+                null,
+                new Rect(0, 0, width, height));
+        }
+
+        renderTarget.Render(drawingVisual);
+        renderTarget.Freeze();
+
+        //PNG encoder for creating PNG file
+        PngBitmapEncoder encoder = new();
+        encoder.Frames.Add(BitmapFrame.Create(renderTarget));
+        using FileStream stream = new
+            (destination.LocalPath, FileMode.Create,
+        FileAccess.Write);
+        encoder.Save(stream);*/
+        // --------------------------------------------------------------------
         try
         {
             double height, renderHeight, width, renderWidth;
@@ -112,7 +160,7 @@ public partial class MainWindow : Window
         Directory.CreateDirectory(basePath);
         Uri path = new($"{basePath}\\title.png");
 
-        UIElement element = (UIElement)GridTag;
+        UIElement element = (UIElement)this.Content;
         CaptureScreen(element, path);
 
         WindowsHelper.OpenFileExplorer(basePath);
