@@ -4,6 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ThumbnailCreator"
+        xmlns:WPFDrawing="clr-namespace:WPF.Drawing;assembly=WPF"
         mc:Ignorable="d"
         Title="MainWindow" Background="White"
         WindowStyle="None"
@@ -42,7 +43,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <local:OutlinedText Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+            <WPFDrawing:OutlinedText Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                 x:Name="ShowTitle" Fill="Yellow" FontSize="92" Font="Exo 2"
                 Bold="True" Stroke="#FF224444" StrokeThickness="4" Text="Demo Titles"
                 HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Width="Auto" />

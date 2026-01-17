@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Titles"
-        xmlns:localTitles="clr-namespace:WPF.Drawing;assembly=WPF"
+        xmlns:WPFDrawing="clr-namespace:WPF.Drawing;assembly=WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="2900" Background="Transparent">
     <Grid>
@@ -34,11 +34,11 @@
                 <Button Grid.Row="2" Content="Save Image" Click="Button_Click" Height="32" Width="84" Margin="10,10,144,208" />
             </Grid>
         </GroupBox>
-        <localTitles:OutlinedText Grid.Row="0" Grid.Column="1"
+        <WPFDrawing:OutlinedText Grid.Row="0" Grid.Column="1"
                 x:Name="ShowTitle" Fill="{Binding FillColor}" Font="Russo One" FontSize="150"
                 Bold="True" Stroke="Black" StrokeThickness="8" Text="{Binding TitleLabel}" Margin="5"
                 HorizontalAlignment="Center" VerticalAlignment="Top" />
-        <localTitles:OutlinedText Grid.Row="1" Grid.Column="1"
+        <WPFDrawing:OutlinedText Grid.Row="1" Grid.Column="1"
                 x:Name="ShowTitleB" Fill="{Binding FillColor}" Font="Russo One" FontSize="100"
                 Bold="True" Stroke="Black" StrokeThickness="8" Text="{Binding TitleLabelB}" Margin="5"
                 HorizontalAlignment="Center" VerticalAlignment="Top" />

@@ -4,6 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ThumbnailCreator"
+        xmlns:WPFDrawing="clr-namespace:WPF.Drawing;assembly=WPF"
         mc:Ignorable="d"
         Title="Thumbnails"
         Background="White"
@@ -39,7 +40,7 @@
         <Image x:Name="Image" Grid.Row="1" Grid.Column="0"
                Source="Images/Rudys Rarer Rcords.jpeg" OpacityMask="#FF000000" />
 
-        <local:OutlinedText Grid.Row="0" Grid.Column="0"
+        <WPFDrawing:OutlinedText Grid.Row="0" Grid.Column="0"
                 Grid.ColumnSpan="2" x:Name="ShowTitle" Fill="{Binding MyColor}" FontSize="100"
                 Bold="True" Stroke="Black" StrokeThickness="4" Text="Demo Text" Margin="0,0,0,0"
                 HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" Height="231" />
@@ -49,19 +50,19 @@
         <Image Grid.Row="1" Grid.Column="1" Visibility="{Binding IsSciFiShow, Converter={StaticResource BoolToVisConverter}}"
             Source="Art/sci fi.png" Margin="455,0,0,388" />
 
-        <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType"
+        <WPFDrawing:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType"
                     Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="RADIO"
                     Font="Lemon" Margin="122,79,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="396" Height="231" />
-        <local:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType2"
+        <WPFDrawing:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType2"
                     Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="COMEDY"
                     Font="Lemon" Margin="60,184,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />
 
-        <local:OutlinedText Grid.Row="1" x:Name="Show" Fill="White" FontSize="80"
+        <WPFDrawing:OutlinedText Grid.Row="1" x:Name="Show" Fill="White" FontSize="80"
             Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1" Width="Auto" Grid.Column="1" Margin="347,420,63,197" />
 
-        <local:OutlinedText Grid.Row="1" x:Name="EpisodeCount" Fill="Yellow" FontSize="80"
+        <WPFDrawing:OutlinedText Grid.Row="1" x:Name="EpisodeCount" Fill="Yellow" FontSize="80"
             Bold="True" Stroke="Black" StrokeThickness="4" Text="4 Episodes" Width="Auto" Margin="283,562,96,10" Grid.Column="1" />
         <Image Grid.Row="1" Grid.Column="1" Visibility="{Binding IsSciFiShow, Converter={StaticResource BoolToVisConverter}}"
             Source="/Art/sci fi.png" Margin="455,0,0,388" />
