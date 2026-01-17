@@ -15,11 +15,9 @@ public partial class MainWindow : Window
     private string _titleA = "Episode 2:";
     private string _titleB = "Light and Track,\n\r+ Rolling Stock";
 
-    // 120 episode fton size.
     public MainWindow()
     {
         InitializeComponent();
-
         DataContext = this;
     }
 
@@ -71,7 +69,6 @@ public partial class MainWindow : Window
             height = renderHeight = source.RenderSize.Height;
             width = renderWidth = source.RenderSize.Width;
 
-            //Specification for target bitmap like width/height pixel etc.
             RenderTargetBitmap renderTarget = new((int)renderWidth, (int)renderHeight, 0, 0,
                 PixelFormats.Pbgra32);
 
@@ -115,7 +112,7 @@ public partial class MainWindow : Window
         Directory.CreateDirectory(basePath);
         Uri path = new($"{basePath}\\title.png");
 
-        UIElement element = (UIElement)this.Content;
+        UIElement element = (UIElement)GridTag;
         CaptureScreen(element, path);
 
         WindowsHelper.OpenFileExplorer(basePath);

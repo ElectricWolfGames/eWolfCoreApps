@@ -34,8 +34,9 @@
                 <Button Grid.Row="2" Content="Save Image" Click="Button_Click" Height="32" Width="84" Margin="10,10,144,208" />
             </Grid>
         </GroupBox>
-        <WPFDrawing:Outlined2Text Grid.Row="0" Grid.Column="1"
-                x:Name="ShowTitle" Fill="{Binding FillColor}" Font="Russo One" FontSize="150"
+        <Grid Grid.Row="0" Grid.Column="1" Name="GridTag" Grid.RowSpan="2">
+            <WPFDrawing:Outlined2Text
+                x:Name="ShowTitle" Fill="{Binding FillColor}" Font="Russo One" FontSize="100"
                 Bold="True"
                 Text="{Binding TitleLabel}" Margin="5"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
@@ -43,14 +44,24 @@
                 StrokeThickness="7"
                 OuterStroke="White"
                 OuterStrokeThickness="10" />
-        <WPFDrawing:Outlined2Text Grid.Row="1" Grid.Column="1"
-                x:Name="ShowTitleB" Fill="{Binding FillColor}" Font="Russo One" FontSize="100"
+            <WPFDrawing:Outlined2Text
+                x:Name="ShowTitleB" Fill="{Binding FillColor}" Font="Russo One" FontSize="80"
                 Bold="True"
-                Text="{Binding TitleLabelB}" Margin="5"
+                Text="{Binding TitleLabelB}" Margin="0,380,0,0"
                 HorizontalAlignment="Center" VerticalAlignment="Top"
                 Stroke="Black"
                 StrokeThickness="6"
                 OuterStroke="White"
-                OuterStrokeThickness="8" />
+                OuterStrokeThickness="8" RenderTransformOrigin="0.5,0.5" Height="431">
+                <WPFDrawing:Outlined2Text.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </WPFDrawing:Outlined2Text.RenderTransform>
+            </WPFDrawing:Outlined2Text>
+        </Grid>
     </Grid>
 </Window>
