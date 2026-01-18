@@ -42,8 +42,9 @@
 
         <WPFDrawing:OutlinedText Grid.Row="0" Grid.Column="0"
                 Grid.ColumnSpan="2" x:Name="ShowTitle" Fill="{Binding MyColor}" FontSize="100"
-                Bold="True" Stroke="Black" StrokeThickness="4" Text="Demo Text" Margin="0,0,0,0"
-                HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" Height="231" />
+                Bold="True" Text="Demo Text" Margin="0,0,0,0"
+                HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" Height="231"
+                Stroke="Black" StrokeThickness="6" />
 
         <Image Grid.Row="1" Grid.Column="1" Visibility="{Binding IsComedyShow, Converter={StaticResource BoolToVisConverter}}"
             Source="Art/Face_With_Headphones-Small.png" Margin="455,0,0,388" />
