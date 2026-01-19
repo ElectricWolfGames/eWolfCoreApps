@@ -10,6 +10,8 @@ namespace ThumbnailCreator
     public partial class Thumbnails : Window, INotifyPropertyChanged
     {
         private bool _comedyShow = true;
+        private int _indexCurrent = 0;
+        private int _indexTotal;
         private SolidColorBrush _myColor = new SolidColorBrush(Colors.White);
         private bool _scifiShow = true;
         private ShowDetails _showDetails;
@@ -25,6 +27,32 @@ namespace ThumbnailCreator
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public int IndexCurrent
+        {
+            get => _indexCurrent;
+            set
+            {
+                if (_indexCurrent != value)
+                {
+                    _indexCurrent = value;
+                    OnPropertyChanged(nameof(IndexCurrent));
+                }
+            }
+        }
+
+        public int IndexTotal
+        {
+            get => _indexTotal;
+            set
+            {
+                if (_indexTotal != value)
+                {
+                    _indexTotal = value;
+                    OnPropertyChanged(nameof(IndexTotal));
+                }
+            }
+        }
 
         public bool IsComedyShow
         {
@@ -122,7 +150,20 @@ namespace ThumbnailCreator
             {
                 ShowType.Text = _showDetails.ShowTypeLineA;
                 ShowType2.Text = _showDetails.ShowTypeLineB;
-                Show.Text = $"SERIES {seriesCount}";
+                SeriesCountTag.Text = $"SERIES {seriesCount}";
+
+                IndexCurrent = seriesCount;
+
+                IndexTotal = _showDetails.Series;
+
+                if (_showDetails.Series == 1)
+                {
+                    IndexCounterTag.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    IndexCounterTag.Visibility = Visibility.Visible;
+                }
 
                 BitmapImage thumb = new BitmapImage();
                 thumb.BeginInit();
@@ -140,18 +181,18 @@ namespace ThumbnailCreator
 
                 if (_showDetails.CompleteShow)
                 {
-                    Show.Text = "Complete Show";
+                    SeriesCountTag.Text = "Complete Show";
                 }
 
                 if (_showDetails.ShortShow)
                 {
                     if (IsComedyShow)
                     {
-                        Show.Text = "Short";
+                        SeriesCountTag.Text = "Short";
                     }
                     else
                     {
-                        Show.Text = string.Empty;
+                        SeriesCountTag.Text = string.Empty;
                     }
                     EpisodeCount.Text = _showDetails.TitleLine2;
                 }
