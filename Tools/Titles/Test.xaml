@@ -7,25 +7,25 @@
         mc:Ignorable="d"
         Title="Test" Height="450" Width="800" Background="Green">
     <Grid>
-        <Border
-    CornerRadius="8"
-    Background="LightCyan"
-    BorderBrush="Black"
-    BorderThickness="1"
-    Padding="8"
-    HorizontalAlignment="Center"
-    VerticalAlignment="Center">
+        <Border Name="IndexTag"
+            CornerRadius="8"
+            Background="LightCyan"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Padding="8"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
 
             <StackPanel Orientation="Horizontal">
-                <TextBlock FontSize="16"
+                <TextBlock FontSize="16" FontFamily="Bahnschrift"
                     Text="{Binding Current}"
                     FontWeight="Bold" />
 
-                <TextBlock FontSize="16"
+                <TextBlock FontSize="16" FontFamily="Bahnschrift"
                     Text=" | "
-                    Margin="4,0" FontWeight="Bold" />
+                    Margin="4,0" FontWeight="Bold" FontStyle="Italic" />
 
-                <TextBlock FontSize="16"
+                <TextBlock FontSize="16" FontFamily="Bahnschrift"
                     Text="{Binding Total}"
                     Opacity="0.7" FontWeight="Bold" />
             </StackPanel>
