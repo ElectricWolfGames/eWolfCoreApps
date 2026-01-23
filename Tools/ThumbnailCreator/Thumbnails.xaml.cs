@@ -170,7 +170,7 @@ namespace ThumbnailCreator
                 thumb.UriSource = new Uri(_showDetails.Source, UriKind.Absolute);
                 thumb.CacheOption = BitmapCacheOption.OnLoad; // Ensures the file is closed after loading
                 thumb.EndInit();
-                Image.Source = thumb;
+                ImageTag.Source = thumb;
 
                 int episodecount = _showDetails.EpisodeDetails.Where(x => x.Title.Contains($"s{seriesCount.ToString("D2")}")).Count();
 
