@@ -1,4 +1,6 @@
-﻿namespace ThumbnailCreator.Data
+﻿using eWolfAudioShows.Data;
+
+namespace ThumbnailCreator.Data
 {
     public class ShowDetails
     {
@@ -11,6 +13,7 @@
         public bool ScifiShow { get; set; }
         public int Series { get; set; } = 2;
         public bool ShortShow { get; set; }
+        public List<ShowItem> ShowItems { get; set; } = [];
         public string ShowTypeLineA { get; set; } = "Radio";
         public string ShowTypeLineB { get; set; } = "Comedy";
         public string Source { get; set; }

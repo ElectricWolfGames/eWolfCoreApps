@@ -148,9 +148,17 @@ namespace ThumbnailCreator
 
             for (int seriesCount = 1; seriesCount < _showDetails.Series + 1; seriesCount++)
             {
+                var showMain = _showDetails.ShowItems[seriesCount - 1];
+
+                string showNumber = seriesCount.ToString();
+                if (!string.IsNullOrWhiteSpace(showMain.PartName))
+                {
+                    showNumber = $"{showMain.StartName}{showMain.PartName}";
+                }
+
                 ShowType.Text = _showDetails.ShowTypeLineA;
                 ShowType2.Text = _showDetails.ShowTypeLineB;
-                SeriesCountTag.Text = $"SERIES {seriesCount}";
+                SeriesCountTag.Text = $"{showMain.Name}";
 
                 IndexCurrent = seriesCount;
 
@@ -204,7 +212,8 @@ namespace ThumbnailCreator
                 UIElement element = this.Content as UIElement;
 
                 Directory.CreateDirectory(_showDetails.Path + "thumbnails\\");
-                Uri path = new(_showDetails.Path + $"thumbnails\\{seriesCount}.png");
+
+                Uri path = new(_showDetails.Path + $"thumbnails\\{showNumber}.png");
                 if (_showDetails.ShortShow)
                 {
                     path = new(_showDetails.Path + $"thumbnails\\{_showDetails.Title}.png");

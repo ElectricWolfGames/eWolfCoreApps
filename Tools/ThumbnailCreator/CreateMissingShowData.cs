@@ -51,12 +51,14 @@ namespace ThumbnailCreator
                 Description = show.Description,
                 ShowTypeLineA = "RADIO",
                 ShowTypeLineB = "COMEDY",
-                Series = show.Shows.Shows.Count(),
+                Series = show.Shows.ShowItems.Count,
                 ShortShow = false,
                 CompleteShow = false,
                 ComdeyShow = true,
                 ScifiShow = false
             };
+
+            ShowDetails.ShowItems = show.Shows.ShowItems;
 
             if (show.ShowTypes == eWolfAudioShows.Data.Enums.ShowTypes.SciFiDrama)
             {
@@ -65,7 +67,7 @@ namespace ThumbnailCreator
             }
 
             int count = 0;
-            foreach (var serie in show.Shows.Shows)
+            foreach (var serie in show.Shows.ShowItems)
             {
                 int epCount = 1;
                 count++;
