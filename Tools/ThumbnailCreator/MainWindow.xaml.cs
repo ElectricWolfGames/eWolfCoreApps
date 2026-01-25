@@ -104,6 +104,11 @@ namespace ThumbnailCreator
                 if (ep.Title.Length > 3)
                     subfolder = ep.Title.Substring(0, 3);
 
+                if (!string.IsNullOrWhiteSpace(ep.PartName))
+                {
+                    subfolder = $"s{ep.StartName}{ep.PartName}";
+                }
+
                 Directory.CreateDirectory(_showDetails.Path + subfolder);
 
                 if (_showDetails.ShortShow)

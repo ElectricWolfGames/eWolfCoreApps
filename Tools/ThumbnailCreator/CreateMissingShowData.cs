@@ -74,11 +74,24 @@ namespace ThumbnailCreator
                 foreach (var ep in serie.Episodes)
                 {
                     string name = $"s0{count}e0{epCount++}";
+                    if (!string.IsNullOrWhiteSpace(serie.PartName))
+                    {
+                        name = $"s{serie.StartName}e{ep.Number.ToString("00")}";
+                    }
 
                     EpisodeDetails s01e01 = new EpisodeDetails();
                     s01e01.TitleExtra = "";
+
                     s01e01.Title = $"{name} {ep.Name}";
+
                     s01e01.Description = ep.Description;
+                    s01e01.StartName = serie.StartName;
+                    s01e01.PartName = serie.PartName;
+                    /*if (!string.IsNullOrWhiteSpace(s01e01.PartName))
+                    {
+                        s01e01.Title = $"s{serie.StartName}{} {ep.Name}";
+                    }*/
+
                     ShowDetails.EpisodeDetails.Add(s01e01);
                 }
             }

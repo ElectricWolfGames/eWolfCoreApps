@@ -59,8 +59,8 @@
                     Font="Lemon" Margin="60,184,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Height="231" />
 
-        <WPFDrawing:OutlinedText Grid.Row="1" x:Name="SeriesCountTag" Fill="White" FontSize="80"
-            Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1" Width="Auto" Grid.Column="1" Margin="347,420,63,197" />
+        <WPFDrawing:OutlinedText Grid.Row="1" x:Name="SeriesCountTag" HorizontalAlignment="Center" Fill="White" FontSize="80"
+            Bold="True" Stroke="Black" StrokeThickness="4" Text="Series 1" Width="Auto" Margin="898,420,10,197" Grid.ColumnSpan="2" />
 
         <WPFDrawing:OutlinedText Grid.Row="1" x:Name="EpisodeCount" Fill="Yellow" FontSize="80"
             Bold="True" Stroke="Black" StrokeThickness="4" Text="4 Episodes" Width="Auto" Margin="283,562,96,10" Grid.Column="1" />
