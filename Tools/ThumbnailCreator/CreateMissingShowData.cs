@@ -44,7 +44,7 @@ namespace ThumbnailCreator
 
             ShowDetails = new ShowDetails
             {
-                Source = image, // TODO: need to load the image.
+                Source = image,
                 Title = show.Title,
                 TitleLine2 = show.TitleLine2,
                 Path = show.OutputPath,
@@ -55,10 +55,9 @@ namespace ThumbnailCreator
                 ShortShow = false,
                 CompleteShow = false,
                 ComdeyShow = true,
-                ScifiShow = false
+                ScifiShow = false,
+                ShowItems = show.Shows.ShowItems
             };
-
-            ShowDetails.ShowItems = show.Shows.ShowItems;
 
             if (show.ShowTypes == eWolfAudioShows.Data.Enums.ShowTypes.SciFiDrama)
             {
@@ -79,18 +78,16 @@ namespace ThumbnailCreator
                         name = $"s{serie.StartName}e{ep.Number.ToString("00")}";
                     }
 
-                    EpisodeDetails s01e01 = new EpisodeDetails();
-                    s01e01.TitleExtra = "";
-
-                    s01e01.Title = $"{name} {ep.Name}";
-
-                    s01e01.Description = ep.Description;
-                    s01e01.StartName = serie.StartName;
-                    s01e01.PartName = serie.PartName;
-                    /*if (!string.IsNullOrWhiteSpace(s01e01.PartName))
+                    EpisodeDetails s01e01 = new EpisodeDetails
                     {
-                        s01e01.Title = $"s{serie.StartName}{} {ep.Name}";
-                    }*/
+                        TitleExtra = "",
+
+                        Title = $"{name} {ep.Name}",
+
+                        Description = ep.Description,
+                        StartName = serie.StartName,
+                        PartName = serie.PartName
+                    };
 
                     ShowDetails.EpisodeDetails.Add(s01e01);
                 }
