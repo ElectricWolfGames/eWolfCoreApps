@@ -18,6 +18,13 @@
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
     </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#FF333333" Offset="0" />
+                <GradientStop Color="#FF223355" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="220" />
             <RowDefinition Height="*" />
@@ -27,7 +34,7 @@
             <ColumnDefinition Width="900" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Rectangle Grid.Row="0" Grid.Column="0"
+        <!--<Rectangle Grid.Row="0" Grid.Column="0"
                    Grid.ColumnSpan="2" Grid.RowSpan="3"
                    Width="1920"
                    Height="1112"
@@ -35,7 +42,8 @@
                    Stroke="#88112222"
                    StrokeThickness="2"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center" />
+                   VerticalAlignment="Center" />-->
+
         <Image x:Name="ImageTag" Grid.Row="1" Grid.Column="0"
                Source="Images/Rudys Rarer Rcords.jpeg" OpacityMask="#FF000000" />
 
@@ -43,14 +51,15 @@
                 Grid.ColumnSpan="2" x:Name="ShowTitle" Fill="{Binding MyColor}" FontSize="100"
                 Bold="True" Text="Demo Text My Title" Margin="0,20,0,0"
                 HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" Height="231"
-                Stroke="Black" StrokeThickness="6" Font="Russo One" />
+                Stroke="Black" StrokeThickness="6" Font="Lemon" />
 
         <Image Grid.Row="1" Grid.Column="1" Visibility="{Binding IsComedyShow, Converter={StaticResource BoolToVisConverter}}"
             Source="Art/Face_With_Headphones-Small.png" Margin="455,0,0,388" />
         <Image Grid.Row="1" Grid.Column="1" Visibility="{Binding IsSciFiShow, Converter={StaticResource BoolToVisConverter}}"
             Source="Art/sci fi.png" Margin="455,0,0,388" />
 
-        <WPFDrawing:OutlinedText Grid.Row="1" Grid.Column="1" x:Name="ShowType"
+        <WPFDrawing:OutlinedText Grid.Row="1" Grid.Column="1"
+                    x:Name="ShowType"
                     Fill="Yellow" FontSize="94" Bold="True" Stroke="Black" StrokeThickness="3" Text="RADIO"
                     Font="Lemon" Margin="122,79,0,0"
             HorizontalAlignment="Left" VerticalAlignment="Top" Width="396" Height="231" />
@@ -66,7 +75,7 @@
             Bold="True" Stroke="Black" StrokeThickness="4" Text="4 Episodes" Width="Auto" Margin="283,562,96,10" Grid.Column="1" />
         <Image Grid.Row="1" Grid.Column="1" Visibility="{Binding IsSciFiShow, Converter={StaticResource BoolToVisConverter}}"
             Source="/Art/sci fi.png" Margin="455,0,0,388" />
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,60">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="256" />
                 <ColumnDefinition Width="*" />
