@@ -34,16 +34,6 @@
             <ColumnDefinition Width="900" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <!--<Rectangle Grid.Row="0" Grid.Column="0"
-                   Grid.ColumnSpan="2" Grid.RowSpan="3"
-                   Width="1920"
-                   Height="1112"
-                   Fill="#FF222222"
-                   Stroke="#88112222"
-                   StrokeThickness="2"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center" />-->
-
         <Image x:Name="ImageTag" Grid.Row="1" Grid.Column="0"
                Source="Images/Rudys Rarer Rcords.jpeg" OpacityMask="#FF000000" />
 
