@@ -1,5 +1,6 @@
 ﻿using eWolfAudioShows;
 using eWolfAudioShows.Interfaces;
+using eWolfAudioShows.Shows_OLD;
 using System.IO;
 using ThumbnailCreator.Data;
 
@@ -33,12 +34,12 @@ namespace ThumbnailCreator
             }
         }
 
-        private static List<IAudioShow> GetAll()
+        private static List<IAudioShowOLD> GetAll()
         {
             return Holder.GetAll();
         }
 
-        private void SetShow(IAudioShow show)
+        private void SetShow(IAudioShowOLD show)
         {
             string image = $"{show.OutputPath}\\Ref\\{show.Title}.jpeg";
 
