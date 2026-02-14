@@ -12,12 +12,13 @@ namespace ThumbnailCreator
 
         public void Do()
         {
-            var shows = GetAll();
+            var shows = GetAllEpisodesShow();
             foreach (var show in shows)
             {
                 if (string.IsNullOrWhiteSpace(show.OutputPath))
                     continue;
 
+                /*
                 string path = $"{show.OutputPath}\\thumbnails\\";
                 Directory.CreateDirectory(path);
 
@@ -30,13 +31,13 @@ namespace ThumbnailCreator
 
                 SetShow(show);
                 MainWindow mainWindow = new MainWindow(ShowDetails);
-                mainWindow.ShowDialog();
+                mainWindow.ShowDialog();*/
             }
         }
 
-        private static List<IAudioShowOLD> GetAll()
+        private static List<IAudioEpisodesShow> GetAllEpisodesShow()
         {
-            return Holder.GetAll();
+            return Holder.GetAllEpisodesShow();
         }
 
         private void SetShow(IAudioShowOLD show)
