@@ -12,12 +12,28 @@ namespace ThumbnailCreator
 
         public void Do()
         {
-            var shows = GetAllEpisodesShow();
+            List<IAudioEpisodesShow> shows = GetAllEpisodesShow();
             foreach (var show in shows)
             {
                 if (string.IsNullOrWhiteSpace(show.OutputPath))
                     continue;
 
+                string showPath = show.OutputPath;
+
+                foreach (var episode in show.Episodes.EpisodeItems)
+                {
+                    if (!string.IsNullOrWhiteSpace(episode.OutputPath))
+                    {
+                        Directory.CreateDirectory(Path.Combine(showPath, episode.OutputPath));
+                    }
+
+                    AudioEpisodesShow audioEpisodesShow = new AudioEpisodesShow();
+
+                    audioEpisodesShow.ShowTitle = episode.Name;
+                    audioEpisodesShow.OutputPath = Path.Combine(showPath, episode.OutputPath);
+
+                    audioEpisodesShow.ShowDialog();
+                }
                 /*
                 string path = $"{show.OutputPath}\\thumbnails\\";
                 Directory.CreateDirectory(path);
