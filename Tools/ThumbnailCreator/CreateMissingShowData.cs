@@ -45,22 +45,21 @@ namespace ThumbnailCreator
                     };
 
                     audioEpisodesShow.ShowDialog();
+
+                    AudioEpisodesThumbnails audioEpisodesThumbnails = new()
+                    {
+                        SeriesTitle = show.Title,
+                        ShowTitle = $"{episode.Name}",
+                        OutputPath = Path.Combine(showPath, episode.OutputPath),
+                        IndexCurrent = count,
+                        IndexTotal = show.Episodes.EpisodeItems.Count,
+                        ShowDescription = episode.Description
+                    };
+
+                    audioEpisodesThumbnails.ShowDialog();
+
                     count++;
                 }
-                /*
-                string path = $"{show.OutputPath}\\thumbnails\\";
-                Directory.CreateDirectory(path);
-
-                if (File.Exists($"{path}\\1.png"))
-                    continue;
-
-                string image = $"{show.OutputPath}Ref\\{show.Title}.jpeg";
-                if (!File.Exists(image))
-                    continue;
-
-                SetShow(show);
-                MainWindow mainWindow = new MainWindow(ShowDetails);
-                mainWindow.ShowDialog();*/
             }
         }
 

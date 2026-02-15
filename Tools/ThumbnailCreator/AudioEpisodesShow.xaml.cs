@@ -4,8 +4,6 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using ThumbnailCreator.Data;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ThumbnailCreator
 {
