@@ -28,6 +28,12 @@ namespace ThumbnailCreator
                         Directory.CreateDirectory(Path.Combine(showPath, episode.OutputPath));
                     }
 
+                    if (count == 13)
+                    {
+                        int i = 0;
+                        i++;
+                    }
+
                     AudioEpisodesShow audioEpisodesShow = new()
                     {
                         SeriesTitle = show.Title,

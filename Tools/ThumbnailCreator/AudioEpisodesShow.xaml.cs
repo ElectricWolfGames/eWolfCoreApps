@@ -205,7 +205,7 @@ namespace ThumbnailCreator
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Uri path = new(_outputPath + $"{ShowTitle}.png");
+            Uri path = new(Path.Combine(_outputPath, $"{ShowTitle}.png"));
             UIElement element = this.Content as UIElement;
             CaptureScreen(element, path);
             Close();
