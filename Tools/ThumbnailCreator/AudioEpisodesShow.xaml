@@ -27,20 +27,53 @@
             <ColumnDefinition Width="32" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="220" />
+            <RowDefinition Height="200" />
             <RowDefinition Height="*" />
             <RowDefinition Height="32" />
         </Grid.RowDefinitions>
 
         <WPFDrawing:OutlinedText Grid.Row="0" Grid.Column="1"
-                x:Name="ShowTitleTag" Fill="White" FontSize="92" Font="Exo 2"
+                x:Name="SeriesTitleTag" Fill="Yellow" FontSize="70" Font="Exo 2"
+                Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="{Binding SeriesTitle}"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto" />
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <WPFDrawing:OutlinedText
+                x:Name="ShowTitleTag" Fill="White" FontSize="100" Font="Exo 2"
                 Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="{Binding ShowTitle}"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto" />
 
-        <TextBlock x:Name="EpisodeTitle" HorizontalAlignment="Center" FontSize="48" TextWrapping="Wrap"
-                   Text="TextBlock" VerticalAlignment="Top" Height="234" Width="962"
-                   Foreground="#FFFFFFFF" FontFamily="Bowlby One SC" Margin="0,186,0,0" Grid.RowSpan="2" />
-        <TextBlock Grid.Row="1" x:Name="EpisodeDescription" HorizontalAlignment="Center" FontSize="32" Margin="0,125,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="446" Width="878" Foreground="White" />
-        <TextBlock Grid.Row="1" Grid.Column="0" x:Name="ShowDescription" HorizontalAlignment="Left" FontSize="28" Margin="51,571,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="239" Width="902" Foreground="White" Grid.RowSpan="2" />
+            <TextBlock x:Name="ShowDescirption" FontSize="50" TextWrapping="Wrap"
+                   Text="{Binding ShowDescription}" Height="470" Width="1580"
+                   Foreground="#FFFFFFFF" FontFamily="Exo 2" Margin="0,186,0,0" Grid.RowSpan="2" />
+        </StackPanel>
+
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,40,0,50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="256" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="256" />
+            </Grid.ColumnDefinitions>
+            <Border Grid.Row="0" Grid.Column="2" Name="IndexCounterTag"
+        CornerRadius="8"
+        Background="DarkGray"
+        BorderBrush="Black"
+        BorderThickness="2"
+        Padding="8"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="48" FontFamily="Bahnschrift"
+                    Text="{Binding IndexCurrent}"
+                    FontWeight="Bold" />
+                    <TextBlock FontSize="48" FontFamily="Bahnschrift"
+                    Text=" | "
+                    Margin="4,0" FontWeight="Bold" FontStyle="Italic" />
+                    <TextBlock FontSize="48" FontFamily="Bahnschrift"
+                    Text="{Binding IndexTotal}"
+                    Opacity="1" FontWeight="Bold" />
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

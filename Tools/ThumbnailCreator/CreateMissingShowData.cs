@@ -20,6 +20,7 @@ namespace ThumbnailCreator
 
                 string showPath = show.OutputPath;
 
+                int count = 1;
                 foreach (var episode in show.Episodes.EpisodeItems)
                 {
                     if (!string.IsNullOrWhiteSpace(episode.OutputPath))
@@ -27,12 +28,18 @@ namespace ThumbnailCreator
                         Directory.CreateDirectory(Path.Combine(showPath, episode.OutputPath));
                     }
 
-                    AudioEpisodesShow audioEpisodesShow = new AudioEpisodesShow();
-
-                    audioEpisodesShow.ShowTitle = episode.Name;
-                    audioEpisodesShow.OutputPath = Path.Combine(showPath, episode.OutputPath);
+                    AudioEpisodesShow audioEpisodesShow = new()
+                    {
+                        SeriesTitle = show.Title,
+                        ShowTitle = $"{count}). {episode.Name}",
+                        OutputPath = Path.Combine(showPath, episode.OutputPath),
+                        IndexCurrent = count,
+                        IndexTotal = show.Episodes.EpisodeItems.Count,
+                        ShowDescription = episode.Description
+                    };
 
                     audioEpisodesShow.ShowDialog();
+                    count++;
                 }
                 /*
                 string path = $"{show.OutputPath}\\thumbnails\\";

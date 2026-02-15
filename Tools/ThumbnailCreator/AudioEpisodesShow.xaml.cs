@@ -12,7 +12,11 @@ namespace ThumbnailCreator
     public partial class AudioEpisodesShow : Window, INotifyPropertyChanged
 
     {
+        private int _indexCurrent = 0;
+        private int _indexTotal;
         private string _outputPath = "";
+        private string _seriesTitle = "";
+        private string _showDescription = "";
         private string _showTitle = "Show Title";
 
         public AudioEpisodesShow()
@@ -26,12 +30,58 @@ namespace ThumbnailCreator
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public int IndexCurrent
+        {
+            get => _indexCurrent;
+            set
+            {
+                if (_indexCurrent != value)
+                {
+                    _indexCurrent = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public int IndexTotal
+        {
+            get => _indexTotal;
+            set
+            {
+                if (_indexTotal != value)
+                {
+                    _indexTotal = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         public string OutputPath
         {
             get { return _outputPath; }
             set
             {
                 _outputPath = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string SeriesTitle
+        {
+            get { return _seriesTitle; }
+            set
+            {
+                _seriesTitle = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string ShowDescription
+        {
+            get { return _showDescription; }
+            set
+            {
+                _showDescription = value;
                 OnPropertyChanged();
             }
         }
