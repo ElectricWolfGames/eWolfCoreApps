@@ -2,7 +2,6 @@
 using eWolfAudioShows.Interfaces;
 using eWolfAudioShows.Shows_OLD;
 using System.IO;
-using System.Windows.Shapes;
 using ThumbnailCreator.Data;
 
 namespace ThumbnailCreator
@@ -35,7 +34,7 @@ namespace ThumbnailCreator
                     {
                         AudioEpisodesShow audioEpisodesShow = new()
                         {
-                            SeriesTitle = $"{show.Title} {show.TitleLine2}",
+                            SeriesTitle = $"{show.Title.ToUpper()} {show.TitleLine2.ToUpper()}",
                             ShowTitle = $"{count}). {episode.Name}",
                             OutputPath = System.IO.Path.Combine(showPath, episode.OutputPath),
                             IndexCurrent = count,
@@ -47,8 +46,8 @@ namespace ThumbnailCreator
 
                         AudioEpisodesThumbnails audioEpisodesThumbnails = new()
                         {
-                            SeriesTitle = show.Title,
-                            SeriesTitleLine2 = show.TitleLine2,
+                            SeriesTitle = show.Title.ToUpper(),
+                            SeriesTitleLine2 = show.TitleLine2.ToUpper(),
                             ShowTitle = $"{episode.Name}",
                             OutputPath = System.IO.Path.Combine(showPath, episode.OutputPath),
                             IndexCurrent = count,
