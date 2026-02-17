@@ -27,38 +27,50 @@
             <ColumnDefinition Width="32" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="200" />
+            <RowDefinition Height="400" />
             <RowDefinition Height="*" />
             <RowDefinition Height="32" />
         </Grid.RowDefinitions>
 
-        <WPFDrawing:OutlinedText Grid.Row="0" Grid.Column="1"
-                x:Name="SeriesTitleTag" Fill="Yellow" FontSize="70" Font="Exo 2"
-                Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="{Binding SeriesTitle}"
-                HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto" />
-
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Border Height="50" />
+            <WPFDrawing:OutlinedText Grid.Row="0" Grid.Column="1"
+                    x:Name="SeriesTitleTag" Fill="Yellow" FontSize="140" Font="Exo 2"
+                    Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="{Binding SeriesTitle}"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto" />
+            <WPFDrawing:OutlinedText Grid.Row="0" Grid.Column="1"
+                    x:Name="SeriesTitleLine2Tag" Fill="Yellow" FontSize="90" Font="Exo 2"
+                    Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="{Binding SeriesTitleLine2}"
+                    HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto" />
+        </StackPanel>
         <StackPanel Grid.Row="1" Grid.Column="1">
             <WPFDrawing:OutlinedText
-                x:Name="ShowTitleTag" Fill="White" FontSize="100" Font="Exo 2"
+                x:Name="ShowTitleTag" Fill="White" FontSize="110" Font="Exo 2"
                 Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="{Binding ShowTitle}"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto" />
 
-            <Border Height="250" />
+            <Border Height="20" />
             <WPFDrawing:OutlinedText Grid.Row="0" Grid.Column="1"
-                Fill="Yellow" FontSize="120" Font="Exo 2"
-                Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="Audio Drama"
+                Fill="Wheat" FontSize="80" Font="Exo 2"
+                Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="Full Story"
+                HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto" />
+
+            <Border Height="100" />
+            <WPFDrawing:OutlinedText Grid.Row="0" Grid.Column="1"
+                Fill="Yellow" FontSize="100" Font="Exo 2"
+                Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="SUPERNATURAL"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto" />
             <WPFDrawing:OutlinedText Grid.Row="0" Grid.Column="1"
-                Fill="Yellow" FontSize="120" Font="Exo 2"
-                Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="SUPERNATURAL"
+                Fill="Yellow" FontSize="100" Font="Exo 2"
+                Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="Audio Drama"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto" />
         </StackPanel>
 
-        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,40,0,50">
+        <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,20,0,150">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="256" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="256" />
+                <ColumnDefinition Width="320" />
             </Grid.ColumnDefinitions>
             <Border Grid.Row="0" Grid.Column="2" Name="IndexCounterTag"
         CornerRadius="8"
@@ -69,13 +81,13 @@
         HorizontalAlignment="Center"
         VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="48" FontFamily="Bahnschrift"
+                    <TextBlock FontSize="90" FontFamily="Bahnschrift"
                     Text="{Binding IndexCurrent}"
                     FontWeight="Bold" />
-                    <TextBlock FontSize="48" FontFamily="Bahnschrift"
+                    <TextBlock FontSize="90" FontFamily="Bahnschrift"
                     Text=" | "
                     Margin="4,0" FontWeight="Bold" FontStyle="Italic" />
-                    <TextBlock FontSize="48" FontFamily="Bahnschrift"
+                    <TextBlock FontSize="90" FontFamily="Bahnschrift"
                     Text="{Binding IndexTotal}"
                     Opacity="1" FontWeight="Bold" />
                 </StackPanel>

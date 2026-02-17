@@ -36,7 +36,7 @@ namespace ThumbnailCreator
 
                     AudioEpisodesShow audioEpisodesShow = new()
                     {
-                        SeriesTitle = show.Title,
+                        SeriesTitle = $"{show.Title} {show.TitleLine2}",
                         ShowTitle = $"{count}). {episode.Name}",
                         OutputPath = Path.Combine(showPath, episode.OutputPath),
                         IndexCurrent = count,
@@ -49,6 +49,7 @@ namespace ThumbnailCreator
                     AudioEpisodesThumbnails audioEpisodesThumbnails = new()
                     {
                         SeriesTitle = show.Title,
+                        SeriesTitleLine2 = show.TitleLine2,
                         ShowTitle = $"{episode.Name}",
                         OutputPath = Path.Combine(showPath, episode.OutputPath),
                         IndexCurrent = count,

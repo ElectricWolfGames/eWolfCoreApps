@@ -13,6 +13,7 @@ public partial class AudioEpisodesThumbnails : Window, INotifyPropertyChanged
     private int _indexTotal;
     private string _outputPath = "";
     private string _seriesTitle = "";
+    private string _seriesTitleLine2 = "";
     private string _showDescription = "";
     private string _showTitle = "Show Title";
 
@@ -69,6 +70,16 @@ public partial class AudioEpisodesThumbnails : Window, INotifyPropertyChanged
         set
         {
             _seriesTitle = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public string SeriesTitleLine2
+    {
+        get { return _seriesTitleLine2; }
+        set
+        {
+            _seriesTitleLine2 = value;
             OnPropertyChanged();
         }
     }
