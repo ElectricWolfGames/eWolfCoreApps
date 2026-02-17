@@ -2,6 +2,7 @@
 using eWolfAudioShows.Interfaces;
 using eWolfAudioShows.Shows_OLD;
 using System.IO;
+using System.Windows.Shapes;
 using ThumbnailCreator.Data;
 
 namespace ThumbnailCreator
@@ -25,39 +26,38 @@ namespace ThumbnailCreator
                 {
                     if (!string.IsNullOrWhiteSpace(episode.OutputPath))
                     {
-                        Directory.CreateDirectory(Path.Combine(showPath, episode.OutputPath));
+                        Directory.CreateDirectory(System.IO.Path.Combine(showPath, episode.OutputPath));
                     }
 
-                    if (count == 13)
+                    string pathTest = System.IO.Path.Combine(showPath, episode.OutputPath, $"{episode.Name}_Thumbnail.png");
+
+                    if (!File.Exists(pathTest))
                     {
-                        int i = 0;
-                        i++;
+                        AudioEpisodesShow audioEpisodesShow = new()
+                        {
+                            SeriesTitle = $"{show.Title} {show.TitleLine2}",
+                            ShowTitle = $"{count}). {episode.Name}",
+                            OutputPath = System.IO.Path.Combine(showPath, episode.OutputPath),
+                            IndexCurrent = count,
+                            IndexTotal = show.Episodes.EpisodeItems.Count,
+                            ShowDescription = episode.Description
+                        };
+
+                        audioEpisodesShow.ShowDialog();
+
+                        AudioEpisodesThumbnails audioEpisodesThumbnails = new()
+                        {
+                            SeriesTitle = show.Title,
+                            SeriesTitleLine2 = show.TitleLine2,
+                            ShowTitle = $"{episode.Name}",
+                            OutputPath = System.IO.Path.Combine(showPath, episode.OutputPath),
+                            IndexCurrent = count,
+                            IndexTotal = show.Episodes.EpisodeItems.Count,
+                            ShowDescription = episode.Description
+                        };
+
+                        audioEpisodesThumbnails.ShowDialog();
                     }
-
-                    AudioEpisodesShow audioEpisodesShow = new()
-                    {
-                        SeriesTitle = $"{show.Title} {show.TitleLine2}",
-                        ShowTitle = $"{count}). {episode.Name}",
-                        OutputPath = Path.Combine(showPath, episode.OutputPath),
-                        IndexCurrent = count,
-                        IndexTotal = show.Episodes.EpisodeItems.Count,
-                        ShowDescription = episode.Description
-                    };
-
-                    audioEpisodesShow.ShowDialog();
-
-                    AudioEpisodesThumbnails audioEpisodesThumbnails = new()
-                    {
-                        SeriesTitle = show.Title,
-                        SeriesTitleLine2 = show.TitleLine2,
-                        ShowTitle = $"{episode.Name}",
-                        OutputPath = Path.Combine(showPath, episode.OutputPath),
-                        IndexCurrent = count,
-                        IndexTotal = show.Episodes.EpisodeItems.Count,
-                        ShowDescription = episode.Description
-                    };
-
-                    audioEpisodesThumbnails.ShowDialog();
 
                     count++;
                 }

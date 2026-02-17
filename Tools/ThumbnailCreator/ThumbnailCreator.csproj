@@ -16,20 +16,6 @@
     <None Remove="backgound Eels.png" />
     <None Remove="Image1.png" />
     <None Remove="Image2.png" />
-    <None Remove="Images\MM\1 Lion.jpeg" />
-    <None Remove="Images\MM\3 Goalkeeper Joe.jpeg" />
-    <None Remove="Images\MM\3 The Magna Charta.jpeg" />
-    <None Remove="Images\MM\4 The Battle of Hastings.jpeg" />
-    <None Remove="Images\MM\6 Jonah and the Grampus.jpeg" />
-    <None Remove="Images\MM\7 Gunner Joe.jpeg" />
-    <None Remove="Images\Robin Wendys Wet Weekends.jpeg" />
-    <None Remove="Images\Rudys Rarer Rcords.jpeg" />
-    <None Remove="Images\Scifi\05 Deep Station Emerald.jpeg" />
-    <None Remove="Images\Scifi\06 Leviathan 99.jpeg" />
-    <None Remove="Images\Scifi\625Y.jpeg" />
-    <None Remove="Images\Scifi\A Plague Of Goodness.jpeg" />
-    <None Remove="Images\Scifi\Aliens of the Mind.jpeg" />
-    <None Remove="Images\Scifi\Host Planet Earth.jpeg" />
     <None Remove="IMG_6866 2024-07-17 GrosmontStation NYMR Tracks.JPG" />
     <None Remove="OIG4.jpeg" />
     <None Remove="OIG4.M0OmUIZ1Sg.LJ.jpeg" />
@@ -50,25 +36,7 @@
     <Resource Include="Art\Face_With_Headphones-Small.jpeg" />
     <Resource Include="Art\Face_With_Headphones-Small.png" />
     <Resource Include="Art\sci fi.png" />
-    <Resource Include="Images\MM\1 Lion.jpeg" />
-    <Resource Include="Images\MM\3 Goalkeeper Joe.jpeg" />
-    <Resource Include="Images\MM\3 The Magna Charta.jpeg" />
-    <Resource Include="Images\MM\4 The Battle of Hastings.jpeg" />
-    <Resource Include="Images\MM\5 Three Ha pence a foot.jpeg" />
-    <Resource Include="Images\MM\7 Gunner Joe.jpeg" />
     <Resource Include="Images\Pic.jpeg" />
-    <Resource Include="Images\Robin Wendys Wet Weekends.jpeg" />
-    <Resource Include="Images\Rudys Rarer Rcords.jpeg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\MM\6 Jonah and the Grampus.jpeg" />
-    <Resource Include="Images\Scifi\05 Deep Station Emerald.jpeg" />
-    <Resource Include="Images\Scifi\06 Leviathan 99.jpeg" />
-    <Resource Include="Images\Scifi\625Y.jpeg" />
-    <Resource Include="Images\Scifi\A Plague Of Goodness.jpeg" />
-    <Resource Include="Images\Scifi\Aliens of the Mind.jpeg" />
-    <Resource Include="Images\Scifi\Host Planet Earth.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
