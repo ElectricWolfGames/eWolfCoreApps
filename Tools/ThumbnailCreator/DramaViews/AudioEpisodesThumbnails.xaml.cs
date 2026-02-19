@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 using System.Windows;
 using ThumbnailCreator.Helpers;
 
-namespace ThumbnailCreator;
+namespace ThumbnailCreator.DramaViews;
 
 public partial class AudioEpisodesThumbnails : Window, INotifyPropertyChanged
 

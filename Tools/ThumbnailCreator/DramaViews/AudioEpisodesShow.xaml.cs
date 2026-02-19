@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
-namespace ThumbnailCreator;
+namespace ThumbnailCreator.DramaViews;
 
 public partial class AudioEpisodesShow : Window, INotifyPropertyChanged
 

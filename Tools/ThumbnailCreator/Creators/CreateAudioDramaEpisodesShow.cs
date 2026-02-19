@@ -1,7 +1,7 @@
 ﻿using eWolfAudioShows;
 using eWolfAudioShows.Interfaces;
 using System.IO;
-using ThumbnailCreator;
+using ThumbnailCreator.DramaViews;
 
 namespace ThumbnailCreator.Creators;
 
@@ -9,7 +9,7 @@ internal class CreateAudioDramaEpisodesShow
 {
     public void CreateThumbnails()
     {
-        List<IAudioEpisodesShow> shows = GetAllEpisodesShow();
+        List<IAudioEpisodesShow> shows = Holder.GetAllEpisodesShow();
         foreach (var show in shows)
         {
             if (string.IsNullOrWhiteSpace(show.OutputPath))
@@ -58,10 +58,5 @@ internal class CreateAudioDramaEpisodesShow
                 count++;
             }
         }
-    }
-
-    private static List<IAudioEpisodesShow> GetAllEpisodesShow()
-    {
-        return Holder.GetAllEpisodesShow();
     }
 }
