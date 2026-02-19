@@ -1,17 +1,20 @@
 ﻿using System.Windows;
+using ThumbnailCreator.Creators;
 
-namespace ThumbnailCreator
+namespace ThumbnailCreator;
+
+public partial class Runner : Window
 {
-    public partial class Runner : Window
+    public Runner()
     {
-        public Runner()
-        {
-            InitializeComponent();
+        InitializeComponent();
 
-            CreateMissingShowData createMissingShowData = new CreateMissingShowData();
-            createMissingShowData.Do();
+        CreateAudioDramaEpisodesShow createMissingShowData = new CreateAudioDramaEpisodesShow();
+        createMissingShowData.CreateThumbnails();
 
-            Close();
-        }
+        CreateAudioDramaOneOffShow createOneOffShowsData = new CreateAudioDramaOneOffShow();
+        createOneOffShowsData.CreateThumbnails();
+
+        Close();
     }
 }
