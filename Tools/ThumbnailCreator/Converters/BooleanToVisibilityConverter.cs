@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Data;
 
-namespace ThumbnailCreator;
+namespace ThumbnailCreator.Converters;
 
 public class BooleanToVisibilityConverter : IValueConverter
 {

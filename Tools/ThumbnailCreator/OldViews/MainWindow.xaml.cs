@@ -4,7 +4,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using ThumbnailCreator.Data;
 
-namespace ThumbnailCreator;
+namespace ThumbnailCreator.OldViews;
 
 public partial class MainWindow : Window
 {

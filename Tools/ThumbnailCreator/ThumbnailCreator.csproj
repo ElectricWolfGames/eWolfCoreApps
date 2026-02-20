@@ -40,7 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Thumbnails.xaml">
+    <Page Update="OldViews\Thumbnails.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
