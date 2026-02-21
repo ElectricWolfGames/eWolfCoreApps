@@ -9,18 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="10 Life after Life.jpeg" />
     <None Remove="Art\Face_With_Headphones-Small.jpeg" />
     <None Remove="Art\Face_With_Headphones-Small.png" />
     <None Remove="Art\sci fi.png" />
-    <None Remove="backgound Eels.png" />
-    <None Remove="Image1.png" />
-    <None Remove="Image2.png" />
-    <None Remove="IMG_6866 2024-07-17 GrosmontStation NYMR Tracks.JPG" />
-    <None Remove="OIG4.jpeg" />
-    <None Remove="OIG4.M0OmUIZ1Sg.LJ.jpeg" />
-    <None Remove="starmap_random_2020_4k_gal_print.jpg" />
-    <None Remove="Tickets Please.png" />
   </ItemGroup>
 
   <ItemGroup>

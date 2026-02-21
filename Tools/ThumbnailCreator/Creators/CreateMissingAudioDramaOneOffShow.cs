@@ -1,4 +1,5 @@
-﻿using eWolfAudioShows;
+﻿using CommonCode;
+using eWolfAudioShows;
 using eWolfAudioShows.Interfaces;
 using System.IO;
 using ThumbnailCreator.DramaAudioEpisodes;
@@ -17,7 +18,7 @@ internal class CreateAudioDramaOneOffShow
 
             string showPath = show.OutputPath;
 
-            string pathTest = Path.Combine(showPath, $"{show.Title}_Thumbnail.png");
+            string pathTest = Path.Combine(showPath, $"{StringsHelper.MakeFileNameSafe(show.Title)}_thumbnail.png");
 
             if (!File.Exists(pathTest))
             {
@@ -31,9 +32,11 @@ internal class CreateAudioDramaOneOffShow
 
                 audioEpisodesShow.ShowDialog();
 
-                AudioEpisodesThumbnails audioEpisodesThumbnails = new()
+                AudioDramaOneOffThumbnail audioEpisodesThumbnails = new()
                 {
-                    ShowTitle = $"{show.Title.ToUpper()} {show.TitleLine2.ToUpper()}",
+                    ShowTitle = show.Title.ToUpper(),
+                    ShowTitleLine2 = show.TitleLine2,
+                    StoryType = show.StoryType,
                     OutputPath = Path.Combine(showPath),
                     ShowDescription = show.Description
                 };
