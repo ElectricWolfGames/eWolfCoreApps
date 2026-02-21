@@ -1,23 +1,26 @@
-﻿using System.ComponentModel;
+﻿using CommonCode;
+using eWolfCommon.Helpers;
+using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using ThumbnailCreator.Helpers;
 
-namespace ThumbnailCreator.DramaViews;
+namespace ThumbnailCreator.DramaAudioEpisodes;
 
-public partial class AudioEpisodesThumbnails : Window, INotifyPropertyChanged
+public partial class AudioDramaOneOffShow : Window, INotifyPropertyChanged
 
 {
     private int _indexCurrent = 0;
     private int _indexTotal;
     private string _outputPath = "";
-    private string _seriesTitle = "";
-    private string _seriesTitleLine2 = "";
     private string _showDescription = "";
     private string _showTitle = "Show Title";
+    private string _showTitleLine2 = string.Empty;
 
-    public AudioEpisodesThumbnails()
+    public AudioDramaOneOffShow()
     {
         InitializeComponent();
 
@@ -64,26 +67,6 @@ public partial class AudioEpisodesThumbnails : Window, INotifyPropertyChanged
         }
     }
 
-    public string SeriesTitle
-    {
-        get { return _seriesTitle; }
-        set
-        {
-            _seriesTitle = value;
-            OnPropertyChanged();
-        }
-    }
-
-    public string SeriesTitleLine2
-    {
-        get { return _seriesTitleLine2; }
-        set
-        {
-            _seriesTitleLine2 = value;
-            OnPropertyChanged();
-        }
-    }
-
     public string ShowDescription
     {
         get { return _showDescription; }
@@ -104,6 +87,16 @@ public partial class AudioEpisodesThumbnails : Window, INotifyPropertyChanged
         }
     }
 
+    public string ShowTitleLine2
+    {
+        get { return _showTitleLine2; }
+        set
+        {
+            _showTitleLine2 = value;
+            OnPropertyChanged();
+        }
+    }
+
     protected void OnPropertyChanged([CallerMemberName] string name = null)
     {
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
@@ -111,7 +104,7 @@ public partial class AudioEpisodesThumbnails : Window, INotifyPropertyChanged
 
     private void Window_Loaded(object sender, RoutedEventArgs e)
     {
-        Uri path = new(Path.Combine(_outputPath, $"{ShowTitle}_Thumbnail.png"));
+        Uri path = new(Path.Combine(_outputPath, $"{StringsHelper.MakeFileNameSafe(ShowTitle)}.png"));
         UIElement element = this.Content as UIElement;
         Screen.CaptureScreen(element, path);
         Close();

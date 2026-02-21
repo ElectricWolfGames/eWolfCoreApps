@@ -1,7 +1,7 @@
 ﻿using eWolfAudioShows;
 using eWolfAudioShows.Interfaces;
 using System.IO;
-using ThumbnailCreator.DramaViews;
+using ThumbnailCreator.DramaAudioEpisodes;
 
 namespace ThumbnailCreator.Creators;
 
@@ -21,9 +21,10 @@ internal class CreateAudioDramaOneOffShow
 
             if (!File.Exists(pathTest))
             {
-                AudioEpisodesShow audioEpisodesShow = new()
+                AudioDramaOneOffShow audioEpisodesShow = new()
                 {
-                    ShowTitle = $"{show.Title.ToUpper()} {show.TitleLine2.ToUpper()}",
+                    ShowTitle = show.Title.ToUpper(),
+                    ShowTitleLine2 = show.TitleLine2,
                     OutputPath = Path.Combine(showPath),
                     ShowDescription = show.Description
                 };

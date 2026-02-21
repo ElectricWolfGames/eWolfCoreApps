@@ -1,7 +1,7 @@
 ﻿using eWolfAudioShows;
 using eWolfAudioShows.Interfaces;
 using System.IO;
-using ThumbnailCreator.DramaViews;
+using ThumbnailCreator.DramaAudioEpisodes;
 
 namespace ThumbnailCreator.Creators;
 

@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\eWolfSiteBuilder\eWolfAudioShows\eWolfAudioShows.csproj" />
+    <ProjectReference Include="..\..\CommonCode\CommonCode.csproj" />
     <ProjectReference Include="..\..\Common\WPF\WPF.csproj" />
   </ItemGroup>
 

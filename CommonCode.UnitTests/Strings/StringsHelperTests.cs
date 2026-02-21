@@ -20,5 +20,34 @@ namespace CommonCode.UnitTests.Strings
             var r = StringsHelper.HasDateNotAtStart(text);
             Assert.That(r, Is.EqualTo(expected));
         }
+
+        [TestCase("value", "const string value = \"value\";")]
+        [TestCase("Value With Spaces", "const string valueWithSpaces = \"Value With Spaces\";")]
+        public void ShouldConvertTextToStringVar(string from, string to)
+        {
+            string text = StringsHelper.ConvertTextToStringVar(from);
+            Assert.That(text, Is.EqualTo(to));
+        }
+
+        [TestCase("Text", "Text")]
+        [TestCase("Text more words", "Text_more_words")]
+        [TestCase("TextMore Words", "TextMore_words")]
+        [TestCase("Text-More Words", "Text_more_words")]
+        [TestCase("dot.dot", "dot_dot")]
+        [TestCase("Can't", "Cant")]
+        public void ShouldConvertTextToUnderscores(string from, string to)
+        {
+            string text = StringsHelper.ConvertTextToUnderscores(from);
+            Assert.That(text, Is.EqualTo(to));
+        }
+
+        [TestCase("Text", "Text")]
+        [TestCase("TextMoreWords", "Text more words")]
+        [TestCase("TextMore Words", "Text more Words")]
+        public void ShouldConvertToSentenceCase(string from, string to)
+        {
+            string text = StringsHelper.ToSentenceCase(from);
+            Assert.That(text, Is.EqualTo(to));
+        }
     }
 }
