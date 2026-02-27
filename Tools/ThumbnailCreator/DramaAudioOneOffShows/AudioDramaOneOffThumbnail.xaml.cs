@@ -1,11 +1,8 @@
 ﻿using CommonCode;
-using eWolfCommon.Helpers;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using ThumbnailCreator.Helpers;
 
 namespace ThumbnailCreator.DramaAudioEpisodes;

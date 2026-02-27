@@ -1,38 +1,37 @@
-﻿namespace FileNameCleaner
+﻿namespace FileNameCleaner;
+
+internal class RemoveEmptyFolders
 {
-    internal class RemoveEmptyFolders
+    private string _path;
+
+    public RemoveEmptyFolders(string path)
     {
-        private string _path;
+        _path = path;
+    }
 
-        public RemoveEmptyFolders(string path)
-        {
-            _path = path;
-        }
+    public void Do()
+    {
+        ProcessPath(_path);
+    }
 
-        public void Do()
+    private void ProcessPath(string path)
+    {
+        try
         {
-            ProcessPath(_path);
-        }
+            var items = Directory.GetFileSystemEntries(path);
 
-        private void ProcessPath(string path)
-        {
-            try
+            if (items.Count() == 0)
             {
-                var items = Directory.GetFileSystemEntries(path);
-
-                if (items.Count() == 0)
-                {
-                    Console.WriteLine(path + "   Removed");
-                    Directory.Delete(path);
-                }
-
-                foreach (var entry in items)
-                {
-                    if (Directory.Exists(entry))
-                        ProcessPath(entry);
-                }
+                Console.WriteLine(path + "   Removed");
+                Directory.Delete(path);
             }
-            catch { }
+
+            foreach (var entry in items)
+            {
+                if (Directory.Exists(entry))
+                    ProcessPath(entry);
+            }
         }
+        catch { }
     }
 }
