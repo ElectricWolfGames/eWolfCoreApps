@@ -1,24 +1,23 @@
-﻿namespace eWolfTagHolders.Tags
+﻿namespace eWolfTagHolders.Tags;
+
+public class GroupTags
 {
-    public class GroupTags
+    public GroupTags(string masterTag)
     {
-        public GroupTags(string masterTag)
-        {
-            MasterTag = masterTag;
-        }
+        MasterTag = masterTag;
+    }
 
-        public List<string> ClearableTags { get; set; } = new List<string>();
-        public List<string> IndedifiableTags { get; set; } = new List<string>();
-        public string MasterTag { get; set; }
+    public List<string> ClearableTags { get; set; } = new List<string>();
+    public List<string> IndedifiableTags { get; set; } = new List<string>();
+    public string MasterTag { get; set; }
 
-        public void Add(string tag)
-        {
-            IndedifiableTags.Add(tag);
-        }
+    public void Add(string tag)
+    {
+        IndedifiableTags.Add(tag);
+    }
 
-        public void AddClearTags(string tag)
-        {
-            ClearableTags.Add(tag);
-        }
+    public void AddClearTags(string tag)
+    {
+        ClearableTags.Add(tag);
     }
 }
