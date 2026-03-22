@@ -35,7 +35,7 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <WPFDrawing:OutlinedText
-                x:Name="ShowTitleTag" Fill="White" FontSize="100" Font="Exo 2"
+                x:Name="ShowTitleTag" Fill="White" FontSize="80" Font="Exo 2"
                 Bold="True" Stroke="#FF000000" StrokeThickness="4" Text="{Binding ShowTitle}"
                 HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="Auto" />
             <WPFDrawing:OutlinedText
