@@ -1,54 +1,53 @@
-﻿namespace eWolfTagHolders.Tags
+﻿namespace eWolfTagHolders.Tags;
+
+public class GroupTagsHolder
 {
-    public class GroupTagsHolder
+    public GroupTagsHolder()
     {
-        public GroupTagsHolder()
+        GroupTagCollection = new List<GroupTags>();
+    }
+
+    public List<GroupTags> GroupTagCollection { get; set; }
+
+    public void AdjustTags(TagHolders tagHolder)
+    {
+        var groups = GroupTagCollection;
+
+        foreach (var group in groups)
         {
-            GroupTagCollection = new List<GroupTags>();
-        }
-
-        public List<GroupTags> GroupTagCollection { get; set; }
-
-        public void AdjustTags(TagHolders tagHolder)
-        {
-            var groups = GroupTagCollection;
-
-            foreach (var group in groups)
+            var tagsToReplace = group.IndedifiableTags;
+            bool addGroupTag = false;
+            foreach (var tag in tagsToReplace)
             {
-                var tagsToReplace = group.IndedifiableTags;
-                bool addGroupTag = false;
-                foreach (var tag in tagsToReplace)
+                if (tagHolder.HasTag(tag))
                 {
-                    if (tagHolder.HasTag(tag))
+                    tagHolder.RemoveTag(tag);
+                    addGroupTag = true;
+                }
+                else
+                {
+                    if (tagHolder.HasTagInGroup(tag))
                     {
-                        tagHolder.RemoveTag(tag);
+                        string groupName = tagHolder.GetTagFromPartGroup(tag);
+                        tagHolder.RemoveTag(groupName);
                         addGroupTag = true;
                     }
-                    else
-                    {
-                        if (tagHolder.HasTagInGroup(tag))
-                        {
-                            string groupName = tagHolder.GetTagFromPartGroup(tag);
-                            tagHolder.RemoveTag(groupName);
-                            addGroupTag = true;
-                        }
-                    }
-                }
-                if (addGroupTag)
-                {
-                    ApplyGroupTag(tagHolder, group);
                 }
             }
-        }
-
-        public void ApplyGroupTag(TagHolders tagHolder, GroupTags group)
-        {
-            foreach (var tag in group.ClearableTags)
+            if (addGroupTag)
             {
-                tagHolder.RemoveTag(tag);
+                ApplyGroupTag(tagHolder, group);
             }
-
-            tagHolder.AddTag(group.MasterTag);
         }
+    }
+
+    public void ApplyGroupTag(TagHolders tagHolder, GroupTags group)
+    {
+        foreach (var tag in group.ClearableTags)
+        {
+            tagHolder.RemoveTag(tag);
+        }
+
+        tagHolder.AddTag(group.MasterTag);
     }
 }
