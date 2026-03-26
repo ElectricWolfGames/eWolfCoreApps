@@ -1,114 +1,113 @@
 ﻿using eWolfTagHolders.Helpers;
 
-namespace eWolfTagHolders.Tags
+namespace eWolfTagHolders.Tags;
+
+public class TagHolders
 {
-    public class TagHolders
+    private string[] _parts = new string[0];
+
+    public TagHolders(string line)
     {
-        private string[] _parts = new string[0];
+        Line = line;
+    }
 
-        public TagHolders(string line)
+    public string Line
+    {
+        get
         {
-            Line = line;
+            return TagHelper.CreateFileNameFromTags(_parts);
         }
-
-        public string Line
+        set
         {
-            get
-            {
-                return TagHelper.CreateFileNameFromTags(_parts);
-            }
-            set
-            {
-                Modifiy = true;
-                _parts = TagHelper.GetTagsFromName(value);
-            }
-        }
-
-        public string LineWithCommons
-        {
-            get
-            {
-                return TagHelper.CreateFileNameFromTags(_parts, " - ");
-            }
-        }
-
-        public bool Modifiy { get; set; }
-
-        public void AddTag(string line)
-        {
-            if (string.IsNullOrWhiteSpace(line))
-                return;
-
-            if (HasTag(line))
-                return;
-
-            List<string> words = _parts.ToList();
-            words.Add(TagHelper.MakePascalCase(line));
-
-            _parts = words.ToArray();
             Modifiy = true;
+            _parts = TagHelper.GetTagsFromName(value);
         }
+    }
 
-        public void ClearAllTagsAfterFirst()
+    public string LineWithCommons
+    {
+        get
         {
-            string firstWord = _parts[0];
-            _parts = new string[1] { firstWord };
-            Modifiy = true;
+            return TagHelper.CreateFileNameFromTags(_parts, " - ");
         }
+    }
 
-        public void CopyTags(TagHolders tagHolder)
-        {
-            List<string> words = tagHolder._parts.ToList();
-            words = words.Skip(1).ToList();
-            words.Insert(0, _parts[0]);
-            _parts = words.ToArray();
-            Modifiy = true;
-        }
+    public bool Modifiy { get; set; }
 
-        public int CountTags()
-        {
-            return _parts.Length;
-        }
+    public void AddTag(string line)
+    {
+        if (string.IsNullOrWhiteSpace(line))
+            return;
 
-        public string GetTagFromPartGroup(string tag)
+        if (HasTag(line))
+            return;
+
+        List<string> words = _parts.ToList();
+        words.Add(TagHelper.MakePascalCase(line));
+
+        _parts = words.ToArray();
+        Modifiy = true;
+    }
+
+    public void ClearAllTagsAfterFirst()
+    {
+        string firstWord = _parts[0];
+        _parts = new string[1] { firstWord };
+        Modifiy = true;
+    }
+
+    public void CopyTags(TagHolders tagHolder)
+    {
+        List<string> words = tagHolder._parts.ToList();
+        words = words.Skip(1).ToList();
+        words.Insert(0, _parts[0]);
+        _parts = words.ToArray();
+        Modifiy = true;
+    }
+
+    public int CountTags()
+    {
+        return _parts.Length;
+    }
+
+    public string GetTagFromPartGroup(string tag)
+    {
+        foreach (string part in _parts)
         {
-            foreach (string part in _parts)
+            if (part.Contains(","))
             {
-                if (part.Contains(","))
+                string[] groupParts = part.Split(',');
+                foreach (string groupPart in groupParts)
                 {
-                    string[] groupParts = part.Split(',');
-                    foreach (string groupPart in groupParts)
-                    {
-                        if (groupPart == tag)
-                            return part;
-                    }
+                    if (groupPart == tag)
+                        return part;
                 }
             }
-            return string.Empty;
         }
+        return string.Empty;
+    }
 
-        public bool HasTag(string tag)
+    public bool HasTag(string tag)
+    {
+        return _parts.Contains(tag);
+    }
+
+    public bool HasTagInGroup(string tag)
+    {
+        return GetTagFromPartGroup(tag) != string.Empty;
+    }
+
+    public void RemoveTag(string tag)
+    {
+        List<string> items = new List<string>();
+
+        foreach (string part in _parts)
         {
-            return _parts.Contains(tag);
+            if (part != tag)
+                items.Add(part);
         }
 
-        public bool HasTagInGroup(string tag)
-        {
-            return GetTagFromPartGroup(tag) != string.Empty;
-        }
-
-        public void RemoveTag(string tag)
-        {
-            List<string> items = new List<string>();
-
-            foreach (string part in _parts)
-            {
-                if (part != tag)
-                    items.Add(part);
-            }
-
-            _parts = items.ToArray();
-            Modifiy = true;
-        }
+        _parts = items.ToArray();
+        Modifiy = true;
     }
 }
