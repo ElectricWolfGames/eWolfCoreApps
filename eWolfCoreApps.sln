@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33122.133
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11620.152 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TagHolders", "TagHolders", "{929CC08E-CE83-4C16-9B88-F3319C23033F}"
 EndProject
@@ -58,6 +58,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eWolfCommon", "..\eWolfApps\Common\eWolfCommon\eWolfCommon.csproj", "{B59A75D7-858F-E7F2-80CC-C14138F4E0B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eWolfCommonUnitTests", "..\eWolfApps\Common\eWolfCommonUnitTests\eWolfCommonUnitTests.csproj", "{5FA2656A-3A9F-43F2-8A5A-A336C2693B80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmTagger", "Tools\FilmTagger\FilmTagger.csproj", "{07F0371F-B8FA-4C14-A3EE-56BE657199FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +147,10 @@ Global
 		{5FA2656A-3A9F-43F2-8A5A-A336C2693B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FA2656A-3A9F-43F2-8A5A-A336C2693B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FA2656A-3A9F-43F2-8A5A-A336C2693B80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07F0371F-B8FA-4C14-A3EE-56BE657199FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07F0371F-B8FA-4C14-A3EE-56BE657199FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07F0371F-B8FA-4C14-A3EE-56BE657199FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07F0371F-B8FA-4C14-A3EE-56BE657199FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -170,6 +176,7 @@ Global
 		{0D116B1F-ABAB-41D4-93E7-31E804892C65} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{B59A75D7-858F-E7F2-80CC-C14138F4E0B7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{5FA2656A-3A9F-43F2-8A5A-A336C2693B80} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{07F0371F-B8FA-4C14-A3EE-56BE657199FD} = {001340F2-AE65-4279-AA50-5B28B83941E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16B389B3-87EB-491C-93B6-6463060612A9}
