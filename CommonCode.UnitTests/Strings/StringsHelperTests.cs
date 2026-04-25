@@ -2,6 +2,15 @@ namespace CommonCode.UnitTests.Strings
 {
     public class Tests
     {
+        [TestCase("has [Date] 1950", "Date")]
+        [TestCase("[thing]", "thing")]
+        [TestCase("[thing, other , more]", "thing, other , more")]
+        public void GetBoxBrackets(string text, string expected)
+        {
+            var r = StringsHelper.GetBoxBrackets(text);
+            Assert.That(r, Is.EqualTo(expected));
+        }
+
         [TestCase("has Date 1950", "1950")]
         public void GetYearFrom(string text, string expected)
         {

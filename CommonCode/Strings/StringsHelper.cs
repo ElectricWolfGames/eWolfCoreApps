@@ -1,4 +1,7 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace CommonCode
 {
@@ -32,6 +35,23 @@ namespace CommonCode
             }
 
             return string.Join("_", words);
+        }
+
+        public static string GetBoxBrackets(string input)
+        {
+            int start = input.IndexOf('[');
+            int end = input.IndexOf(']', start + 1);
+
+            if (start != -1 && end != -1)
+            {
+                return input.Substring(start + 1, end - start - 1);
+            }
+            return string.Empty;
+        }
+
+        public static string[] GetWordTypes(string input)
+        {
+            return input.Split(',');
         }
 
         public static string GetYearFrom(string text)

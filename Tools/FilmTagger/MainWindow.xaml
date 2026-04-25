@@ -1,9 +1,8 @@
 ﻿<Window x:Class="FilmTagger.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FilmTagger"
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="1400">
@@ -17,14 +16,26 @@
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
 
-        <wv2:WebView2 Grid.Column="1" Grid.Row="1" x:Name="Browser" />
+        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="Files" Grid.Row="0" Height="256" SelectionChanged="Files_SelectionChanged" />
+            <StackPanel Grid.Column="1">
+                <TextBox x:Name="FullNameTag" Text="{Binding Fullfilename}" Margin="10" />
+                <TextBox x:Name="TitleOnlyTag" Text="{Binding TitleOnly}" Margin="10" />
+                <TextBox x:Name="FilmTypesTag" Text="{Binding FilmTypes}" Margin="10" />
+                <TextBox x:Name="PeopleTag" Text="{Binding PeopleNames}" Margin="10" />
+            </StackPanel>
+        </Grid>
 
+        <wv2:WebView2 Grid.Column="1" Grid.Row="1" x:Name="Browser" />
         <StackPanel Grid.Row="1">
             <Button Content="Comedy" Margin="25,15,25,0" Click="ButtonComedy_Click" />
             <Button Content="Action" Margin="25,15,25,0" Click="ButtonAction_Click" />
-            <Button Content="Sci-Fi" Margin="25,15,25,0" />
-            <Button Content="Crime" Margin="25,15,25,0" />
-            <Button Content="Crime" Margin="25,15,25,0" />
+            <Button Content="Sci-Fi" Margin="25,15,25,0" Click="ButtonSciFi_Click" />
+            <Button Content="Crime" Margin="25,15,25,0" Click="ButtonCrime_Click" />
         </StackPanel>
     </Grid>
 </Window>
