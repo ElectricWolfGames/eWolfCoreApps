@@ -160,6 +160,10 @@ namespace eWolfMetaTagging.Data
             groupTags.Add("55009");
             GroupTagCollection.Add(groupTags);
 
+            groupTags = new GroupTags("55019,Class55,Tulyar");
+            groupTags.Add("D9015");
+            GroupTagCollection.Add(groupTags);
+
             groupTags = new GroupTags("926,Repton,4-4-0,SchoolsClass");
             groupTags.Add("Repton");
             groupTags.AddClearTags("926");
@@ -420,6 +424,14 @@ namespace eWolfMetaTagging.Data
 
             groupTags = new GroupTags("ColinMcAndrew&Coy,0-4-0");
             groupTags.Add("ColinMcAndrew&Coy");
+            GroupTagCollection.Add(groupTags);
+
+            groupTags = new GroupTags("D9525,Class14,TeddyBear");
+            groupTags.Add("D9525");
+            GroupTagCollection.Add(groupTags);
+
+            groupTags = new GroupTags("26043,Class26");
+            groupTags.Add("26043");
             GroupTagCollection.Add(groupTags);
         }
     }

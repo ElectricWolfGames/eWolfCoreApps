@@ -22,6 +22,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <ListBox x:Name="Files" Grid.Row="0" Height="256" SelectionChanged="Files_SelectionChanged" />
+
             <StackPanel Grid.Column="1">
                 <TextBox x:Name="FullNameTag" Text="{Binding Fullfilename}" Margin="10" />
                 <TextBox x:Name="TitleOnlyTag" Text="{Binding TitleOnly}" Margin="10" />
@@ -32,10 +33,14 @@
 
         <wv2:WebView2 Grid.Column="1" Grid.Row="1" x:Name="Browser" />
         <StackPanel Grid.Row="1">
-            <Button Content="Comedy" Margin="25,15,25,0" Click="ButtonComedy_Click" />
+
+            <Button Content="Search" Margin="25,15,25,0" Click="ButtonSearch_Click" />
+            <Rectangle Height="15" />
+            <Button Content="Clear Types" Margin="25,15,25,0" Click="ButtonClear_Click" />
             <Button Content="Action" Margin="25,15,25,0" Click="ButtonAction_Click" />
             <Button Content="Sci-Fi" Margin="25,15,25,0" Click="ButtonSciFi_Click" />
             <Button Content="Crime" Margin="25,15,25,0" Click="ButtonCrime_Click" />
+            <Button Content="War" Margin="25,15,25,0" Click="ButtonWar_Click" />
         </StackPanel>
     </Grid>
 </Window>

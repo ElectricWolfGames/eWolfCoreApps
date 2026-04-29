@@ -1,8 +1,10 @@
 ﻿using FilmTagger.IO;
 using System.ComponentModel;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace FilmTagger;
 
@@ -12,6 +14,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private string _filmTypes;
     private string _fullfilename;
+    private bool _modifed = false;
     private string _peopleNames;
     private ReadFiles _readFiles;
     private string _titleOnly;
@@ -29,6 +32,18 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             Files.Items.Add(items.Name);
         }
+
+        Browser.CoreWebView2InitializationCompleted += (s, e) =>
+        {
+            if (e.IsSuccess)
+            {
+                Browser.CoreWebView2.NewWindowRequested += (sender, args) =>
+                {
+                    Browser.CoreWebView2.Navigate(args.Uri);
+                    args.Handled = true;
+                };
+            }
+        };
     }
 
     public event PropertyChangedEventHandler PropertyChanged;
@@ -81,11 +96,18 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void AddTag(string tagName)
     {
         FilmTypes += tagName + ", ";
+        _modifed = true;
     }
 
     private void ButtonAction_Click(object sender, RoutedEventArgs e)
     {
         AddTag("Action");
+    }
+
+    private void ButtonClear_Click(object sender, RoutedEventArgs e)
+    {
+        FilmTypes = string.Empty;
+        _modifed = true;
     }
 
     private void ButtonComedy_Click(object sender, RoutedEventArgs e)
@@ -103,21 +125,36 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         AddTag("Sci-fi");
     }
 
+    private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+    {
+        string url = $"https://www.bing.com/search?q={Uri.EscapeDataString(Fullfilename)}";
+        Browser.Source = new Uri(url);
+    }
+
+    private void ButtonWar_Click(object sender, RoutedEventArgs e)
+    {
+        AddTag("War");
+    }
+
     private void Files_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
     {
         var listBox = sender as ListBox;
 
         if (listBox?.SelectedItem != null)
         {
+            if (_fileDetails != null && _modifed)
+            {
+                _fileDetails.Save();
+
+                // Save name
+            }
+
             string name = listBox.SelectedItem.ToString();
-
-            int i = 0;
-            i++;
-
             _fileDetails = _readFiles.FileDetails.FirstOrDefault(x => x.Name == name);
 
             Fullfilename = name;
             FilmTypes = string.Join(", ", _fileDetails.FilmTypes);
+            _modifed = false;
         }
     }
 }
