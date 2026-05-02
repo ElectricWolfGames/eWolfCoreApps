@@ -1,10 +1,8 @@
 ﻿using FilmTagger.IO;
 using System.ComponentModel;
-using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 
 namespace FilmTagger;
 
@@ -127,8 +125,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void ButtonSearch_Click(object sender, RoutedEventArgs e)
     {
-        string url = $"https://www.bing.com/search?q={Uri.EscapeDataString(Fullfilename)}";
-        Browser.Source = new Uri(url);
+        if (!string.IsNullOrEmpty(Fullfilename))
+        {
+            string url = $"https://www.bing.com/search?q={Uri.EscapeDataString(Fullfilename)}";
+            Browser.Source = new Uri(url);
+        }
     }
 
     private void ButtonWar_Click(object sender, RoutedEventArgs e)
