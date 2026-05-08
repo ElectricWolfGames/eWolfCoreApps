@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace CommonCode
 {
+    [Obsolete("Use eWolfCommonCore")]
     public static class StringsHelper
     {
         public static string ConvertTextToStringVar(string sentence)
@@ -47,11 +48,6 @@ namespace CommonCode
                 return input.Substring(start + 1, end - start - 1);
             }
             return string.Empty;
-        }
-
-        public static string[] GetWordTypes(string input)
-        {
-            return input.Split(',');
         }
 
         public static string GetYearFrom(string text)

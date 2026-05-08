@@ -94,6 +94,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void AddTag(string tagName)
     {
         FilmTypes += tagName + ", ";
+        _fileDetails.FilmTypes.Add(tagName);
         _modifed = true;
     }
 
@@ -116,6 +117,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void ButtonCrime_Click(object sender, RoutedEventArgs e)
     {
         AddTag("Crime");
+    }
+
+    private void ButtonDrama_Click(object sender, RoutedEventArgs e)
+    {
+        AddTag("Drama");
+    }
+
+    private void ButtonSave_Click(object sender, RoutedEventArgs e)
+    {
+        _fileDetails.Save();
     }
 
     private void ButtonSciFi_Click(object sender, RoutedEventArgs e)

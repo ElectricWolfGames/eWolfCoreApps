@@ -35,9 +35,12 @@
         <StackPanel Grid.Row="1">
 
             <Button Content="Search" Margin="25,15,25,0" Click="ButtonSearch_Click" />
+            <Button Content="Save" Margin="25,15,25,0" Click="ButtonSave_Click" />
             <Rectangle Height="15" />
             <Button Content="Clear Types" Margin="25,15,25,0" Click="ButtonClear_Click" />
             <Button Content="Action" Margin="25,15,25,0" Click="ButtonAction_Click" />
+            <Button Content="Comedy" Margin="25,15,25,0" Click="ButtonComedy_Click" />
+            <Button Content="Drama" Margin="25,15,25,0" Click="ButtonDrama_Click" />
             <Button Content="Sci-Fi" Margin="25,15,25,0" Click="ButtonSciFi_Click" />
             <Button Content="Crime" Margin="25,15,25,0" Click="ButtonCrime_Click" />
             <Button Content="War" Margin="25,15,25,0" Click="ButtonWar_Click" />

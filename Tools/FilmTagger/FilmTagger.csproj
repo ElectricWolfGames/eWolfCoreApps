@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CommonCode\CommonCode.csproj" />
+    <ProjectReference Include="..\..\Common\eWolfCommonCore\eWolfCommonCore.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using CommonCode;
+﻿using eWolfCommonCore;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;

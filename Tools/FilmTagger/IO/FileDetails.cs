@@ -1,4 +1,4 @@
-﻿using CommonCode;
+﻿using eWolfCommonCore;
 using System.IO;
 
 namespace FilmTagger.IO;
@@ -24,6 +24,16 @@ public class FileDetails
 
     public void Save()
     {
-        string fullPath = $"{FullPath}\\{Name}";
+        string filmTypes = string.Join(",", FilmTypes);
+        if (!string.IsNullOrEmpty(filmTypes))
+            filmTypes = $"[{filmTypes}]";
+
+        string fullPath = $"{FullPath}\\{Name} {filmTypes}".Trim();
+        fullPath = $"{fullPath}.{Extension}";
+
+        if (fullPath != _orginalPath)
+        {
+            File.Move(_orginalPath, fullPath);
+        }
     }
 }
