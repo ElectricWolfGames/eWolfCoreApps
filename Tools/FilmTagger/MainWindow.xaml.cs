@@ -124,6 +124,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         AddTag("Drama");
     }
 
+    private void ButtonHorror_Click(object sender, RoutedEventArgs e)
+    {
+        AddTag("Horror");
+    }
+
     private void ButtonSave_Click(object sender, RoutedEventArgs e)
     {
         _fileDetails.Save();

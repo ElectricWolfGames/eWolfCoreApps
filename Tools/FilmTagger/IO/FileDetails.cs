@@ -34,6 +34,7 @@ public class FileDetails
         if (fullPath != _orginalPath)
         {
             File.Move(_orginalPath, fullPath);
+            _orginalPath = fullPath;
         }
     }
 }
